@@ -1,7 +1,5 @@
 module.exports = {
     root: true,
-    ecmaVersion: "latest",
-    sourceType: "module",
     env: { browser: true, es2020: true },
     extends: [
         'eslint:recommended',
@@ -10,6 +8,12 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
     ],
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: ["./tsconfig.json", "./tsconfig.node.json"],
+        tsconfigRootDir: __dirname,
+    },
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
     plugins: ['react-refresh'],
@@ -19,6 +23,4 @@ module.exports = {
             { allowConstantExport: true },
         ],
     },
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
 }
