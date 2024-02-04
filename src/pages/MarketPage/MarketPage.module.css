@@ -16,7 +16,7 @@
 
 .item {
     border-radius: 6px;
-    background-color: rgba(16, 16, 16, 0.7);
+    background-color: rgb(16 16 16 / 70%);
     padding: 5px;
     height: 201px;
     flex: 0 1 calc(50% - 5px);
@@ -32,7 +32,7 @@
     align-items: center;
     height: 152px;
     border-radius: 12px;
-    background: rgba(153, 107, 255, 1);
+    background: rgb(153 107 255 / 100%);
 }
 
 .info {

@@ -10,3 +10,4 @@ export { PageTitle } from "./PageTitle";
 export { InfoTrigger } from "./InfoTrigger";
 export { BackCard } from "./BackCard";
 export { MoveItem } from "./MoveItem";
+export { Subtitle } from "./Subtitle";

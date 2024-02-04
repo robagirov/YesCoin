@@ -6,5 +6,5 @@ interface SubtitleProps {
 }
 
 export const Subtitle = ({ children }: SubtitleProps) => {
-  return <>{children}</>;
+  return <h2 className={styles.subtitle}>{children}</h2>;
 };

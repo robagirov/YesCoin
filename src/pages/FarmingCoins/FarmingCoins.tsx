@@ -5,6 +5,9 @@ import {
   MoveItem,
   PageTitle,
   ViewMarkup,
+  Subtitle,
+  GlowCircle,
+  GlowCirclePositions,
 } from "shared/ui";
 
 export const FarmingCoins = () => {
@@ -19,12 +22,26 @@ export const FarmingCoins = () => {
 
         <div style={{ marginBottom: "20px" }}>
           <BackCard>
-            <MoveItem />
+            <MoveItem coins={10000} title="Пригласи 10 друзей" />
           </BackCard>
         </div>
 
-        <div>Активные</div>
+        <div style={{ marginBottom: "20px" }}>
+          <Subtitle>Активные</Subtitle>
+        </div>
+
+        <BackCard height={290}>
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          <MoveItem coins={10000} title="Пригласи 10 друзей" />
+        </BackCard>
       </div>
+
+      <GlowCircle position={GlowCirclePositions.bottom} />
     </ViewMarkup>
   );
 };
