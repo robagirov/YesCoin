@@ -1,0 +1,16 @@
+.button {
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.primary {
+    background-color: #996BFF;
+}
+
+.secondary {
+    background-color: #4B4656;
+}

@@ -1,0 +1,11 @@
+.content {
+    padding-bottom: 32px;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+}
+
+.featureTab {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}

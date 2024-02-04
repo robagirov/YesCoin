@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+}
+
+.picture {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background: rgba(243, 243, 245, 0.1);
+}
+
+.info {
+    flex: 1;
+    padding: 12px 0 12px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoTitle {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 24px;
+}
+
+.infoCount {
+    font-size: 14px;
+    line-height: 24px;
+}

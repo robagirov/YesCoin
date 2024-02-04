@@ -1,0 +1,28 @@
+.progress {
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    opacity: 0.9;
+
+    &::-webkit-meter-bar {
+        height: 20px;
+        border: none;
+        border-radius: 6px;
+        background: rgba(24, 24, 24, 0.9);
+    }
+
+    &::-webkit-meter-optimum-value {
+        background: radial-gradient(rgb(204, 181, 255), rgb(153, 107, 255));
+    }
+}
+
+.pin {
+    height: 24px;
+    width: 1px;
+    position: absolute;
+    top: 2px;
+    transform: translateY(-4px);
+    background: rgb(153, 107, 255);
+}

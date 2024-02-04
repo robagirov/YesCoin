@@ -1,0 +1,61 @@
+.content {
+    padding-bottom: 32px;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.to-leader {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 29px;
+    padding-right: 85px;
+    width: 100%;
+    border-radius: 6px;
+    background: rgba(24, 24, 24, 0.9);
+    color: white;
+    height: 52px;
+    margin-bottom: 90px;
+
+    &:before, &:after {
+        display: block;
+        content: "";
+        position: absolute;
+    }
+
+    &:before {
+        height: 57px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.7);
+        left: 23%;
+    }
+
+    &:after {
+        border-left: 2px solid rgba(255, 255, 255, 0.7);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 2px;
+        height: 14px;
+        width: 14px;
+        right: 7%;
+        transform: rotate(225deg);
+    }
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.friends-list {
+    height: 334px;
+    border-radius: 6px;
+    background: rgba(243, 243, 245, 0.1);
+    margin-bottom: 72px;
+}

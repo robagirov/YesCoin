@@ -1,0 +1,27 @@
+.wrapper {
+    flex: 1;
+    height: 65px;
+    border-radius: 16px;
+    background: radial-gradient(rgb(245, 240, 255), rgb(226, 214, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.count-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-count {
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(153, 107, 255);;
+}
+
+.common-count {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(191, 163, 255);
+}

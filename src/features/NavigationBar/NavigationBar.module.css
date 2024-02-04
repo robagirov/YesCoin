@@ -1,0 +1,7 @@
+.navigationBar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    column-gap: 10px;
+    margin-bottom: 10px;
+}

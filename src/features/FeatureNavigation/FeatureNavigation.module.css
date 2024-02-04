@@ -1,0 +1,11 @@
+.wrapper {
+    flex: 2;
+    height: 65px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: radial-gradient(rgba(204, 181, 255, 0.75), rgba(153, 107, 255, 0.75)), radial-gradient(rgb(245, 240, 255), rgb(226, 214, 255));
+}
