@@ -1,14 +1,19 @@
 import styles from "./InfoTrigger.module.css";
+import clsx from "clsx";
 
 interface InfoTriggerProps {
-  children: string;
+  text: string;
   onClick?: () => void;
+  className?: string;
 }
 
-export const InfoTrigger = ({ children, onClick }: InfoTriggerProps) => {
+export const InfoTrigger = ({ text, onClick, className }: InfoTriggerProps) => {
   return (
-    <span onClick={onClick} className={styles.subtitle}>
-      {children}
-    </span>
+    <p
+      onClick={onClick}
+      className={clsx(styles.subtitle, className, "text-center")}
+    >
+      {text}
+    </p>
   );
 };

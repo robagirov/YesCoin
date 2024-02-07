@@ -1,10 +1,11 @@
-import { ReactNode } from "react";
 import styles from "./Subtitle.module.css";
+import clsx from "clsx";
 
 interface SubtitleProps {
-  children: ReactNode;
+  title: string;
+  className?: string;
 }
 
-export const Subtitle = ({ children }: SubtitleProps) => {
-  return <h2 className={styles.subtitle}>{children}</h2>;
+export const Subtitle = ({ title, className }: SubtitleProps) => {
+  return <h2 className={clsx(styles.subtitle, className)}>{title}</h2>;
 };

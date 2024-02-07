@@ -1,26 +1,38 @@
-import { ActionButton, InfoTrigger, ViewMarkup } from "shared/ui";
+import { ActionButton, BackCard, InfoTrigger, ViewMarkup } from "shared/ui";
 import { PageTitle } from "shared/ui";
 
 import styles from "./YourFriends.module.css";
+import { FriendItem } from "shared/ui/FriendItem";
+import { Link } from "react-router-dom";
+import { ROUTES } from "shared/consts";
 
 export const YourFriends = () => {
   return (
     <ViewMarkup>
       <div className={styles["content"]}>
         <div className={styles["title-wrapper"]}>
-          <PageTitle>Ваши друзья</PageTitle>
+          <PageTitle title="Ваши друзья" />
 
-          <InfoTrigger>Как сделать 1М Коинов</InfoTrigger>
+          <InfoTrigger text="Как сделать 1М Коинов" />
         </div>
 
         <div className={styles["to-leader"]}>
           <span style={{ textAlign: "left" }}>+0</span>
-          <span>Топ 300 лидеров</span>
+          <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
         </div>
 
         <div className={styles["subtitle"]}>Друзья</div>
 
-        <div className={styles["friends-list"]} />
+        <div className="mb-5">
+          <BackCard height={334}>
+            <FriendItem name="Бизьяна Битзайн" />
+            <FriendItem name="Бизьяна Битзайн" />
+            <FriendItem name="Бизьяна Битзайн" />
+            <FriendItem name="Бизьяна Битзайн" />
+            <FriendItem name="Бизьяна Битзайн" />
+            <FriendItem name="Бизьяна Битзайн" />
+          </BackCard>
+        </div>
 
         <ActionButton variant="primary" message="Invite a fren" />
       </div>

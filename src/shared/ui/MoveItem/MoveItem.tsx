@@ -15,6 +15,7 @@ export const MoveItem = ({ avatar, title, coins }: MoveItemProps) => {
           "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
         }
         className={styles.picture}
+        alt="Фото профиля"
       />
 
       <div className={styles.info}>

@@ -1,4 +1,5 @@
 import "./reset.css";
+import "./app.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -9,6 +10,7 @@ import {
   GoldenLeague,
   FarmingCoins,
   BoostsSelect,
+  PartyKings,
 } from "pages";
 import { ROUTES } from "./shared/consts";
 
@@ -20,10 +22,11 @@ function App() {
         <Route path={ROUTES.WALLET} element={<WalletPage />} />
         <Route path={ROUTES.MARKET} element={<MarketPage />} />
         <Route path={ROUTES.GOLDEN_LEAGUE} element={<GoldenLeague />} />
-        <Route path={ROUTES.GOLDEN_LEAGUE} element={<GoldenLeague />} />
         <Route path={ROUTES.FRIENDS} element={<YourFriends />} />
         <Route path={ROUTES.FARMING} element={<FarmingCoins />} />
         <Route path={ROUTES.BOOSTERS} element={<BoostsSelect />} />
+        <Route path={ROUTES.BOOSTERS} element={<BoostsSelect />} />
+        <Route path={ROUTES.PARTY_KINGS} element={<PartyKings />} />
       </Routes>
     </Router>
   );

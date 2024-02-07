@@ -6,4 +6,5 @@ export const ROUTES = {
   FRIENDS: "/friends",
   FARMING: "/farming",
   BOOSTERS: "/boosters",
+  PARTY_KINGS: "/party-kings",
 };

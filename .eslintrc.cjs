@@ -11,10 +11,10 @@ module.exports = {
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: ["./tsconfig.json", "./tsconfig.node.json"],
+        project: ["./tsconfig.json", "./tsconfig.node.json", "./tailwind.config.js"],
         tsconfigRootDir: __dirname,
     },
-    ignorePatterns: ['dist', '.eslintrc.cjs'],
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'tailwind.config.js', 'postcss.config.js'],
     parser: '@typescript-eslint/parser',
     plugins: ['react-refresh'],
     rules: {

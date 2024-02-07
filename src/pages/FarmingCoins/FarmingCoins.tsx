@@ -15,9 +15,9 @@ export const FarmingCoins = () => {
     <ViewMarkup>
       <div className={styles.content}>
         <div className={styles.head}>
-          <PageTitle>Earn more coins</PageTitle>
+          <PageTitle title="Earn more coins" />
 
-          <InfoTrigger>Полная инструкция</InfoTrigger>
+          <InfoTrigger text="Полная инструкция" />
         </div>
 
         <div style={{ marginBottom: "20px" }}>
@@ -27,7 +27,7 @@ export const FarmingCoins = () => {
         </div>
 
         <div style={{ marginBottom: "20px" }}>
-          <Subtitle>Активные</Subtitle>
+          <Subtitle title="Активные" />
         </div>
 
         <BackCard height={290}>

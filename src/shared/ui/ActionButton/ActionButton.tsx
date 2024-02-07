@@ -1,14 +1,20 @@
 import styles from "./ActionButton.module.css";
-import { FC } from "react";
 import clsx from "clsx";
 
-export const ActionButton: FC<{
+interface ActionButtonProps {
   variant: "primary" | "secondary";
   message: string;
-}> = ({ variant = "primary", message }) => {
+  className?: string;
+}
+
+export const ActionButton = ({
+  variant = "primary",
+  className,
+  message,
+}: ActionButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, {
+      className={clsx(styles.button, className, {
         [styles.primary]: variant === "primary",
         [styles.secondary]: variant === "secondary",
       })}

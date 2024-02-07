@@ -1,9 +1,11 @@
 import styles from "./PageTitle.module.css";
+import clsx from "clsx";
 
 interface PageTitleProps {
-  children: string;
+  title: string;
+  className?: string;
 }
 
-export const PageTitle = ({ children }: PageTitleProps) => {
-  return <h1 className={styles.title}>{children}</h1>;
+export const PageTitle = ({ title, className }: PageTitleProps) => {
+  return <h1 className={clsx(styles.title, className)}>{title}</h1>;
 };

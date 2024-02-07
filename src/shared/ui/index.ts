@@ -11,3 +11,5 @@ export { InfoTrigger } from "./InfoTrigger";
 export { BackCard } from "./BackCard";
 export { MoveItem } from "./MoveItem";
 export { Subtitle } from "./Subtitle";
+export { InfoSection } from "./InfoSection";
+export { ListItem } from "./ListItem";

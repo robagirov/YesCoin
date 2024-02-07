@@ -6,4 +6,5 @@ export enum GlowCirclePositions {
 
 export interface GlowCircleProps {
   position: GlowCirclePositions;
+  isTriple?: boolean;
 }

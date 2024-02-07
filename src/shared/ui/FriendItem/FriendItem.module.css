@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+}
+
+.picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(243 243 245 / 10%);
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 0 15px;
+
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        border-left: 2px solid rgb(255 255 255 / 70%);
+        border-bottom: 2px solid rgb(255 255 255 / 70%);
+        border-radius: 2px;
+        height: 14px;
+        width: 14px;
+        right: 7%;
+        top: 40%;
+        transform: rotate(225deg);
+    }
+}
+
+.infoTitle {
+    color: rgb(255 255 255);
+    line-height: 24px;
+}
+
+.yellowText {
+    font-size: 14px;
+    font-weight: 300;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: radial-gradient(rgb(255, 248, 181), rgb(255, 222, 107));;
+    line-height: 24px;
+}

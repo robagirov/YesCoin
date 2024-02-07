@@ -1,9 +1,0 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  padding: 20px;
-  border-radius: 6px;
-  background: rgb(243 243 245 / 10%);
-  overflow-y: auto;
-}

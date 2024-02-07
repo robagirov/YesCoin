@@ -1,7 +1,6 @@
 .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     column-gap: 5px;
 }
 
@@ -10,4 +9,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     background-image: radial-gradient(rgb(255, 248, 181), rgb(255, 222, 107));
+}
+
+.small {
+    font-size: 14px;
+    font-weight: 300;
 }
