@@ -8,7 +8,7 @@ export const BoostCard = ({ className }: BoostCardProps) => {
   return (
     <div
       className={clsx(
-        "flex items-center justify-center gap-x-2 w-2/4 h-16 rounded-md bg-white bg-[rgba(243,243,245,0.2)]",
+        "flex items-center justify-center gap-x-2 w-2/4 h-16 rounded-md bg-[rgba(243,243,245,0.1)]",
         className,
       )}
     >

@@ -2,7 +2,6 @@ import { BalanceAmount, NavigationBar } from "features";
 import {
   ActionButton,
   GlowCircle,
-  GlowCirclePositions,
   RouterLink,
   ToggleSwitch,
   ViewMarkup,
@@ -30,7 +29,7 @@ export const WalletPage = () => {
         <div />
       </div>
 
-      <GlowCircle position={GlowCirclePositions.bottom} />
+      <GlowCircle position="bottom" />
     </ViewMarkup>
   );
 };

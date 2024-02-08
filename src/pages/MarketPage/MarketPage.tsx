@@ -1,10 +1,4 @@
-import {
-  ActionButton,
-  GlowCircle,
-  GlowCirclePositions,
-  RouterLink,
-  ViewMarkup,
-} from "shared/ui";
+import { ActionButton, GlowCircle, RouterLink, ViewMarkup } from "shared/ui";
 import { NavigationBar } from "features";
 import styles from "./MarketPage.module.css";
 
@@ -33,7 +27,7 @@ export const MarketPage = () => {
         ))}
       </div>
 
-      <GlowCircle position={GlowCirclePositions.bottom} />
+      <GlowCircle position="bottom" />
     </ViewMarkup>
   );
 };

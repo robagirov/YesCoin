@@ -3,7 +3,6 @@ import {
   EnergyRemain,
   FeatureTab,
   GlowCircle,
-  GlowCirclePositions,
   RouterLink,
   ViewMarkup,
 } from "shared/ui";
@@ -55,7 +54,7 @@ export const MainPage = () => {
         </div>
       </div>
 
-      <GlowCircle position={GlowCirclePositions.center} />
+      <GlowCircle position="center" />
     </ViewMarkup>
   );
 };

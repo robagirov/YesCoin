@@ -1,10 +1,17 @@
-import { BackCard, InfoTrigger, Subtitle, ViewMarkup } from "shared/ui";
-import { BalanceAmount, BoostCard } from "features";
+import {
+  BackCard,
+  InfoTrigger,
+  Subtitle,
+  ViewMarkup,
+  GlowCircle,
+} from "shared/ui";
+
+import { BalanceAmount, BoostCard, BoostOption } from "features";
 
 export const BoostsSelect = () => {
   return (
     <ViewMarkup>
-      <div className="pb-8">
+      <div className="pb-8 z-10">
         <p className="text-center opacity-70 mb-2.5">Баланс</p>
 
         <BalanceAmount className="mb-2.5" />
@@ -21,8 +28,17 @@ export const BoostsSelect = () => {
 
         <Subtitle title="Бусты" className="mb-5" />
 
-        <BackCard height={334}>asf</BackCard>
+        <BackCard height={356}>
+          <BoostOption cost={10000} title="Двойной клик" />
+          <BoostOption cost={10000} title="Двойной клик" />
+          <BoostOption cost={10000} title="Двойной клик" />
+          <BoostOption cost={10000} title="Двойной клик" />
+          <BoostOption cost={10000} title="Двойной клик" />
+          <BoostOption cost={10000} title="Двойной клик" />
+        </BackCard>
       </div>
+
+      <GlowCircle position="bottom" className="opacity-30" />
     </ViewMarkup>
   );
 };

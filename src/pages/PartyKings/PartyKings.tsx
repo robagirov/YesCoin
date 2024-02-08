@@ -6,7 +6,6 @@ import {
   InfoSection,
   ActionButton,
   ListItem,
-  GlowCirclePositions,
 } from "shared/ui";
 
 export const PartyKings = () => {
@@ -37,7 +36,7 @@ export const PartyKings = () => {
         </BackCard>
       </div>
 
-      <GlowCircle position={GlowCirclePositions.top} isTriple />
+      <GlowCircle position="top" isTriple />
     </ViewMarkup>
   );
 };

@@ -7,7 +7,6 @@ import {
   ViewMarkup,
   Subtitle,
   GlowCircle,
-  GlowCirclePositions,
 } from "shared/ui";
 
 export const FarmingCoins = () => {
@@ -41,7 +40,7 @@ export const FarmingCoins = () => {
         </BackCard>
       </div>
 
-      <GlowCircle position={GlowCirclePositions.bottom} />
+      <GlowCircle position="bottom" />
     </ViewMarkup>
   );
 };
