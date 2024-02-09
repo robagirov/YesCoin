@@ -6,3 +6,4 @@ export { YourFriends } from "./YourFriends";
 export { FarmingCoins } from "./FarmingCoins";
 export { BoostsSelect } from "./BoostsSelect";
 export { PartyKings } from "./PartyKings";
+export { YesCoin } from "./YesCoin";

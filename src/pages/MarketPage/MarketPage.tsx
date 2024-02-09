@@ -10,7 +10,11 @@ export const MarketPage = () => {
         <RouterLink to="/wallet" text="Кошелек" />
       </NavigationBar>
 
-      <ActionButton variant="primary" message="Connect TON wallet" />
+      <ActionButton
+        variant="primary"
+        message="Connect TON wallet"
+        onClick={() => false}
+      />
 
       <h1 className={styles.header}>Market</h1>
 

@@ -17,7 +17,11 @@ export const WalletPage = () => {
         <RouterLink to="/market" text="Маркет" />
       </NavigationBar>
 
-      <ActionButton variant="primary" message="Connect TON wallet" />
+      <ActionButton
+        variant="primary"
+        message="Connect TON wallet"
+        onClick={() => false}
+      />
 
       <div className={styles.middleContainer}>
         <div className={styles.box}>

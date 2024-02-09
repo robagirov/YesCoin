@@ -11,6 +11,7 @@ import {
   FarmingCoins,
   BoostsSelect,
   PartyKings,
+  YesCoin,
 } from "pages";
 import { ROUTES } from "./shared/consts";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path={ROUTES.BOOSTERS} element={<BoostsSelect />} />
         <Route path={ROUTES.BOOSTERS} element={<BoostsSelect />} />
         <Route path={ROUTES.PARTY_KINGS} element={<PartyKings />} />
+        <Route path={ROUTES.YES_COIN} element={<YesCoin />} />
       </Routes>
     </Router>
   );

@@ -15,7 +15,7 @@ export const GlowCircle = ({
   return (
     <div
       className={clsx(
-        styles.glowCircle,
+        "absolute left-0 w-full h-2/4",
         {
           [styles.top]: position === "top",
           [styles.center]: position === "center",

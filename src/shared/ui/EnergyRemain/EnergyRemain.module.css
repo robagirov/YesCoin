@@ -22,7 +22,7 @@
     height: 24px;
     width: 1px;
     position: absolute;
-    top: 2px;
+    top: 4px;
     transform: translateY(-4px);
     background: rgb(153, 107, 255);
 }

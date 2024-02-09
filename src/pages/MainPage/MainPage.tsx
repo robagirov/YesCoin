@@ -26,7 +26,11 @@ export const MainPage = () => {
         <RouterLink to="/market" text="Маркет" />
       </NavigationBar>
 
-      <ActionButton variant="primary" message="Войти в Сквад" />
+      <ActionButton
+        variant="primary"
+        message="Войти в Сквад"
+        onClick={() => false}
+      />
 
       <div className={styles.content}>
         <div className={styles.moneyWrapper}>

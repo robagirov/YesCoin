@@ -28,7 +28,9 @@ export const ListItem = ({
       <div className="flex flex-col">
         <span className="text-white text-lg">{title}</span>
 
-        <span className="text-gray-400 opacity-70 font-light">{subtitle}</span>
+        <span className="text-sm text-gray-400 opacity-70 font-light">
+          {subtitle}
+        </span>
       </div>
     </div>
   );

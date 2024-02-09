@@ -7,4 +7,5 @@ export const ROUTES = {
   FARMING: "/farming",
   BOOSTERS: "/boosters",
   PARTY_KINGS: "/party-kings",
+  YES_COIN: "/yes-coin",
 };

@@ -34,7 +34,11 @@ export const YourFriends = () => {
           </BackCard>
         </div>
 
-        <ActionButton variant="primary" message="Invite a fren" />
+        <ActionButton
+          variant="primary"
+          message="Invite a fren"
+          onClick={() => false}
+        />
       </div>
     </ViewMarkup>
   );

@@ -6,16 +6,18 @@ interface BoostItemProps {
   cost: number;
   title: string;
   picture?: string;
+  onClick?: () => void;
 }
 
 export const BoostOption = ({
   className,
+  onClick,
   cost,
   title,
   picture,
 }: BoostItemProps) => {
   return (
-    <div className={clsx("flex gap-x-4 relative", className)}>
+    <div className={clsx("flex gap-x-4 relative", className)} onClick={onClick}>
       <img
         src={
           picture ||

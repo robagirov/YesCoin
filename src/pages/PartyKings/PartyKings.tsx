@@ -22,6 +22,7 @@ export const PartyKings = () => {
           className="mb-4"
           variant="primary"
           message="Пригласить друзей"
+          onClick={() => false}
         />
 
         <BackCard className="rounded-b-none" height={374}>

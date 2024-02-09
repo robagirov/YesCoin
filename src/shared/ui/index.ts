@@ -14,3 +14,4 @@ export { Subtitle } from "./Subtitle";
 export { InfoSection } from "./InfoSection";
 export { ListItem } from "./ListItem";
 export { ArrowRight } from "./ArrowRight";
+export { ModalView } from "./ModalView";
