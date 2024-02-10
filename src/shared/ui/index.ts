@@ -15,3 +15,5 @@ export { InfoSection } from "./InfoSection";
 export { ListItem } from "./ListItem";
 export { ArrowRight } from "./ArrowRight";
 export { ModalView } from "./ModalView";
+export { SquadItem } from "./SquadItem";
+export { SwitchBar } from "./SwitchBar";

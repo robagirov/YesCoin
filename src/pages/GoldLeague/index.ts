@@ -1,0 +1,1 @@
+export { GoldLeague } from "./GoldLeague";

@@ -11,9 +11,9 @@ import {
 import { BalanceAmount, BoostCard, BoostOption } from "features";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../shared/consts";
+import { ROUTES } from "shared/consts";
 
-export const BoostsSelect = () => {
+export const GameBoosts = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const onCloseModal = () => setModalOpen(false);
@@ -87,7 +87,7 @@ export const BoostsSelect = () => {
       <ModalView isOpen={modalOpen}>
         <div className="h-full flex z-10">
           <ActionButton
-            className="mt-auto"
+            className="mt-96"
             variant="primary"
             message="Спасибо"
             onClick={onCloseModal}

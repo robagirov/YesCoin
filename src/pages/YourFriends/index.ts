@@ -1,1 +1,1 @@
-export { YourFriends } from "./YourFriends.tsx";
+export { YourFriends } from "./YourFriends";

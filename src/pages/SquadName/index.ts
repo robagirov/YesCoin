@@ -1,0 +1,1 @@
+export { SquadName } from "./SquadName";

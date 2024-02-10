@@ -1,4 +1,4 @@
-import styles from "./FarmingCoins.module.css";
+import styles from "./FarmCoins.module.css";
 import {
   BackCard,
   InfoTrigger,
@@ -9,7 +9,7 @@ import {
   GlowCircle,
 } from "shared/ui";
 
-export const FarmingCoins = () => {
+export const FarmCoins = () => {
   return (
     <ViewMarkup>
       <div className={styles.content}>

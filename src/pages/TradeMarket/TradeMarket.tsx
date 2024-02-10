@@ -1,8 +1,8 @@
-import { ActionButton, GlowCircle, RouterLink, ViewMarkup } from "shared/ui";
 import { NavigationBar } from "features";
-import styles from "./MarketPage.module.css";
+import { ActionButton, GlowCircle, RouterLink, ViewMarkup } from "shared/ui";
+import styles from "./TradeMarket.module.css";
 
-export const MarketPage = () => {
+export const TradeMarket = () => {
   return (
     <ViewMarkup>
       <NavigationBar>

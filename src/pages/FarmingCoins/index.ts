@@ -1,1 +1,0 @@
-export { FarmingCoins } from "./FarmingCoins";

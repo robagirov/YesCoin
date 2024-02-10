@@ -12,13 +12,14 @@ import {
   GoldLeagueLink,
   NavigationBar,
 } from "features";
-import styles from "./MainPage.module.css";
+import styles from "./MainBoard.module.css";
 import { ROUTES } from "shared/consts";
 import { LevelCounter } from "entities";
 
 import MainCoin from "shared/icon/MainCoin.svg?react";
+import { Link } from "react-router-dom";
 
-export const MainPage = () => {
+export const MainBoard = () => {
   return (
     <ViewMarkup>
       <NavigationBar>
@@ -26,11 +27,13 @@ export const MainPage = () => {
         <RouterLink to="/market" text="Маркет" />
       </NavigationBar>
 
-      <ActionButton
-        variant="primary"
-        message="Войти в Сквад"
-        onClick={() => false}
-      />
+      <Link to={ROUTES.ENTER_SQUAD}>
+        <ActionButton
+          variant="primary"
+          message="Войти в Сквад"
+          onClick={() => false}
+        />
+      </Link>
 
       <div className={styles.content}>
         <div className={styles.moneyWrapper}>
@@ -46,11 +49,11 @@ export const MainPage = () => {
             <LevelCounter />
 
             <FeatureNavigation>
-              <FeatureTab feature="Друзья" to={ROUTES.FRIENDS} />
+              <FeatureTab feature="Друзья" to={ROUTES.YOUR_FRIENDS} />
 
-              <FeatureTab feature="Фарминг" to={ROUTES.FARMING} />
+              <FeatureTab feature="Фарминг" to={ROUTES.FARM_COINS} />
 
-              <FeatureTab feature="Бусты" to={ROUTES.BOOSTERS} />
+              <FeatureTab feature="Бусты" to={ROUTES.GAME_BOOST} />
             </FeatureNavigation>
           </div>
 

@@ -1,6 +1,11 @@
-import { ActionButton, GlowCircle, PageTitle, ViewMarkup } from "shared/ui";
+import { PageTitle, GlowCircle, ViewMarkup, ActionButton } from "shared/ui";
+import { FC } from "react";
 
-export const YesCoin = () => {
+interface SquadWorkProps {
+  className?: string;
+}
+
+export const SquadWork: FC<SquadWorkProps> = () => {
   return (
     <ViewMarkup>
       <div className="pb-8 z-10">
@@ -18,7 +23,7 @@ export const YesCoin = () => {
           />
         </div>
 
-        <PageTitle title="YesCoin" className="mb-12" />
+        <PageTitle title="Сквады" className="mb-12" />
 
         <div className="flex flex-col gap-y-7 mb-40 pl-6">
           <div className="flex gap-x-3.5">
@@ -53,18 +58,6 @@ export const YesCoin = () => {
 
               <span className="text-sm text-gray-400 opacity-70 font-light">
                 Дойди до лиги
-              </span>
-            </div>
-          </div>
-
-          <div className="flex gap-x-3.5">
-            <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
-
-            <div className="flex flex-col">
-              <span>Присоединяйся к Скваду</span>
-
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Вместе больше
               </span>
             </div>
           </div>

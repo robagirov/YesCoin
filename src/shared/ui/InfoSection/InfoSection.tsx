@@ -1,13 +1,19 @@
-import { ReactNode } from "react";
+import clsx from "clsx";
 
 interface InfoSectionProps {
-  children: ReactNode;
+  message: string;
+  className?: string;
 }
 
-export const InfoSection = ({ children }: InfoSectionProps) => {
+export const InfoSection = ({ message, className }: InfoSectionProps) => {
   return (
-    <p className="text-center text-base font-medium leading-6 text-white text-opacity-70 w-3/4">
-      {children}
+    <p
+      className={clsx(
+        "w-full text-center text-base font-medium leading-6 text-white text-opacity-70 mx-auto",
+        className,
+      )}
+    >
+      {message}
     </p>
   );
 };

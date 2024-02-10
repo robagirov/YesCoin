@@ -15,7 +15,10 @@ export const PartyKings = () => {
         <div className="flex flex-col gap-y-4 items-center mb-9">
           <PageTitle title="Короли вечеринки" />
 
-          <InfoSection>Приглашай больше друзей чтобы попасть сюда</InfoSection>
+          <InfoSection
+            message="Приглашай больше друзей чтобы попасть сюда"
+            className="w-2/3"
+          />
         </div>
 
         <ActionButton

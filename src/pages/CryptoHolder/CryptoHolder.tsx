@@ -1,4 +1,3 @@
-import { BalanceAmount, NavigationBar } from "features";
 import {
   ActionButton,
   GlowCircle,
@@ -6,9 +5,13 @@ import {
   ToggleSwitch,
   ViewMarkup,
 } from "shared/ui";
-import styles from "./WalletPage.module.css";
+import { BalanceAmount, NavigationBar } from "features";
+import styles from "./CryptoHolder.module.css";
+import { useState } from "react";
 
-export const WalletPage = () => {
+export const CryptoHolder = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <ViewMarkup>
       <NavigationBar>
@@ -27,7 +30,11 @@ export const WalletPage = () => {
         <div className={styles.box}>
           <BalanceAmount />
 
-          <ToggleSwitch />
+          <ToggleSwitch
+            options={["Депозит", "Вывод"]}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
         </div>
 
         <div />

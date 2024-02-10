@@ -1,0 +1,1 @@
+export { SquadItem } from "./SquadItem";

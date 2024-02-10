@@ -1,0 +1,1 @@
+export { MajorDigits } from "./MajorDigits";
