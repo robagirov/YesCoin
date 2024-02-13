@@ -21,6 +21,7 @@
         background-image: url("base.png");
         background-repeat: no-repeat;
         background-position-y: bottom;
+        background-size: contain;
         opacity: 0.7;
     }
 }
