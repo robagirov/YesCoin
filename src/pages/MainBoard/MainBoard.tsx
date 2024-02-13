@@ -23,7 +23,7 @@ export const MainBoard = () => {
   return (
     <ViewMarkup>
       <NavigationBar>
-        <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелек" />
+        <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелекк" />
         <RouterLink to={ROUTES.TRADE_MARKET} text="Маркет" />
       </NavigationBar>
 
