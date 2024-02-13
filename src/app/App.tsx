@@ -33,9 +33,9 @@ function App() {
   useEffect(() => {
     if (!telegram) return;
 
-    telegram.expand();
-    telegram.setHeaderColor("#fff");
-    telegram.setBackgroundColor("#996bff");
+    telegram?.expand();
+    telegram?.setHeaderColor("#fff");
+    telegram?.setBackgroundColor("#996bff");
   }, [telegram]);
 
   return (
