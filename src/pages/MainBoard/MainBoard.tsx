@@ -18,8 +18,20 @@ import { LevelCounter } from "entities";
 
 import MainCoin from "shared/icon/MainCoin.svg?react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useTelegram } from "shared/api";
 
 export const MainBoard = () => {
+  const telegram = useTelegram();
+
+  useEffect(() => {
+    if (!telegram) return;
+
+    telegram.expand();
+    telegram.setHeaderColor("#fff");
+    telegram.setBackgroundColor("#996bff");
+  }, [telegram]);
+
   return (
     <ViewMarkup>
       <NavigationBar>
