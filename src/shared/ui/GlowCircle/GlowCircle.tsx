@@ -24,9 +24,9 @@ export const GlowCircle = ({
         className,
       )}
     >
-      <div className={styles.glow} />
+      {/*<div className={styles.glow} />*/}
 
-      <div className={styles.glow} />
+      {/*<div className={styles.glow} />*/}
 
       {isTriple && <div className={styles.glow} />}
     </div>
