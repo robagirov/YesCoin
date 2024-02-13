@@ -22,5 +22,8 @@
     "noFallthroughCasesInSwitch": true,
   },
   "include": ["src"],
+  "exclude": [
+    "src/app/core/telegram-web-app.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
