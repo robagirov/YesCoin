@@ -16,13 +16,27 @@ import styles from "./MainBoard.module.css";
 import { ROUTES } from "shared/consts";
 import { LevelCounter } from "entities";
 
-import MainCoin from "shared/icon/MainCoin.svg?react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTelegram } from "shared/api";
+import { MainCoin } from "./ui";
 
 export const MainBoard = () => {
   const telegram = useTelegram();
+
+  const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000));
+  const [energy, setEnergy] = useState(5000);
+
+  const onClickCoin = () => {
+    if (energy <= 0) {
+      console.log("No more energy!");
+
+      return;
+    }
+
+    setBalance((prevValue) => prevValue + 1);
+    setEnergy((prevValue) => prevValue - 1);
+  };
 
   useEffect(() => {
     if (!telegram) return;
@@ -49,12 +63,12 @@ export const MainBoard = () => {
 
       <div className={styles.content}>
         <div className={styles.moneyWrapper}>
-          <BalanceAmount />
+          <BalanceAmount amount={balance} />
 
           <GoldLeagueLink />
         </div>
 
-        <MainCoin className={styles.coin} />
+        <MainCoin onClick={onClickCoin} />
 
         <div className={styles.footer}>
           <div className={styles["resource-management"]}>
@@ -69,7 +83,7 @@ export const MainBoard = () => {
             </FeatureNavigation>
           </div>
 
-          <EnergyRemain />
+          <EnergyRemain remain={energy} />
         </div>
       </div>
 

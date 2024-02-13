@@ -1,12 +1,12 @@
 import { ReactNode, useEffect } from "react";
-import { useTelegram } from "shared/api";
 import { useIsHomePage } from "shared/hooks";
+import { useTelegram } from "shared/api";
 
-interface RouteAwareWrapperProps {
+interface LocationProviderProps {
   children: ReactNode;
 }
 
-export const RouteAwareWrapper = ({ children }: RouteAwareWrapperProps) => {
+export const LocationProvider = ({ children }: LocationProviderProps) => {
   const isHomePage = useIsHomePage();
   const telegram = useTelegram();
 

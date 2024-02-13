@@ -19,12 +19,12 @@ import {
   MajorDigits,
 } from "pages";
 import { ROUTES } from "shared/consts";
-import { RouteAwareWrapper } from "./components";
+import { LocationProvider } from "app/providers";
 
 function App() {
   return (
     <Router>
-      <RouteAwareWrapper>
+      <LocationProvider>
         <Routes>
           <Route path={ROUTES.MAIN_BOARD} element={<MainBoard />} />
           <Route path={ROUTES.CRYPTO_HOLDER} element={<CryptoHolder />} />
@@ -41,7 +41,7 @@ function App() {
           <Route path={ROUTES.SQUAD_WORK} element={<SquadWork />} />
           <Route path={ROUTES.MAJOR_DIGITS} element={<MajorDigits />} />
         </Routes>
-      </RouteAwareWrapper>
+      </LocationProvider>
     </Router>
   );
 }
