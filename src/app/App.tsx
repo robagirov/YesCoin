@@ -26,6 +26,10 @@ import { RouteAwareWrapper } from "./components";
 function App() {
   const telegram = useTelegram();
 
+  telegram.expand();
+  telegram.setHeaderColor("#fff");
+  telegram.setBackgroundColor("#996bff");
+
   useEffect(() => {
     if (!telegram) return;
 
