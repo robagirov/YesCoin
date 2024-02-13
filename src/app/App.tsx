@@ -19,8 +19,6 @@ import {
   MajorDigits,
 } from "pages";
 import { ROUTES } from "shared/consts";
-import { useEffect } from "react";
-import { useTelegram } from "shared/api";
 import { RouteAwareWrapper } from "./components";
 
 function App() {
