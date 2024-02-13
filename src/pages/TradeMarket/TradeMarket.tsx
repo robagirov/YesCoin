@@ -1,13 +1,14 @@
 import { NavigationBar } from "features";
 import { ActionButton, GlowCircle, RouterLink, ViewMarkup } from "shared/ui";
 import styles from "./TradeMarket.module.css";
+import { ROUTES } from "../../shared/consts";
 
 export const TradeMarket = () => {
   return (
     <ViewMarkup>
       <NavigationBar>
-        <RouterLink to="/" text="Главная" />
-        <RouterLink to="/wallet" text="Кошелек" />
+        <RouterLink to={ROUTES.MAIN_BOARD} text="Главная" />
+        <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелек" />
       </NavigationBar>
 
       <ActionButton

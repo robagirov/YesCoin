@@ -8,6 +8,7 @@ import {
 import { BalanceAmount, NavigationBar } from "features";
 import styles from "./CryptoHolder.module.css";
 import { useState } from "react";
+import { ROUTES } from "../../shared/consts";
 
 export const CryptoHolder = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -15,9 +16,9 @@ export const CryptoHolder = () => {
   return (
     <ViewMarkup>
       <NavigationBar>
-        <RouterLink to="/" text="Главня" />
+        <RouterLink to={ROUTES.MAIN_BOARD} text="Главня" />
 
-        <RouterLink to="/market" text="Маркет" />
+        <RouterLink to={ROUTES.TRADE_MARKET} text="Маркет" />
       </NavigationBar>
 
       <ActionButton
