@@ -18,5 +18,13 @@ export const RouteAwareWrapper = ({ children }: RouteAwareWrapperProps) => {
     telegram.BackButton.show();
   }, [telegram, isHomePage]);
 
+  useEffect(() => {
+    if (!telegram) return;
+
+    telegram?.expand();
+    telegram?.setHeaderColor("#fff");
+    telegram?.setBackgroundColor("#996bff");
+  }, [telegram]);
+
   return <>{children}</>;
 };
