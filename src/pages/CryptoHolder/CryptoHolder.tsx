@@ -29,7 +29,7 @@ export const CryptoHolder = () => {
 
       <div className={styles.middleContainer}>
         <div className={styles.box}>
-          <BalanceAmount />
+          <BalanceAmount amount={5000000} />
 
           <ToggleSwitch
             options={["Депозит", "Вывод"]}

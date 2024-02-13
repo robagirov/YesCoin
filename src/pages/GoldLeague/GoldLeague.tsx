@@ -54,7 +54,7 @@ export const GoldLeague = () => {
 
           <p className="opacity-30 text-center mb-1">929,324 / 2M</p>
 
-          <EnergyRemain className="mb-2" />
+          <EnergyRemain remain={5000} className="mb-2" />
 
           <ToggleSwitch
             className="mb-4"
