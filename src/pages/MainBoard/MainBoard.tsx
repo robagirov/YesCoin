@@ -20,6 +20,16 @@ import MainCoin from "shared/icon/MainCoin.svg?react";
 import { Link } from "react-router-dom";
 
 export const MainBoard = () => {
+  const telegram = window.Telegram?.WebApp;
+
+  telegram?.expand();
+  telegram?.setHeaderColor("#fff");
+  telegram?.setBackgroundColor("#996bff");
+
+  if (telegram) {
+    return "message";
+  }
+
   return (
     <ViewMarkup>
       <NavigationBar>

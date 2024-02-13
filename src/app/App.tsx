@@ -24,15 +24,20 @@ import { useTelegram } from "shared/api";
 import { RouteAwareWrapper } from "./components";
 
 function App() {
-  const telegram = useTelegram();
+  // const telegram = useTelegram();
+  const telegram = window.Telegram?.WebApp;
 
-  useEffect(() => {
+  telegram?.expand();
+  telegram?.setHeaderColor("#fff");
+  telegram?.setBackgroundColor("#996bff");
+
+  /*useEffect(() => {
     if (!telegram) return;
 
     telegram?.expand();
     telegram?.setHeaderColor("#fff");
     telegram?.setBackgroundColor("#996bff");
-  }, [telegram]);
+  }, [telegram]);*/
 
   return (
     <Router>
