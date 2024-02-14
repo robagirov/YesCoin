@@ -10,10 +10,6 @@
     top: 0;
 }
 
-.svg {
-    position: absolute;
-}
-
 .top {
     background-position-y: top;
     background-image: url("./assets/top.png");

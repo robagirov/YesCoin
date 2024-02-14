@@ -1,11 +1,31 @@
+.border {
+    padding: 1px;
+    border-radius: 16px;
+    background: linear-gradient(224.11deg, #FFFFFF 7.7%, rgba(255, 255, 255, 0) 90.12%);
+
+    & a:not(:last-child) {
+        &:after {
+            content: "";
+            display: block;
+            left: 100%;
+            top: -27%;
+            position: absolute;
+            width: 1px;
+            height: 69px;
+            background: rgba(153, 107, 255, 1);
+        }
+    }
+}
+
 .wrapper {
     flex: 2;
-    height: 65px;
+    height: 63px;
     border-radius: 16px;
+    background: radial-gradient(64.1% 50% at 50% 39.32%, #CCB5FF 0%, #996BFF 100%),
+    radial-gradient(46.3% 75.26% at 50% 15.39%, #F5F0FF 0%, #E2D6FF 100%),
+    linear-gradient(224.11deg, #FFFFFF 7.7%, rgba(255, 255, 255, 0) 90.12%);
 
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    background: radial-gradient(rgba(204, 181, 255, 0.75), rgba(153, 107, 255, 0.75)), radial-gradient(rgb(245, 240, 255), rgb(226, 214, 255));
 }

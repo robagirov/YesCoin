@@ -10,17 +10,16 @@ interface GoldLeagueLinkProps {
 
 export const GoldLeagueLink = ({ isSmall }: GoldLeagueLinkProps) => {
   return (
-    <div className={styles.wrapper}>
+    <Link to={ROUTES.GOLD_LEAGUE} className={styles.wrapper}>
       <GoldCircle />
 
-      <Link
-        to={ROUTES.GOLD_LEAGUE}
+      <div
         className={clsx(styles.sign, {
           [styles.small]: isSmall,
         })}
       >
         Gold
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };

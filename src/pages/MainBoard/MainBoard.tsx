@@ -1,7 +1,14 @@
-import { Layout, FeatureTab, EnergyRemain, ActionButton } from "shared/ui";
+import {
+  Layout,
+  GlowCircle,
+  FeatureTab,
+  EnergyRemain,
+  ActionButton,
+} from "shared/ui";
 import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from "features";
 import styles from "./MainBoard.module.css";
 import { ROUTES } from "shared/consts";
+import WalletIcon from "./assets/wallet.svg?react";
 
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -52,140 +59,17 @@ export const MainBoard = () => {
 
         <div className="mb-[60px]">
           <MainCoin onClick={onClickCoin} />
-          <svg
-            width="390"
-            height="304"
-            viewBox="0 0 390 304"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: "blur(45.7px)", position: "absolute" }}
-            className={styles.svg}
-          >
-            <g filter="url(#filter0_f_2_1163)">
-              <circle cx="200.5" cy="304.5" r="212.5" fill="#D9D9D9" />
-              <circle
-                cx="200.5"
-                cy="304.5"
-                r="212.5"
-                fill="url(#paint0_radial_2_1163)"
-              />
-            </g>
-            <defs>
-              <radialGradient
-                id="paint0_radial_2_1163"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(200.5 157.428) rotate(90) scale(319.868 196.781)"
-              >
-                <stop stopColor="#CCB5FF" />
-                <stop offset="1" stopColor="#996BFF" />
-              </radialGradient>
-            </defs>
-          </svg>
-          <svg
-            width="390"
-            height="304"
-            viewBox="0 0 390 304"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: "blur(45.7px)", position: "absolute" }}
-            className={styles.svg}
-          >
-            <g filter="url(#filter0_f_2_1162)">
-              <circle cx="200.5" cy="304.5" r="212.5" fill="#D9D9D9" />
-              <circle
-                cx="200.5"
-                cy="304.5"
-                r="212.5"
-                fill="url(#paint0_radial_2_1162)"
-              />
-            </g>
-            <defs>
-              <radialGradient
-                id="paint0_radial_2_1162"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(200.5 157.428) rotate(90) scale(319.868 196.781)"
-              >
-                <stop stopColor="#CCB5FF" />
-                <stop offset="1" stopColor="#996BFF" />
-              </radialGradient>
-            </defs>
-          </svg>
-          <svg
-            width="390"
-            height="662"
-            viewBox="0 0 390 662"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: "blur(225px)", position: "absolute" }}
-            className={styles.svg}
-          >
-            <g filter="url(#filter0_f_2_1161)">
-              <circle cx="200.5" cy="662.5" r="212.5" fill="#D9D9D9" />
-              <circle
-                cx="200.5"
-                cy="662.5"
-                r="212.5"
-                fill="url(#paint0_radial_2_1161)"
-              />
-            </g>
-            <defs>
-              <radialGradient
-                id="paint0_radial_2_1161"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(200.5 515.428) rotate(90) scale(319.868 196.781)"
-              >
-                <stop stopColor="#CCB5FF" />
-                <stop offset="1" stopColor="#996BFF" />
-              </radialGradient>
-            </defs>
-          </svg>
-
-          <svg
-            width="390"
-            height="662"
-            viewBox="0 0 390 662"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: " blur(225px)", position: "absolute" }}
-            className={styles.svg}
-          >
-            <g filter="url(#filter0_f_2_1160)">
-              <circle cx="200.5" cy="662.5" r="212.5" fill="#D9D9D9" />
-              <circle
-                cx="200.5"
-                cy="662.5"
-                r="212.5"
-                fill="url(#paint0_radial_2_1160)"
-              />
-            </g>
-            <defs>
-              <radialGradient
-                id="paint0_radial_2_1160"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(200.5 515.428) rotate(90) scale(319.868 196.781)"
-              >
-                <stop stopColor="#CCB5FF" />
-                <stop offset="1" stopColor="#996BFF" />
-              </radialGradient>
-            </defs>
-          </svg>
         </div>
 
         <div className={styles.footer}>
-          <div className={styles["resource-management"]}>
-            {/*<LevelCounter />*/}
+          <div className={styles.resources}>
+            <Link to={ROUTES.TRADE_MARKET} className={styles.borderWrapper}>
+              <div className={styles.pageButton}>
+                <WalletIcon />
+
+                <span className={styles.pageSign}>Кошелек</span>
+              </div>
+            </Link>
 
             <FeatureNavigation>
               <FeatureTab feature="Друзья" to={ROUTES.YOUR_FRIENDS} />
@@ -200,7 +84,7 @@ export const MainBoard = () => {
         </div>
       </Layout.Content>
 
-      {/*<GlowCircle position="center" />*/}
+      <GlowCircle position="center" />
     </Layout>
   );
 };

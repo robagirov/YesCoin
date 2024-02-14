@@ -6,5 +6,9 @@ interface FeatureNavigationProps {
 }
 
 export const FeatureNavigation: FC<FeatureNavigationProps> = ({ children }) => {
-  return <div className={styles.wrapper}>{children}</div>;
+  return (
+    <div className={styles.border}>
+      <div className={styles.wrapper}>{children}</div>
+    </div>
+  );
 };

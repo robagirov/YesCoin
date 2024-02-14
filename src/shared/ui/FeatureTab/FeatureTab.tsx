@@ -12,13 +12,11 @@ interface FeatureTabProps {
 export const FeatureTab: FC<FeatureTabProps> = ({ feature, to }) => {
   return (
     <>
-      <div className={styles.wrapper}>
+      <Link className={styles.wrapper} to={to}>
         <WhiteCircle />
 
-        <Link className={styles.featureTab} to={to}>
-          {feature}
-        </Link>
-      </div>
+        <span className={styles.featureTab}>{feature}</span>
+      </Link>
     </>
   );
 };

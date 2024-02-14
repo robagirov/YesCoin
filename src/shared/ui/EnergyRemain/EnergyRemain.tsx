@@ -9,12 +9,12 @@ interface EnergyRemainProps {
 export const EnergyRemain = ({ remain, className }: EnergyRemainProps) => {
   return (
     <div className={clsx(styles.progress, className)}>
-      <meter className={styles.bar} value={remain} max={5500} />
-
       <div
-        className={styles.pin}
-        style={{ left: `${(remain / 5500) * 100}%` }}
+        className={styles.bar}
+        style={{ width: `${(remain / 5500) * 100}%` }}
       />
+
+      <div className={styles.counter}>{remain} / 5500</div>
     </div>
   );
 };
