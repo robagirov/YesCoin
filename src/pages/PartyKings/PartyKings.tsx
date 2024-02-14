@@ -1,7 +1,7 @@
 import {
   GlowCircle,
   PageTitle,
-  ViewMarkup,
+  Layout,
   BackCard,
   InfoSection,
   ActionButton,
@@ -10,8 +10,8 @@ import {
 
 export const PartyKings = () => {
   return (
-    <ViewMarkup>
-      <div className="z-10">
+    <Layout>
+      <Layout.Content>
         <div className="flex flex-col gap-y-4 items-center mb-9">
           <PageTitle title="Короли вечеринки" />
 
@@ -28,7 +28,7 @@ export const PartyKings = () => {
           onClick={() => false}
         />
 
-        <BackCard className="rounded-b-none" height={374}>
+        <BackCard height={374} className="rounded-b-none -mb-8">
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
@@ -38,9 +38,9 @@ export const PartyKings = () => {
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
         </BackCard>
-      </div>
+      </Layout.Content>
 
-      <GlowCircle position="top" isTriple />
-    </ViewMarkup>
+      <GlowCircle position="double-top" />
+    </Layout>
   );
 };

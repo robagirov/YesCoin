@@ -1,20 +1,13 @@
 import {
-  ActionButton,
-  EnergyRemain,
-  FeatureTab,
+  Layout,
   GlowCircle,
-  RouterLink,
-  ViewMarkup,
+  FeatureTab,
+  EnergyRemain,
+  ActionButton,
 } from "shared/ui";
-import {
-  BalanceAmount,
-  FeatureNavigation,
-  GoldLeagueLink,
-  NavigationBar,
-} from "features";
+import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from "features";
 import styles from "./MainBoard.module.css";
 import { ROUTES } from "shared/consts";
-import { LevelCounter } from "entities";
 
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -47,32 +40,29 @@ export const MainBoard = () => {
   }, [telegram]);
 
   return (
-    <ViewMarkup>
-      <NavigationBar>
-        <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелекк" />
-        <RouterLink to={ROUTES.TRADE_MARKET} text="Маркет" />
-      </NavigationBar>
+    <Layout>
+      <Layout.Content>
+        <Link to={ROUTES.ENTER_SQUAD} className="mb-11 block w-full">
+          <ActionButton
+            variant="primary"
+            message="Войти в Сквад"
+            onClick={() => false}
+          />
+        </Link>
 
-      <Link to={ROUTES.ENTER_SQUAD}>
-        <ActionButton
-          variant="primary"
-          message="Войти в Сквад"
-          onClick={() => false}
-        />
-      </Link>
-
-      <div className={styles.content}>
         <div className={styles.moneyWrapper}>
           <BalanceAmount amount={balance} />
 
           <GoldLeagueLink />
         </div>
 
-        <MainCoin onClick={onClickCoin} />
+        <div className="mb-[60px]">
+          <MainCoin onClick={onClickCoin} />
+        </div>
 
         <div className={styles.footer}>
           <div className={styles["resource-management"]}>
-            <LevelCounter />
+            {/*<LevelCounter />*/}
 
             <FeatureNavigation>
               <FeatureTab feature="Друзья" to={ROUTES.YOUR_FRIENDS} />
@@ -85,9 +75,9 @@ export const MainBoard = () => {
 
           <EnergyRemain remain={energy} />
         </div>
-      </div>
+      </Layout.Content>
 
       <GlowCircle position="center" />
-    </ViewMarkup>
+    </Layout>
   );
 };

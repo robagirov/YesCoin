@@ -2,7 +2,7 @@ import {
   Subtitle,
   BackCard,
   ModalView,
-  ViewMarkup,
+  Layout,
   GlowCircle,
   InfoTrigger,
   ActionButton,
@@ -22,8 +22,8 @@ export const GameBoosts = () => {
 
   return (
     <>
-      <ViewMarkup>
-        <div className="pb-8 z-10">
+      <Layout>
+        <Layout.Content>
           <p className="text-center opacity-70 mb-2.5">Баланс</p>
 
           <BalanceAmount amount={5000000} className="mb-2.5" />
@@ -79,22 +79,20 @@ export const GameBoosts = () => {
               onClick={onOpenModal}
             />
           </BackCard>
-        </div>
+        </Layout.Content>
 
         <GlowCircle position="bottom" className="opacity-30" />
-      </ViewMarkup>
+      </Layout>
 
       <ModalView isOpen={modalOpen}>
-        <div className="h-full flex z-10">
-          <ActionButton
-            className="mt-96"
-            variant="primary"
-            message="Спасибо"
-            onClick={onCloseModal}
-          />
-        </div>
+        <ActionButton
+          className="mt-96"
+          variant="primary"
+          message="Спасибо"
+          onClick={onCloseModal}
+        />
 
-        <GlowCircle position="bottom" className="opacity-15 -z-10" />
+        <GlowCircle position="bottom" className="opacity-15 -z-10 bg-cover" />
       </ModalView>
     </>
   );

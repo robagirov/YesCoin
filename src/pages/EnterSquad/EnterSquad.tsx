@@ -5,15 +5,15 @@ import {
   InfoSection,
   PageTitle,
   SquadItem,
-  ViewMarkup,
+  Layout,
 } from "shared/ui";
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
 
 export const EnterSquad = () => {
   return (
-    <ViewMarkup>
-      <div className="">
+    <Layout>
+      <Layout.Content>
         <PageTitle title="Залетай в сквад" className="mb-4" />
 
         <InfoSection
@@ -25,10 +25,22 @@ export const EnterSquad = () => {
           className="mb-4"
           variant="primary"
           onClick={() => false}
-          message="Пригласить друзей"
+          message="Выбрать другой сквад"
         />
 
-        <BackCard height={334}>
+        <BackCard height={443} className="-mb-8">
+          <Link to={ROUTES.SQUAD_NAME}>
+            <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
+          </Link>
+
+          <Link to={ROUTES.SQUAD_NAME}>
+            <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
+          </Link>
+
+          <Link to={ROUTES.SQUAD_NAME}>
+            <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
+          </Link>
+
           <Link to={ROUTES.SQUAD_NAME}>
             <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
           </Link>
@@ -53,9 +65,9 @@ export const EnterSquad = () => {
             <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
           </Link>
         </BackCard>
-      </div>
+      </Layout.Content>
 
-      <GlowCircle position="top" />
-    </ViewMarkup>
+      <GlowCircle position="middle-top" className="opacity-50" />
+    </Layout>
   );
 };

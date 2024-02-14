@@ -4,7 +4,7 @@ import {
   ModalView,
   PageTitle,
   SwitchBar,
-  ViewMarkup,
+  Layout,
   GlowCircle,
   ActionButton,
 } from "shared/ui";
@@ -24,8 +24,8 @@ export const SquadName = () => {
 
   return (
     <>
-      <ViewMarkup>
-        <div className="z-10">
+      <Layout>
+        <Layout.Content>
           <div className="w-20 h-20 rounded-xl bg-grey-900 mb-9 bg-[rgba(243,243,245,0.1)] mx-auto" />
 
           <PageTitle title="Имя Сквада" className="mb-1.5" />
@@ -74,7 +74,7 @@ export const SquadName = () => {
               setActiveIndex={setActiveIndex}
             />
 
-            <BackCard height={224} className="rounded-none">
+            <BackCard height={224} className="rounded-none -mb-8">
               {squadTopList?.[activeIndex]?.map((person, index) => (
                 <ListItem
                   key={index}
@@ -85,10 +85,10 @@ export const SquadName = () => {
               ))}
             </BackCard>
           </div>
-        </div>
+        </Layout.Content>
 
-        <GlowCircle position="top" />
-      </ViewMarkup>
+        <GlowCircle position="top" className="opacity-50" />
+      </Layout>
 
       <ModalView isOpen={modalOpen}>
         <div className="h-full z-10 flex flex-col justify-end">

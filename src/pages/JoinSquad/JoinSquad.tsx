@@ -1,9 +1,9 @@
-import { ActionButton, GlowCircle, PageTitle, ViewMarkup } from "shared/ui";
+import { ActionButton, GlowCircle, PageTitle, Layout } from "shared/ui";
 
 export const JoinSquad = () => {
   return (
-    <ViewMarkup>
-      <div className="z-10 pb-8">
+    <Layout>
+      <Layout.Content>
         <div className="flex justify-center mb-12">
           <div className="w-24 h-24 rounded-xl bg-[rgb(243,243,245,0.1)]" />
 
@@ -20,9 +20,9 @@ export const JoinSquad = () => {
           onClick={() => false}
           message="Присоединиться"
         />
-      </div>
+      </Layout.Content>
 
-      <GlowCircle position="bottom" />
-    </ViewMarkup>
+      <GlowCircle position="bottom" className="opacity-50" />
+    </Layout>
   );
 };

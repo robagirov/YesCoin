@@ -4,7 +4,7 @@ import {
   InfoTrigger,
   ModalView,
   PageTitle,
-  ViewMarkup,
+  Layout,
 } from "shared/ui";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,8 @@ export const MajorDigits = () => {
 
   return (
     <>
-      <ViewMarkup>
-        <div className="z-10 pb-8">
+      <Layout>
+        <Layout.Content>
           <p className="text-[rgba(255,255,255,0.7)] mb-2.5 text-center">
             Общий баланс YesCoin
           </p>
@@ -86,43 +86,37 @@ export const MajorDigits = () => {
           </div>
 
           <ActionButton variant="primary" onClick={goBack} message="Хорошо" />
-        </div>
+        </Layout.Content>
 
-        <GlowCircle position="bottom" />
-      </ViewMarkup>
+        <GlowCircle position="bottom" className="opacity-50" />
+      </Layout>
 
       <ModalView isOpen={modalOpen}>
-        <div className="flex flex-col items-start z-10">
-          <PageTitle title="Details" className="mb-8" />
+        <PageTitle title="Details" className="mb-8 flex justify-start" />
 
-          <div className="mb-8">
-            <p className="text-xl">10,245,234,235,536</p>
-            <p className="text-[rgba(255,255,255,0.7)]">Общий баланс YesCoin</p>
-          </div>
-
-          <p className="text-xl mb-8">=</p>
-
-          <div className="mb-8">
-            <p className="text-xl">3,245,234,235,536</p>
-            <p className="text-[rgba(255,255,255,0.7)]">Всего добыто</p>
-          </div>
-
-          <div className="mb-8">
-            <p className="text-xl text-[rgb(255,107,107)]">
-              -3,245,234,235,536
-            </p>
-            <p className="text-[rgba(255,255,255,0.7)]">Сожжено и потрачено</p>
-          </div>
-
-          <ActionButton
-            className="mx-auto"
-            variant="primary"
-            message="Хорошо"
-            onClick={onCloseModal}
-          />
+        <div className="mb-8">
+          <p className="text-xl">10,245,234,235,536</p>
+          <p className="text-[rgba(255,255,255,0.7)]">Общий баланс YesCoin</p>
         </div>
 
-        <GlowCircle position="bottom" className="opacity-15 -z-10" />
+        <p className="text-xl mb-8">=</p>
+
+        <div className="mb-8">
+          <p className="text-xl">3,245,234,235,536</p>
+          <p className="text-[rgba(255,255,255,0.7)]">Всего добыто</p>
+        </div>
+
+        <div className="mb-8">
+          <p className="text-xl text-[rgb(255,107,107)]">-3,245,234,235,536</p>
+          <p className="text-[rgba(255,255,255,0.7)]">Сожжено и потрачено</p>
+        </div>
+
+        <ActionButton
+          className="mx-auto"
+          variant="primary"
+          message="Хорошо"
+          onClick={onCloseModal}
+        />
       </ModalView>
     </>
   );

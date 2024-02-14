@@ -1,9 +1,9 @@
-import { ActionButton, GlowCircle, PageTitle, ViewMarkup } from "shared/ui";
+import { ActionButton, GlowCircle, PageTitle, Layout } from "shared/ui";
 
 export const YesCoin = () => {
   return (
-    <ViewMarkup>
-      <div className="pb-8 z-10">
+    <Layout>
+      <Layout.Content>
         <div className="flex gap-x-2.5 mb-9">
           <ActionButton
             message="Войти"
@@ -83,9 +83,9 @@ export const YesCoin = () => {
             message="Хорошо"
           />
         </div>
-      </div>
+      </Layout.Content>
 
       <GlowCircle position="bottom" className="opacity-40" />
-    </ViewMarkup>
+    </Layout>
   );
 };

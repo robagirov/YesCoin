@@ -1,6 +1,6 @@
 export { GradientCircle } from "./GradientCircle";
 export { ToggleSwitch } from "./ToggleSwitch";
-export { ViewMarkup } from "./ViewMarkup";
+export { Layout } from "./Layout";
 export { RouterLink } from "./RouterLink";
 export { ActionButton } from "./ActionButton";
 export { GlowCircle } from "./GlowCircle";

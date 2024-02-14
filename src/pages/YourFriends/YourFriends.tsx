@@ -1,4 +1,10 @@
-import { ActionButton, BackCard, InfoTrigger, ViewMarkup } from "shared/ui";
+import {
+  ActionButton,
+  BackCard,
+  GlowCircle,
+  InfoTrigger,
+  Layout,
+} from "shared/ui";
 import { PageTitle } from "shared/ui";
 
 import styles from "./YourFriends.module.css";
@@ -8,8 +14,8 @@ import { ROUTES } from "shared/consts";
 
 export const YourFriends = () => {
   return (
-    <ViewMarkup>
-      <div className={styles["content"]}>
+    <Layout>
+      <Layout.Content>
         <div className={styles["title-wrapper"]}>
           <PageTitle title="Ваши друзья" />
 
@@ -39,7 +45,9 @@ export const YourFriends = () => {
           message="Invite a fren"
           onClick={() => false}
         />
-      </div>
-    </ViewMarkup>
+      </Layout.Content>
+
+      <GlowCircle position="bottom" className="opacity-40" />
+    </Layout>
   );
 };

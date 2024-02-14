@@ -1,0 +1,9 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #000;
+    height: 100vh;
+    padding: 1.5rem 1.75rem 0 1.75rem;
+}

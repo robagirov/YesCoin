@@ -2,31 +2,20 @@ import styles from "./GlowCircle.module.css";
 import clsx from "clsx";
 
 interface GlowCircleProps {
-  position: "top" | "bottom" | "center";
-  isTriple?: boolean;
+  position: "top" | "bottom" | "center" | "middle-top" | "double-top";
   className?: string;
 }
 
-export const GlowCircle = ({
-  position,
-  isTriple,
-  className,
-}: GlowCircleProps) => {
+export const GlowCircle = ({ position, className }: GlowCircleProps) => {
   return (
     <div
-      className={clsx(
-        "absolute left-0 w-full h-2/4",
-        {
-          [styles.top]: position === "top",
-          [styles.center]: position === "center",
-          [styles.bottom]: position === "bottom",
-        },
-        className,
-      )}
-    >
-      {/*<div className={styles.glow} />*/}
-      {/*<div className={styles.glow} />*/}
-      {isTriple && <div className={styles.glow} />}
-    </div>
+      className={clsx(styles.glow, className, {
+        [styles.top]: position === "top",
+        [styles.bottom]: position === "bottom",
+        [styles.center]: position === "center",
+        [styles.doubleTop]: position === "double-top",
+        [styles.middleTop]: position === "middle-top",
+      })}
+    />
   );
 };
