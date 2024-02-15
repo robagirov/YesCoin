@@ -9,7 +9,7 @@ interface GlowCircleProps {
 
 export const GlowCircle = ({
   position,
-  isTriple,
+  // isTriple,
   className,
 }: GlowCircleProps) => {
   return (
@@ -27,9 +27,9 @@ export const GlowCircle = ({
     >
       <div className={styles.glow} />
 
-      <div className={styles.glow} />
-
-      {isTriple && <div className={styles.glow} />}
+      {/*<div className={styles.glow} />*/}
+      {/**/}
+      {/*{isTriple && <div className={styles.glow} />}*/}
     </div>
   );
 };
