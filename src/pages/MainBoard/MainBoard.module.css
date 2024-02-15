@@ -12,7 +12,7 @@
     height: 100%;
     border-radius: 50%;
 
-    background: radial-gradient(46.3% 75.26% at 50% 15.39%, #CCB5FF 0%, #996BFF 100%), #D9D9D9;
+    background: radial-gradient(46.2% 75.26% at 50% 15.38%, #CCB5FF 0%, #996BFF 100%), #D9D9D9;
 
     &:nth-child(1) {
         filter: blur(46px);
