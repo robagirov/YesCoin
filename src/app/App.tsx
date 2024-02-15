@@ -20,8 +20,11 @@ import {
 } from "pages";
 import { ROUTES } from "shared/consts";
 import { LocationProvider } from "app/providers";
+import eruda from "eruda";
 
 function App() {
+  eruda.init();
+
   return (
     <Router>
       <LocationProvider>
