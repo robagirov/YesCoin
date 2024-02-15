@@ -40,7 +40,7 @@ export const PartyKings = () => {
         </BackCard>
       </Layout.Content>
 
-      <GlowCircle position="double-top" />
+      <GlowCircle position="top" isTriple />
     </Layout>
   );
 };

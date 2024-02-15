@@ -16,7 +16,7 @@
 
 .item {
     border-radius: 6px;
-    background-color: rgb(16 16 16 / 70%);
+    background-color: rgb(16 16 16 / 30%);
     padding: 5px;
     height: 201px;
     flex: 0 1 calc(50% - 5px);

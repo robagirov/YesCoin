@@ -1,4 +1,10 @@
-import { Layout, FeatureTab, EnergyRemain, ActionButton } from "shared/ui";
+import {
+  Layout,
+  FeatureTab,
+  EnergyRemain,
+  ActionButton,
+  GlowCircle,
+} from "shared/ui";
 import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from "features";
 import styles from "./MainBoard.module.css";
 import { ROUTES } from "shared/consts";
@@ -54,6 +60,8 @@ export const MainBoard = () => {
 
         <div className={clsx("mb-[60px]", styles.coin)}>
           <MainCoin onClick={onClickCoin} />
+
+          <GlowCircle position="center" className="-z-10" />
         </div>
 
         <div className={styles.footer}>
@@ -78,8 +86,6 @@ export const MainBoard = () => {
           <EnergyRemain remain={energy} />
         </div>
       </Layout.Content>
-
-      {/*<GlowCircle position="center" />*/}
     </Layout>
   );
 };
