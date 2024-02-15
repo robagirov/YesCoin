@@ -12,7 +12,33 @@
     border-radius: 50%;
     /*background: radial-gradient(46.4% 75.2% at 50% 15.4%, rgb(204, 181, 255) 0%, rgb(153, 107, 255) 100%);*/
     /*background: radial-gradient(46.2% 75.26% at 50% 15.38%, #CCB5FF 0%, #996BFF 100%), #D9D9D9;*/
-    background: radial-gradient(circle farthest-side at center top, #CCB5FF 0%, #996BFF 100%), #D9D9D9;
+    /*background: radial-gradient(circle farthest-side at center top, #CCB5FF 0%, #996BFF 100%), #D9D9D9;*/
+    background: -webkit-radial-gradient(circle farthest-side at center top, #CCB5FF 0%, #996BFF 100%), #D9D9D9;
+
+   /* &:nth-child(1) {
+        background: #372759;
+        filter: blur(46px);
+
+    }
+
+    &:nth-child(2) {
+        background: #483377;
+        filter: blur(46px);
+
+    }
+
+    &:nth-child(3) {
+        background: #64518E;
+        filter: blur(46px);
+
+    }
+
+    &:nth-child(4) {
+        background: linear-gradient(0deg, #D9D9D9, #D9D9D9), #64518E;
+        opacity: 0.35;
+        filter: blur(70px);
+    }*/
+
 
     &:nth-child(1) {
         filter: blur(46px);
