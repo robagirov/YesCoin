@@ -1,5 +1,4 @@
-import "./reset.css";
-import "./app.css";
+import "./styles/index.scss";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -20,10 +19,9 @@ import {
 } from "pages";
 import { ROUTES } from "shared/consts";
 import { LocationProvider } from "app/providers";
-import eruda from "eruda";
 
 function App() {
-  eruda.init();
+  // eruda.init();
 
   return (
     <Router>

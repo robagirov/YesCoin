@@ -1,20 +1,27 @@
+.actionButtonLink {
+    display: block;
+    width: 100%;
+    margin-bottom: 4vh;
+}
+
 .moneyWrapper {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    row-gap: 2vh;
     align-items: center;
-    margin-bottom: 96px;
+    margin-bottom: 8vh;
 }
 
 .coin {
     position: relative;
+    margin-bottom: 6vh;
 }
 
 .footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 1.2vh;
 }
 
 .resources {

@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTelegram } from "shared/api";
 import { MainCoin } from "./ui";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 export const MainBoard = () => {
   const telegram = useTelegram();
@@ -44,7 +44,7 @@ export const MainBoard = () => {
   return (
     <Layout>
       <Layout.Content>
-        <Link to={ROUTES.ENTER_SQUAD} className="mb-11 block w-full">
+        <Link to={ROUTES.ENTER_SQUAD} className={styles.actionButtonLink}>
           <ActionButton
             variant="primary"
             message="Войти в Сквад"
@@ -58,7 +58,7 @@ export const MainBoard = () => {
           <GoldLeagueLink />
         </div>
 
-        <div className={clsx("mb-[60px]", styles.coin)}>
+        <div className={styles.coin}>
           <MainCoin onClick={onClickCoin} />
 
           <GlowCircle position="center" className="-z-10" />
