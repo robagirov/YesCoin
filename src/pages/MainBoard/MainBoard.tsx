@@ -6,7 +6,7 @@ import {
   GlowCircle,
 } from "shared/ui";
 import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from "features";
-import styles from "./MainBoard.module.css";
+import styles from "./styles.module.scss";
 import { ROUTES } from "shared/consts";
 import WalletIcon from "./assets/wallet.svg?react";
 
@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTelegram } from "shared/api";
 import { MainCoin } from "./ui";
-// import clsx from "clsx";
 
 export const MainBoard = () => {
   const telegram = useTelegram();
@@ -61,7 +60,7 @@ export const MainBoard = () => {
         <div className={styles.coin}>
           <MainCoin onClick={onClickCoin} />
 
-          <GlowCircle position="center" className="-z-10" />
+          <GlowCircle position="center" className={styles.coinGlow} />
         </div>
 
         <div className={styles.footer}>

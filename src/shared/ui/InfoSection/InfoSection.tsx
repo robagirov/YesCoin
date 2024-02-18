@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import styles from "./styles.module.scss";
+
 interface InfoSectionProps {
   message: string;
   className?: string;
@@ -9,7 +11,8 @@ export const InfoSection = ({ message, className }: InfoSectionProps) => {
   return (
     <p
       className={clsx(
-        "w-full text-center text-base font-medium leading-6 text-white text-opacity-70 mx-auto",
+        styles.message,
+        "w-full text-center 70 mx-auto",
         className,
       )}
     >

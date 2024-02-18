@@ -1,7 +1,7 @@
 .progress {
     position: relative;
     width: 100%;
-    height: 20px;
+    height: 2rem;
     border: none;
     border-radius: 6px;
     background: rgba(243, 243, 245, 0.1);
@@ -25,7 +25,7 @@
         top: 2px;
 
         display: block;
-        height: 24px;
+        height: 2.4rem;
         width: 1px;
 
         transform: translateY(-4px);
@@ -39,6 +39,6 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 700;
 }

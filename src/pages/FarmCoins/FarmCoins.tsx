@@ -1,4 +1,4 @@
-import styles from "./FarmCoins.module.css";
+import styles from "./styles.module.scss";
 import {
   BackCard,
   InfoTrigger,
@@ -20,17 +20,13 @@ export const FarmCoins = () => {
             <InfoTrigger text="Полная инструкция" />
           </div>
 
-          <div style={{ marginBottom: "20px" }}>
-            <BackCard>
-              <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            </BackCard>
-          </div>
+          <BackCard className={styles.topItem}>
+            <MoveItem coins={10000} title="Пригласи 10 друзей" />
+          </BackCard>
 
-          <div style={{ marginBottom: "20px" }}>
-            <Subtitle title="Активные" />
-          </div>
+          <Subtitle title="Активные" className={styles.active} />
 
-          <BackCard height={290}>
+          <BackCard className={styles.farmList}>
             <MoveItem coins={10000} title="Пригласи 10 друзей" />
             <MoveItem coins={10000} title="Пригласи 10 друзей" />
             <MoveItem coins={10000} title="Пригласи 10 друзей" />

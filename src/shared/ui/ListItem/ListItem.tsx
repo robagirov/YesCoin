@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import styles from "./styles.module.scss";
+
 interface ListItemProps {
   className?: string;
   number: number;
@@ -13,7 +16,7 @@ export const ListItem = ({
   subtitle,
 }: ListItemProps) => {
   return (
-    <div className="flex items-center space-x-4 p-x-4 rounded-lg">
+    <div className={clsx(styles.wrapper, "flex items-center rounded-lg")}>
       <div className="text-white">{number}</div>
 
       <img
@@ -21,16 +24,17 @@ export const ListItem = ({
           avatar ||
           "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
         }
-        className="w-12 h-12 rounded-full bg-[rgba(243,243,245,0.1)] object-cover"
+        className={clsx(
+          styles.image,
+          "rounded-full bg-[rgba(243,243,245,0.1)] object-cover",
+        )}
         alt="Фото профиля"
       />
 
       <div className="flex flex-col">
-        <span className="text-white text-lg">{title}</span>
+        <span className="text-white">{title}</span>
 
-        <span className="text-sm text-gray-400 opacity-70 font-light">
-          {subtitle}
-        </span>
+        <span className="text-gray-400 opacity-70 font-light">{subtitle}</span>
       </div>
     </div>
   );

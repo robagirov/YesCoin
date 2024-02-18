@@ -21,7 +21,7 @@ export const ToggleSwitch = ({
       )}
     >
       <div
-        className="absolute w-[151px] h-9 rounded-xl bg-[rgb(153,107,255)] transition-transform duration-150 ease-in-out"
+        className="absolute w-[15.1rem] h-9 rounded-xl bg-[rgb(153,107,255)] transition-transform duration-150 ease-in-out"
         style={{ transform: `translateX(${activeIndex * (100 + 14)}%)` }}
       />
 

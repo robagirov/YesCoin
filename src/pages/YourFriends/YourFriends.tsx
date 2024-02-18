@@ -7,7 +7,7 @@ import {
 } from "shared/ui";
 import { PageTitle } from "shared/ui";
 
-import styles from "./YourFriends.module.css";
+import styles from "./styles.module.scss";
 import { FriendItem } from "shared/ui/FriendItem";
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
@@ -24,13 +24,14 @@ export const YourFriends = () => {
 
         <div className={styles["to-leader"]}>
           <span style={{ textAlign: "left" }}>+0</span>
+
           <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
         </div>
 
         <div className={styles["subtitle"]}>Друзья</div>
 
-        <div className="mb-5">
-          <BackCard height={334}>
+        <div className={styles["friends-list-wrapper"]}>
+          <BackCard className={styles["friends-list"]}>
             <FriendItem name="Бизьяна Битзайн" />
             <FriendItem name="Бизьяна Битзайн" />
             <FriendItem name="Бизьяна Битзайн" />

@@ -1,4 +1,4 @@
-import styles from "./GlowCircle.module.css";
+import styles from "./styles.module.scss";
 import clsx from "clsx";
 
 interface GlowCircleProps {

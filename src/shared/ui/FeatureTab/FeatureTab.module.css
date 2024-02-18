@@ -2,13 +2,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 0.5rem;
     align-items: center;
     position: relative;
 }
 
 .featureTab {
     color: #fff;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 700;
 }

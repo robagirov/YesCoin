@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./Layout.module.css";
+import styles from "./styles.module.scss";
 import clsx from "clsx";
 import { Content } from "./Content";
 

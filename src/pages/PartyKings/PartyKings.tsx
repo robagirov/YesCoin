@@ -7,17 +7,19 @@ import {
   ActionButton,
   ListItem,
 } from "shared/ui";
+import styles from "./styles.module.scss";
+import clsx from "clsx";
 
 export const PartyKings = () => {
   return (
     <Layout>
       <Layout.Content>
-        <div className="flex flex-col gap-y-4 items-center mb-9">
+        <div className={clsx(styles.header, "flex flex-col items-center")}>
           <PageTitle title="Короли вечеринки" />
 
           <InfoSection
             message="Приглашай больше друзей чтобы попасть сюда"
-            className="w-2/3"
+            className={styles.info}
           />
         </div>
 
@@ -28,7 +30,7 @@ export const PartyKings = () => {
           onClick={() => false}
         />
 
-        <BackCard height={374} className="rounded-b-none -mb-8">
+        <BackCard className={clsx(styles.topChartList, "rounded-b-none")}>
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />
           <ListItem number={1} title="Бизьяна" subtitle="116,723 Друзей" />

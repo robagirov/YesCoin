@@ -5,10 +5,8 @@ interface MainCoinProps {
 export const MainCoin = ({ onClick }: MainCoinProps) => {
   return (
     <svg
-      className="mx-auto"
+      className="mx-auto w-full h-full"
       onClick={onClick}
-      width="286"
-      height="286"
       viewBox="0 0 286 286"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

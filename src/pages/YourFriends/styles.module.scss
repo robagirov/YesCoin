@@ -1,9 +1,11 @@
+@import 'src/app/styles/mixins';
+
 .title-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: vertical-sizing(10px);
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: vertical-sizing(28px);
 }
 
 .to-leader {
@@ -11,14 +13,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 29px;
-  padding-right: 85px;
+  padding-left: 2.9rem;
+  padding-right: 8.5rem;
   width: 100%;
   border-radius: 6px;
   background: rgb(24 24 24 / 90%);
   color: white;
-  height: 52px;
-  margin-bottom: 90px;
+  height: 5.2rem;
+  margin-bottom: vertical-sizing(94px);
 
   &::before,
   &::after {
@@ -28,7 +30,7 @@
   }
 
   &::before {
-    height: 57px;
+    height: 5.7rem;
     width: 1px;
     background: rgb(255 255 255 / 70%);
     left: 23%;
@@ -38,21 +40,22 @@
     border-left: 2px solid rgb(255 255 255 / 70%);
     border-bottom: 2px solid rgb(255 255 255 / 70%);
     border-radius: 2px;
-    height: 14px;
-    width: 14px;
+    height: 1.4rem;
+    width: 1.4rem;
     right: 7%;
     transform: rotate(225deg);
   }
 }
 
 .subtitle {
-  font-size: 22px;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.friends-list-wrapper {
+  margin-bottom: vertical-sizing(20px);
 }
 
 .friends-list {
-  height: 334px;
-  border-radius: 6px;
-  background: rgb(243 243 245 / 10%);
-  margin-bottom: 72px;
+  height: vertical-sizing(334px);
 }

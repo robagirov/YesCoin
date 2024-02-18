@@ -1,8 +1,10 @@
+@import 'src/app/styles/mixins';
+
 .wrapper {
     position: absolute;
     left: 0;
     width: 100vw;
-    height: 48vh;
+    height: 100vw;
 }
 
 .glow {
@@ -22,12 +24,12 @@
 
     &:nth-child(3) {
         background: #fff;
-        width: 60vw;
-        height: 60vw;
+        width: 23.4rem;
+        height: 23.4rem;
         left: 50%;
         filter: blur(36px);
         transform: translateX(-50%);
-        top: 76px;
+        top: vertical-sizing(76px);
     }
 }
 

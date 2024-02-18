@@ -1,13 +1,9 @@
+@import 'src/app/styles/mixins';
+
 :root {
-    --layout-x-padding: 7.18vw;
-    --content-botton-padding: 3.79vh;
-
-    --time: .3s;
-
-    --rad: .8rem;
+    --content-bottom-padding: 3.79vh;
 }
 
 $img: '../img';
 
-$tab: 768px;
 $desk: 992px;

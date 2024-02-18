@@ -1,4 +1,4 @@
-import styles from "./PageTitle.module.css";
+import styles from "./styles.module.scss";
 import clsx from "clsx";
 
 interface PageTitleProps {

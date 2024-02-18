@@ -11,7 +11,7 @@
             top: -27%;
             position: absolute;
             width: 1px;
-            height: 69px;
+            height: 6.9rem;
             background: rgba(153, 107, 255, 1);
         }
     }
@@ -19,7 +19,7 @@
 
 .wrapper {
     flex: 2;
-    height: 63px;
+    height: 6.3rem;
     border-radius: 16px;
     background: radial-gradient(64.1% 50% at 50% 39.32%, #CCB5FF 0%, #996BFF 100%),
     radial-gradient(46.3% 75.26% at 50% 15.39%, #F5F0FF 0%, #E2D6FF 100%),

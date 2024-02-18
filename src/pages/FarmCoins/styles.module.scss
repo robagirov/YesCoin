@@ -1,0 +1,21 @@
+@import 'src/app/styles/mixins';
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: vertical-sizing(10px);
+    margin-bottom: vertical-sizing(30px);
+}
+
+.topItem {
+    margin-bottom: vertical-sizing(30px);
+}
+
+.active {
+    margin-bottom: vertical-sizing(20px);
+}
+
+.farmList {
+    height: vertical-sizing(334px);
+}

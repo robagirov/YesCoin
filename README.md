@@ -1,3 +1,8 @@
+Все размеры задаются задаются в rem, который задан для html.
+
+Все вертикальные margin и padding задаются в vh которые вычисляется через функцию vertical-spacing.
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

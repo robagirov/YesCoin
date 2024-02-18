@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import styles from "./styles.module.scss";
+import clsx from "clsx";
 
 interface ContentProps {
   children?: ReactNode;
@@ -6,6 +8,10 @@ interface ContentProps {
 
 export const Content = ({ children }: ContentProps) => {
   return (
-    <div className="z-10 pb-8 h-full flex flex-col justify-end">{children}</div>
+    <div
+      className={clsx(styles.content, "z-10 h-full flex flex-col justify-end")}
+    >
+      {children}
+    </div>
   );
 };

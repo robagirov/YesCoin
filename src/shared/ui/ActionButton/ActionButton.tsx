@@ -1,4 +1,4 @@
-import styles from "./ActionButton.module.css";
+import styles from "./ActionButton.module.scss";
 import clsx from "clsx";
 
 interface ActionButtonProps {

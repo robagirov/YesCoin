@@ -1,26 +1,26 @@
 .header {
-    font-size: 42px;
-    margin-bottom: 25px;
-    margin-top: 50px;
+    font-size: 4.2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 5rem;
 }
 
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     overflow-y: auto;
     z-index: 1;
-    padding-bottom: 15px;
+    padding-bottom: 1.5rem;
     scroll-behavior: smooth;
 }
 
 .item {
     border-radius: 6px;
     background-color: rgb(16 16 16 / 30%);
-    padding: 5px;
-    height: 201px;
-    flex: 0 1 calc(50% - 5px);
-    row-gap: 10px;
+    padding: 0.5rem;
+    height: 20.1rem;
+    flex: 0 1 calc(50% - 0.5rem);
+    row-gap: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 152px;
+    height: 15.2rem;
     border-radius: 12px;
     background: rgb(153 107 255 / 100%);
 }

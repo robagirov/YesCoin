@@ -1,12 +1,12 @@
 .wrapper {
     flex: 1;
-    height: 65px;
+    height: 6.5rem;
     border-radius: 16px;
     background: radial-gradient(rgb(245, 240, 255), rgb(226, 214, 255));
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 5px;
+    column-gap: 0.5rem;
 }
 
 .count-wrapper {
@@ -15,13 +15,13 @@
 }
 
 .current-count {
-    font-size: 22px;
+    font-size: 2.2rem;
     font-weight: 700;
     color: rgb(153, 107, 255);;
 }
 
 .common-count {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 700;
     color: rgb(191, 163, 255);
 }
