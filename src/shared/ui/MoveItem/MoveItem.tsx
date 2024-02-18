@@ -1,4 +1,4 @@
-import styles from "./MoveItem.module.css";
+import styles from "./styles.module.scss";
 
 interface MoveItemProps {
   avatar?: string;
