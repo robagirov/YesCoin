@@ -13,6 +13,8 @@ export const LocationProvider = ({ children }: LocationProviderProps) => {
   useEffect(() => {
     if (!telegram) return;
 
+    telegram.ready();
+
     if (isHomePage) return;
 
     telegram.BackButton.show();
