@@ -16,6 +16,8 @@ import { useTelegram } from "shared/api";
 import { MainCoin } from "./ui";
 
 export const MainBoard = () => {
+  const telegram = useTelegram();
+
   const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000));
   const [energy, setEnergy] = useState(5000);
 
@@ -30,31 +32,12 @@ export const MainBoard = () => {
     setEnergy((prevValue) => prevValue - 1);
   };
 
-  const telegram = useTelegram();
   useEffect(() => {
     if (!telegram) return;
 
     telegram.expand();
-    telegram.setHeaderColor("#fff");
     telegram.setBackgroundColor("#996bff");
   }, [telegram]);
-
-  useEffect(() => {
-    // Проверяем, доступен ли объект Telegram.WebApp
-    if (window.Telegram.WebApp) {
-      Telegram.WebApp.ready();
-
-      // Показываем кнопку "Назад"
-      Telegram.WebApp.BackButton.show();
-
-      // Опционально: обработка нажатия кнопки "Назад"
-      Telegram.WebApp.BackButton.onClick(() => {
-        console.log("Нажата кнопка Назад");
-        // Здесь можете выполнить любые действия при нажатии кнопки "Назад",
-        // например, вернуть пользователя на предыдущий экран вашего приложения
-      });
-    }
-  }, []);
 
   return (
     <Layout>
