@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Steppe';
-  src: url('src/app/assets/fonts/Steppe-Bold.eot');
+  src: url('/fonts/Steppe-Bold.eot');
   src: local('Steppe Bold'), local('Steppe-Bold'),
-  url('src/app/assets/fonts/Steppe-Bold.eot?#iefix') format('embedded-opentype'),
-  url('src/app/assets/fonts/Steppe-Bold.woff2') format('woff2'),
-  url('src/app/assets/fonts/Steppe-Bold.woff') format('woff'),
-  url('src/app/assets/fonts/Steppe-Bold.ttf') format('truetype');
+  url('/fonts/Steppe-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Steppe-Bold.woff2') format('woff2'),
+  url('/fonts/Steppe-Bold.woff') format('woff'),
+  url('/fonts/Steppe-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
