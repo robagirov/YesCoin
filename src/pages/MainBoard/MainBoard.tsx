@@ -40,6 +40,23 @@ export const MainBoard = () => {
     telegram.setBackgroundColor("#996bff");
   }, [telegram]);
 
+  useEffect(() => {
+    // Проверяем, доступен ли объект Telegram.WebApp
+    if (window.Telegram.WebApp) {
+      Telegram.WebApp.ready();
+
+      // Показываем кнопку "Назад"
+      Telegram.WebApp.BackButton.show();
+
+      // Опционально: обработка нажатия кнопки "Назад"
+      Telegram.WebApp.BackButton.onClick(() => {
+        console.log("Нажата кнопка Назад");
+        // Здесь можете выполнить любые действия при нажатии кнопки "Назад",
+        // например, вернуть пользователя на предыдущий экран вашего приложения
+      });
+    }
+  }, []);
+
   return (
     <Layout>
       <Layout.Content>
