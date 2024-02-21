@@ -18,7 +18,7 @@ import {
   MajorDigits,
 } from "pages";
 import { ROUTES } from "shared/consts";
-import { LocationProvider } from "app/providers";
+import { TelegramProvider } from "app/providers";
 import eruda from "eruda";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      <LocationProvider>
+      <TelegramProvider>
         <Routes>
           <Route path={ROUTES.MAIN_BOARD} element={<MainBoard />} />
           <Route path={ROUTES.CRYPTO_HOLDER} element={<CryptoHolder />} />
@@ -43,7 +43,7 @@ function App() {
           <Route path={ROUTES.SQUAD_WORK} element={<SquadWork />} />
           <Route path={ROUTES.MAJOR_DIGITS} element={<MajorDigits />} />
         </Routes>
-      </LocationProvider>
+      </TelegramProvider>
     </Router>
   );
 }

@@ -3,11 +3,11 @@ import { useIsHomePage } from "shared/hooks";
 import { useTelegram } from "shared/api";
 import { useNavigate } from "react-router-dom";
 
-interface LocationProviderProps {
+interface TelegramProviderProps {
   children: ReactNode;
 }
 
-export const LocationProvider = ({ children }: LocationProviderProps) => {
+export const TelegramProvider = ({ children }: TelegramProviderProps) => {
   const navigate = useNavigate();
 
   const isHomePage = useIsHomePage();

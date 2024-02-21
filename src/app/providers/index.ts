@@ -1,1 +1,1 @@
-export { LocationProvider } from "./LocationProvider";
+export { TelegramProvider } from "./TelegramProvider.tsx";
