@@ -1,5 +1,3 @@
-const telegram = window.Telegram?.WebApp;
-
 export const useTelegram = () => {
-  return telegram;
+  return window.Telegram?.WebApp;
 };

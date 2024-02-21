@@ -16,8 +16,6 @@ import { useTelegram } from "shared/api";
 import { MainCoin } from "./ui";
 
 export const MainBoard = () => {
-  const telegram = useTelegram();
-
   const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000));
   const [energy, setEnergy] = useState(5000);
 
@@ -32,6 +30,7 @@ export const MainBoard = () => {
     setEnergy((prevValue) => prevValue - 1);
   };
 
+  const telegram = useTelegram();
   useEffect(() => {
     if (!telegram) return;
 
