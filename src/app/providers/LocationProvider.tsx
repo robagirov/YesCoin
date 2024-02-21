@@ -18,7 +18,11 @@ export const LocationProvider = ({ children }: LocationProviderProps) => {
   useEffect(() => {
     if (!telegram) return;
 
-    if (isHomePage) return;
+    if (isHomePage) {
+      telegram.BackButton.hide();
+
+      return;
+    }
 
     telegram.BackButton.show();
   }, [telegram, isHomePage]);
@@ -29,7 +33,7 @@ export const LocationProvider = ({ children }: LocationProviderProps) => {
     return () => {
       telegram.BackButton.offClick(handleBack);
     };
-  }, [handleBack, navigate, telegram.BackButton]);
+  }, [handleBack, telegram.BackButton]);
 
-  return <>{children}</>;
+  return children;
 };
