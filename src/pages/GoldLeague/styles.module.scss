@@ -1,0 +1,73 @@
+@import 'src/app/styles/mixins';
+
+.wrapper {
+  flex: 1;
+  padding-top: vertical-sizing(50px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coiners {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(243,243,245,0.1);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.coins {
+  display: flex;
+  column-gap: -0.4rem;
+}
+
+.coin {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #fff;
+  border-radius: 50%;
+
+  &:not(:first-child) {
+    margin-left: -0.4rem;
+  }
+}
+
+.title {
+  margin-bottom: vertical-sizing(10px);
+}
+
+.counter {
+  margin-bottom: vertical-sizing(4px);
+  opacity: 0.3;
+  text-align: center;
+}
+
+.remain {
+  margin-bottom: vertical-sizing(8px);
+}
+
+.list {
+  margin-bottom: -(vertical-sizing(32px));
+}
+
+.switch {
+  margin-bottom: vertical-sizing(16px);
+}
+
+.back {
+  border-radius: 0;
+  height: vertical-sizing(338px);
+}
+
+.glow {
+  opacity: 0.5;
+}
+

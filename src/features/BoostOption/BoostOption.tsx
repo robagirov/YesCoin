@@ -1,5 +1,7 @@
 import clsx from "clsx";
-import { ArrowRight } from "../../shared/ui";
+import { ArrowRight } from "shared/ui";
+
+import styles from "./styles.module.scss";
 
 interface BoostItemProps {
   className?: string;
@@ -17,29 +19,25 @@ export const BoostOption = ({
   picture,
 }: BoostItemProps) => {
   return (
-    <div className={clsx("flex gap-x-4 relative", className)} onClick={onClick}>
+    <div className={clsx(styles.option, className)} onClick={onClick}>
       <img
         src={
           picture ||
           "https://contenthub-static.crypto.com/wp_media/2023/05/WHAT_ARE_MEMECOINS_OTP.jpg"
         }
-        className="w-16 h-16 rounded-md bg-[rgba(243,243,245,0.1)] object-cover"
+        className={styles.pic}
         alt="Фото профиля"
       />
 
-      <div className="flex-1 relative flex flex-col justify-center">
+      <div className={styles.boost}>
         <div>
-          <span className="text-white text-opacity-70 leading-6">{title}</span>
+          <span className={styles.name}>{title}</span>
         </div>
 
-        <div className="flex gap-x-3">
-          <span className="font-light text-sm text-purple-500">
-            {cost.toLocaleString()}
-          </span>
+        <div className={styles.sub}>
+          <span className={styles.cost}>{cost.toLocaleString()}</span>
 
-          <span className="text-white font-light text-sm text-opacity-70">
-            9 lvl
-          </span>
+          <span className={styles.lvl}>9 lvl</span>
         </div>
       </div>
 

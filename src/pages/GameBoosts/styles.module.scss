@@ -1,0 +1,41 @@
+@import 'src/app/styles/mixins';
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  row-gap: vertical-sizing(10px);
+  margin-bottom: vertical-sizing(30px);
+
+  &__text {
+    text-align: center;
+    opacity: 0.7;
+  }
+}
+
+.subtitle {
+  margin-bottom: vertical-sizing(20px);
+}
+
+.freeBoosts {
+  display: flex;
+  column-gap: 1rem;
+  margin-bottom: vertical-sizing(25px);
+}
+
+.boostList {
+  height: vertical-sizing(334px)
+}
+
+.pageGlow {
+  opacity: 0.3;
+}
+
+.confirm {
+  margin-top: vertical-sizing(432px);
+}
+
+.modalGlow {
+  opacity: 0.15;
+  z-index: -10;
+  background-size: cover;
+}

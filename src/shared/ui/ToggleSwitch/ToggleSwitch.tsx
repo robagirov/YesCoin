@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import styles from "./styles.module.scss";
 
 interface ToggleSwitchProps {
   options: string[];
@@ -9,26 +10,23 @@ interface ToggleSwitchProps {
 
 export const ToggleSwitch = ({
   options,
+  className,
   activeIndex,
   setActiveIndex,
-  className,
 }: ToggleSwitchProps) => {
   return (
-    <div
-      className={clsx(
-        "flex h-11 gap-2.5 p-1.5 items-center w-full bg-[rgba(243,243,245,0.1)] rounded-xl",
-        className,
-      )}
-    >
+    <div className={clsx(styles.container, className)}>
       <div
-        className="absolute w-[15.1rem] h-9 rounded-xl bg-[rgb(153,107,255)] transition-transform duration-150 ease-in-out"
-        style={{ transform: `translateX(${activeIndex * (100 + 14)}%)` }}
+        className={clsx(styles.slide, {
+          [styles.left]: activeIndex === 0,
+          [styles.right]: activeIndex === 1,
+        })}
       />
 
       {options.map((option, index) => (
         <button
           key={index}
-          className="relative flex w-full h-full justify-center items-center gap-2.5 rounded-xl font-medium  duration-300 ease-in-out"
+          className={styles.button}
           onClick={() => setActiveIndex(index)}
         >
           {option}

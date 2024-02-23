@@ -1,7 +1,7 @@
+@import 'src/app/styles/mixins';
+
 .navigationBar {
     display: flex;
-    justify-content: space-around;
     width: 100%;
     column-gap: 1rem;
-    margin-bottom: 1rem;
 }

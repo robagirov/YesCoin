@@ -1,6 +1,10 @@
-import styles from "./NavigationBar.module.css";
-import { FC, ReactNode } from "react";
+import styles from "./styles.module.scss";
+import { ReactNode } from "react";
 
-export const NavigationBar: FC<{ children: ReactNode }> = ({ children }) => {
+interface NavigationBarProps {
+  children: ReactNode;
+}
+
+export const NavigationBar = ({ children }: NavigationBarProps) => {
   return <div className={styles.navigationBar}>{children}</div>;
 };

@@ -1,10 +1,12 @@
-import { ActionButton, GlowCircle, PageTitle, Layout } from "shared/ui";
+import { ActionButton, GlowCircle, Layout, PageTitle } from "shared/ui";
+
+import styles from "./styles.module.scss";
 
 export const YesCoin = () => {
   return (
     <Layout>
       <Layout.Content>
-        <div className="flex gap-x-2.5 mb-9">
+        <div className={styles.buttons}>
           <ActionButton
             message="Войти"
             variant="secondary"
@@ -18,74 +20,66 @@ export const YesCoin = () => {
           />
         </div>
 
-        <PageTitle title="YesCoin" className="mb-12" />
+        <PageTitle title="YesCoin" className={styles.title} />
 
-        <div className="flex flex-col gap-y-7 mb-40 pl-6">
-          <div className="flex gap-x-3.5">
-            <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
+        <div className={styles.list}>
+          <div className={styles.item}>
+            <div className={styles.pic} />
 
-            <div className="flex flex-col">
+            <div className={styles.content}>
               <span>Жми на монету</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                И получай YesCoin
-              </span>
+              <span className={styles.label}>И получай YesCoin</span>
             </div>
           </div>
 
-          <div className="flex gap-x-3.5">
-            <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
+          <div className={styles.item}>
+            <div className={styles.pic} />
 
-            <div className="flex flex-col">
+            <div className={styles.content}>
               <span>Прокачивай Буст</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Чтобы получать монетка
-              </span>
+              <span className={styles.label}>Чтобы получать монетка</span>
             </div>
           </div>
 
-          <div className="flex gap-x-3.5">
-            <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
+          <div className={styles.item}>
+            <div className={styles.pic} />
 
-            <div className="flex flex-col">
+            <div className={styles.content}>
               <span>Соревнуйся</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Дойди до лиги
-              </span>
+              <span className={styles.label}>Дойди до лиги</span>
             </div>
           </div>
 
-          <div className="flex gap-x-3.5">
-            <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
+          <div className={styles.item}>
+            <div className={styles.pic} />
 
-            <div className="flex flex-col">
+            <div className={styles.content}>
               <span>Присоединяйся к Скваду</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Вместе больше
-              </span>
+              <span className={styles.label}>Вместе больше</span>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-y-4">
+        <div className={styles.bottom}>
           <ActionButton
+            message="Гайд"
             variant="secondary"
             onClick={() => false}
-            message="Гайд"
           />
 
           <ActionButton
+            message="Хорошо"
             variant="primary"
             onClick={() => false}
-            message="Хорошо"
           />
         </div>
       </Layout.Content>
 
-      <GlowCircle position="bottom" className="opacity-40" />
+      <GlowCircle position="bottom" className={styles.pageGlow} />
     </Layout>
   );
 };

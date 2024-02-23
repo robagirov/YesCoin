@@ -13,6 +13,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
 
+import styles from "./styles.module.scss";
+
 export const GameBoosts = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -24,25 +26,27 @@ export const GameBoosts = () => {
     <>
       <Layout>
         <Layout.Content>
-          <p className="text-center opacity-70 mb-2.5">Баланс</p>
+          <div className={styles.balance}>
+            <p className={styles.balance__text}>Баланс</p>
 
-          <BalanceAmount amount={5000000} className="mb-2.5" />
+            <BalanceAmount amount={5000000} />
 
-          <Link to={ROUTES.YES_COIN}>
-            <InfoTrigger text="Как работают Бусты?" className="mb-7" />
-          </Link>
+            <Link to={ROUTES.YES_COIN}>
+              <InfoTrigger text="Как работают Бусты?" />
+            </Link>
+          </div>
 
-          <Subtitle title="Бесплатные бусты" className="mb-5" />
+          <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
 
-          <div className="flex gap-x-2.5 mb-6">
+          <div className={styles.freeBoosts}>
             <BoostCard />
 
             <BoostCard />
           </div>
 
-          <Subtitle title="Бусты" className="mb-5" />
+          <Subtitle title="Бусты" className={styles.subtitle} />
 
-          <BackCard height={356}>
+          <BackCard className={styles.boostList}>
             <BoostOption
               cost={10000}
               title="Двойной клик"
@@ -81,18 +85,18 @@ export const GameBoosts = () => {
           </BackCard>
         </Layout.Content>
 
-        <GlowCircle position="bottom" className="opacity-30" />
+        <GlowCircle position="bottom" className={styles.pageGlow} />
       </Layout>
 
       <ModalView isOpen={modalOpen}>
         <ActionButton
-          className="mt-96"
+          className={styles.confirm}
           variant="primary"
           message="Спасибо"
           onClick={onCloseModal}
         />
 
-        <GlowCircle position="bottom" className="opacity-15 -z-10 bg-cover" />
+        <GlowCircle position="bottom" className={styles.modalGlow} />
       </ModalView>
     </>
   );

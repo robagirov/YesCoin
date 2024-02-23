@@ -12,6 +12,7 @@ import { useState } from "react";
 import { squadTopList } from "./model/mock.ts";
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
+import styles from "./styles.module.scss";
 
 export const GoldLeague = () => {
   const [activeType, setActiveType] = useState(0);
@@ -20,17 +21,17 @@ export const GoldLeague = () => {
   return (
     <Layout>
       <Layout.Content>
-        <div className="flex-1 h-full flex flex-col justify-between">
+        <div className={styles.wrapper}>
           <Link to={ROUTES.MAJOR_DIGITS}>
-            <div className="flex items-center justify-between py-1 pl-3 pr-2 bg-[rgba(243,243,245,0.1)] p-2 rounded-md">
-              <div className="flex gap-x-2 items-center">
-                <div className="flex -space-x-1">
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                  <div className="w-4 h-4 bg-[rgb(243,243,245)] rounded-full"></div>
-                  <div className="w-4 h-4 bg-[rgb(221,221,221)] rounded-full"></div>
+            <div className={styles.coiners}>
+              <div className={styles.inner}>
+                <div className={styles.coins}>
+                  <div className={styles.coin} />
+                  <div className={styles.coin} />
+                  <div className={styles.coin} />
                 </div>
 
-                <span className="">32,543,654 YesCoiners</span>
+                <span>32,543,654 YesCoiners</span>
               </div>
 
               <svg
@@ -50,15 +51,15 @@ export const GoldLeague = () => {
             </div>
           </Link>
 
-          <div className="-mb-8">
-            <PageTitle title="Золотая Лига" className="mb-2.5" />
+          <div className={styles.list}>
+            <PageTitle title="Золотая Лига" className={styles.title} />
 
-            <p className="opacity-30 text-center mb-1">929,324 / 2M</p>
+            <p className={styles.counter}>929,324 / 2M</p>
 
-            <EnergyRemain remain={5000} className="mb-2" />
+            <EnergyRemain remain={5000} className={styles.remain} />
 
             <ToggleSwitch
-              className="mb-4"
+              className={styles.switch}
               activeIndex={activePeriod}
               options={["Miners", "Squads"]}
               setActiveIndex={setActivePeriod}
@@ -71,7 +72,7 @@ export const GoldLeague = () => {
                 setActiveIndex={setActiveType}
               />
 
-              <BackCard height={360} className="rounded-none">
+              <BackCard className={styles.back}>
                 {squadTopList?.[activeType]?.map((person, index) => (
                   <ListItem
                     key={index}
@@ -86,7 +87,7 @@ export const GoldLeague = () => {
         </div>
       </Layout.Content>
 
-      <GlowCircle position="top" className="opacity-50" />
+      <GlowCircle position="middle-top" className={styles.glow} />
     </Layout>
   );
 };

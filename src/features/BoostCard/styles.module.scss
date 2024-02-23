@@ -1,0 +1,26 @@
+@import 'src/app/styles/mixins';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.8rem;
+  width: 100%;
+  padding: vertical-sizing(10px);
+  border-radius: 6px;
+  background-color: rgba(243,243,245,0.1);
+  margin-bottom: vertical-sizing(25px);
+}
+
+.count {
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.pic {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 6px;
+  background: rgba(243, 243, 245, 0.1);
+}

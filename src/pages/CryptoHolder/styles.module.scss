@@ -1,0 +1,22 @@
+@import 'src/app/styles/mixins';
+
+.bar {
+    margin-bottom: vertical-sizing(8px);
+}
+
+.button {
+    margin-bottom: vertical-sizing(179px);
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    row-gap: vertical-sizing(20px);
+    margin-bottom: vertical-sizing(300px);
+}
+
+.glow {
+    opacity: 0.7;
+}

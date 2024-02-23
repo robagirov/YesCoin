@@ -1,7 +1,9 @@
+@use "sass:math";
+
 $baseHeight: 844px;
 
 @function vertical-sizing($value) {
-  $calculated: $value / $baseHeight * 100;
+  $calculated: math.div($value, $baseHeight) * 100;
 
   @return $calculated + vh;
 }

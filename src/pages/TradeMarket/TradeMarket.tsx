@@ -1,27 +1,30 @@
 import { NavigationBar } from "features";
 import { ActionButton, GlowCircle, RouterLink, Layout } from "shared/ui";
-import styles from "./TradeMarket.module.css";
+import styles from "./styles.module.scss";
 import { ROUTES } from "shared/consts";
-import clsx from "clsx";
 
 export const TradeMarket = () => {
   return (
     <Layout>
       <Layout.Content>
-        <NavigationBar>
-          <RouterLink to={ROUTES.MAIN_BOARD} text="Главная" />
-          <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелек" />
-        </NavigationBar>
+        <div className={styles.bar}>
+          <NavigationBar>
+            <RouterLink to={ROUTES.MAIN_BOARD} text="Главная" />
+            <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелек" />
+          </NavigationBar>
+        </div>
 
-        <ActionButton
-          variant="primary"
-          message="Connect TON wallet"
-          onClick={() => false}
-        />
+        <div className={styles.button}>
+          <ActionButton
+            variant="primary"
+            message="Connect TON wallet"
+            onClick={() => false}
+          />
+        </div>
 
         <h1 className={styles.header}>Market</h1>
 
-        <div className={clsx(styles.list, "-mb-8")}>
+        <div className={styles.list}>
           {Array.from({ length: 23 }).map((_, index) => (
             <div key={index} className={styles.item}>
               <div className={styles.picture} />
