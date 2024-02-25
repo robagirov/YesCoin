@@ -7,7 +7,6 @@
   "printWidth": 130,
   "endOfLine": "lf",
   "bracketSpacing": true,
-  "jsxBracketSameLine": false,
   "overrides": [
     {
       "files": ["*.scss", "*.css"],
