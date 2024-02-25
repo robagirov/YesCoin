@@ -11,7 +11,7 @@ const gitCommand = (filenames) => `git add ${filenames.join(' ')}`
 // const stylelintCommand = 'stylelint --allow-empty-input "**/*.{css,scss}"';
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [formatCommand, eslintCommand, gitCommand],
+  '*.{cjs,js,jsx,ts,tsx}': [formatCommand, eslintCommand, gitCommand],
   '*.{css,scss}': [formatCommand, gitCommand],
-  '!*.{js,jsx,ts,tsx,css,scss}': [formatCommand, gitCommand],
+  '!*.{cjs,js,jsx,ts,tsx,css,scss}': [formatCommand, gitCommand],
 }
