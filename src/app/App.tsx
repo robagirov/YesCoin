@@ -1,6 +1,6 @@
-import './styles/index.scss';
+import './styles/index.scss'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
   MainBoard,
   TradeMarket,
@@ -16,13 +16,15 @@ import {
   JoinSquad,
   SquadWork,
   MajorDigits,
-} from 'pages';
-import { ROUTES } from 'shared/consts';
-import { QueryProvider, TelegramProvider } from 'app/providers';
-import eruda from 'eruda';
+} from 'pages'
+import { ROUTES } from 'shared/consts'
+import { QueryProvider, TelegramProvider } from 'app/providers'
+import eruda from 'eruda'
 
 function App() {
-  eruda.init();
+  eruda.init()
+
+  console.log('test')
 
   return (
     <QueryProvider>
@@ -47,7 +49,7 @@ function App() {
         </TelegramProvider>
       </Router>
     </QueryProvider>
-  );
+  )
 }
 
-export default App;
+export default App
