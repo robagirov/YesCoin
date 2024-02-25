@@ -1,10 +1,3 @@
-// const path = require('path');
-
-// const eslintCommand = (filenames) =>
-//   `next lint --file ${filenames
-//     .map((f) => path.relative(process.cwd(), f))
-//     .join(' --file ')}`;
-
 const eslintCommand = (filenames) => `eslint --debug ${filenames.join(' ')} --fix`
 const formatCommand = (filenames) => `prettier --write ${filenames.join(' ')}`
 const gitCommand = (filenames) => `git add ${filenames.join(' ')}`
