@@ -1,25 +1,18 @@
-import {
-  ActionButton,
-  GlowCircle,
-  InfoTrigger,
-  ModalView,
-  PageTitle,
-  Layout,
-} from "shared/ui";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./styles.module.scss";
-import clsx from "clsx";
+import { ActionButton, GlowCircle, InfoTrigger, ModalView, PageTitle, Layout } from 'shared/ui'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import styles from './styles.module.scss'
+import clsx from 'clsx'
 
 export const MajorDigits = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate(-1)
 
-  const onCloseModal = () => setModalOpen(false);
-  const onOpenModal = () => setModalOpen(true);
+  const onCloseModal = () => setModalOpen(false)
+  const onOpenModal = () => setModalOpen(true)
 
   return (
     <>
@@ -106,13 +99,8 @@ export const MajorDigits = () => {
           <p className={styles.secondary}>Сожжено и потрачено</p>
         </div>
 
-        <ActionButton
-          className={styles.okButton}
-          variant="primary"
-          message="Хорошо"
-          onClick={onCloseModal}
-        />
+        <ActionButton className={styles.okButton} variant="primary" message="Хорошо" onClick={onCloseModal} />
       </ModalView>
     </>
-  );
-};
+  )
+}

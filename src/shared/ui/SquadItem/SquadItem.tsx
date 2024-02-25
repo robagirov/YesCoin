@@ -1,28 +1,20 @@
-import clsx from "clsx";
-import { ArrowRight } from "../ArrowRight";
+import clsx from 'clsx'
+import { ArrowRight } from '../ArrowRight'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface SquadItemProps {
-  className?: string;
-  image?: string;
-  title: string;
-  subtitle: string;
+  className?: string
+  image?: string
+  title: string
+  subtitle: string
 }
 
-export const SquadItem = ({
-  className,
-  image,
-  title,
-  subtitle,
-}: SquadItemProps) => {
+export const SquadItem = ({ className, image, title, subtitle }: SquadItemProps) => {
   return (
     <div className={clsx(styles.item, className)}>
       <img
-        src={
-          image ||
-          "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
-        }
+        src={image || 'https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg'}
         className={styles.pic}
         alt="Изображение сквада"
       />
@@ -35,5 +27,5 @@ export const SquadItem = ({
 
       <ArrowRight />
     </div>
-  );
-};
+  )
+}

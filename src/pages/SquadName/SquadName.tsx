@@ -4,7 +4,7 @@ import { squadTopList } from './model/mock.ts'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export const SquadName = () => {
   const [activeIndex, setActiveIndex] = useState(0)
