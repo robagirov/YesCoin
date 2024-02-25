@@ -7,7 +7,7 @@
 
 const eslintCommand = (filenames) => `eslint --debug ${filenames.join(' ')} --fix`
 const formatCommand = 'npm run format'
-const gitCommand = 'git add'
+const gitCommand = (filenames) => `git add ${filenames.join(' ')}`
 // const stylelintCommand = 'stylelint --allow-empty-input "**/*.{css,scss}"';
 
 module.exports = {
