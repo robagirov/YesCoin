@@ -29,9 +29,9 @@ export const YesCoin = () => {
             <div className={styles.pic} />
 
             <div className={styles.content}>
-              <span>Прокачивай Буст</span>
+              <span>Yes улучшению и бустам</span>
 
-              <span className={styles.label}>Чтобы получать монетка</span>
+              <span className={styles.label}>Чтобы получать больше YesCoin</span>
             </div>
           </div>
 
@@ -39,9 +39,9 @@ export const YesCoin = () => {
             <div className={styles.pic} />
 
             <div className={styles.content}>
-              <span>Соревнуйся</span>
+              <span>Yes соревнованиям</span>
 
-              <span className={styles.label}>Дойди до лиги</span>
+              <span className={styles.label}>Дойди до лучшей лиги</span>
             </div>
           </div>
 
@@ -49,7 +49,7 @@ export const YesCoin = () => {
             <div className={styles.pic} />
 
             <div className={styles.content}>
-              <span>Присоединяйся к Скваду</span>
+              <span>Yes сквадам</span>
 
               <span className={styles.label}>Вместе больше</span>
             </div>

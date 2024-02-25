@@ -7,25 +7,24 @@ export const FarmCoins = () => {
       <Layout.Content>
         <div className={styles.content}>
           <div className={styles.head}>
-            <PageTitle title="Earn more coins" />
+            <PageTitle title="Только Yes фармингу" />
 
             <InfoTrigger text="Полная инструкция" />
           </div>
 
           <BackCard className={styles.topItem}>
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
+            <MoveItem coins={10000} title="Зови друзей" />
           </BackCard>
 
           <Subtitle title="Активные" className={styles.active} />
 
           <BackCard className={styles.farmList}>
             <MoveItem coins={10000} title="Пригласи 10 друзей" />
+            <MoveItem coins={10000} title="Присоединиться в сквад" />
+            <MoveItem coins={10000} title="Подпишись на канал" />
             <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
-            <MoveItem coins={10000} title="Пригласи 10 друзей" />
+            <MoveItem coins={10000} title="Присоединиться в сквад" />
+            <MoveItem coins={10000} title="Подпишись на канал" />
           </BackCard>
         </div>
       </Layout.Content>

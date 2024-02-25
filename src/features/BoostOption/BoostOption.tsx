@@ -21,9 +21,7 @@ export const BoostOption = ({ className, onClick, cost, title, picture }: BoostI
       />
 
       <div className={styles.boost}>
-        <div>
-          <span className={styles.name}>{title}</span>
-        </div>
+        <span className={styles.name}>{title}</span>
 
         <div className={styles.sub}>
           <span className={styles.cost}>{cost.toLocaleString()}</span>

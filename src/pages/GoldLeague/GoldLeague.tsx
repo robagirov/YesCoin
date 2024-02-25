@@ -47,7 +47,7 @@ export const GoldLeague = () => {
             <ToggleSwitch
               className={styles.switch}
               activeIndex={activePeriod}
-              options={['Miners', 'Squads']}
+              options={['Игроки', 'Сквады']}
               setActiveIndex={setActivePeriod}
             />
 
