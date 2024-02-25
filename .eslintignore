@@ -3,5 +3,6 @@ src/shared/openApi
 lint-staged.config.cjs
 tailwind.config.js
 postcss.config.js
+orval.config.js
 node_modules/
 dist/

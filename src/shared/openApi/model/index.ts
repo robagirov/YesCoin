@@ -17,3 +17,7 @@ export * from "./userUpdate";
 export * from "./userUpdateBalance";
 export * from "./validationError";
 export * from "./validationErrorLocItem";
+export * from './addLeagueLeaguesPost200';
+export * from './getLeaguesLeaguesGet200';
+export * from './getSquadsSquadsGet200';
+export * from './leagueCreate';

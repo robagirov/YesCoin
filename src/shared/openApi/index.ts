@@ -4,315 +4,420 @@
  * YesCoin-API
  * OpenAPI spec version: 0.1.0
  */
-import { useMutation, useQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQuery
+} from '@tanstack/react-query'
 import type {
   MutationFunction,
   QueryFunction,
   QueryKey,
   UseMutationOptions,
   UseQueryOptions,
-  UseQueryResult,
-} from "@tanstack/react-query";
-import axios from "axios";
-import type { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+  UseQueryResult
+} from '@tanstack/react-query'
+import axios from 'axios'
 import type {
+  AxiosError,
+  AxiosRequestConfig,
+  AxiosResponse
+} from 'axios'
+import type {
+  AddLeagueLeaguesPost200,
   AddUserUsersPost200,
+  GetLeaguesLeaguesGet200,
+  GetSquadsSquadsGet200,
   GetUserUsersGet200,
   GetUserUsersGetParams,
   HTTPValidationError,
+  LeagueCreate,
   TapUsersTapPut200,
   TapUsersTapPutParams,
   UpdateUserInfoUsersPut200,
   UserCreate,
-  UserUpdate,
-} from "./model";
+  UserUpdate
+} from './model'
+
+
 
 /**
  * @summary Get User
  */
 export const getUserUsersGet = (
-  params: GetUserUsersGetParams,
-  options?: AxiosRequestConfig,
-): Promise<AxiosResponse<GetUserUsersGet200>> => {
-  return axios.get(`/users`, {
+    params: GetUserUsersGetParams, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<GetUserUsersGet200>> => {
+    
+    return axios.get(
+      `http://yestoken.space/users`,{
     ...options,
-    params: { ...params, ...options?.params },
-  });
-};
+        params: {...params, ...options?.params},}
+    );
+  }
 
-export const getGetUserUsersGetQueryKey = (params: GetUserUsersGetParams) => {
-  return [`/users`, ...(params ? [params] : [])] as const;
-};
 
-export const getGetUserUsersGetQueryOptions = <
-  TData = Awaited<ReturnType<typeof getUserUsersGet>>,
-  TError = AxiosError<HTTPValidationError>,
->(
-  params: GetUserUsersGetParams,
-  options?: {
-    query?: Partial<
-      UseQueryOptions<
-        Awaited<ReturnType<typeof getUserUsersGet>>,
-        TError,
-        TData
-      >
-    >;
-    axios?: AxiosRequestConfig;
-  },
+export const getGetUserUsersGetQueryKey = (params: GetUserUsersGetParams,) => {
+    return [`http://yestoken.space/users`, ...(params ? [params]: [])] as const;
+    }
+
+    
+export const getGetUserUsersGetQueryOptions = <TData = Awaited<ReturnType<typeof getUserUsersGet>>, TError = AxiosError<HTTPValidationError>>(params: GetUserUsersGetParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getUserUsersGet>>, TError, TData>>, axios?: AxiosRequestConfig}
 ) => {
-  const { query: queryOptions, axios: axiosOptions } = options ?? {};
 
-  const queryKey = queryOptions?.queryKey ?? getGetUserUsersGetQueryKey(params);
+const {query: queryOptions, axios: axiosOptions} = options ?? {};
 
-  const queryFn: QueryFunction<Awaited<ReturnType<typeof getUserUsersGet>>> = ({
-    signal,
-  }) => getUserUsersGet(params, { signal, ...axiosOptions });
+  const queryKey =  queryOptions?.queryKey ?? getGetUserUsersGetQueryKey(params);
 
-  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof getUserUsersGet>>,
-    TError,
-    TData
-  > & { queryKey: QueryKey };
-};
+  
 
-export type GetUserUsersGetQueryResult = NonNullable<
-  Awaited<ReturnType<typeof getUserUsersGet>>
->;
-export type GetUserUsersGetQueryError = AxiosError<HTTPValidationError>;
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getUserUsersGet>>> = ({ signal }) => getUserUsersGet(params, { signal, ...axiosOptions });
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getUserUsersGet>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetUserUsersGetQueryResult = NonNullable<Awaited<ReturnType<typeof getUserUsersGet>>>
+export type GetUserUsersGetQueryError = AxiosError<HTTPValidationError>
 
 /**
  * @summary Get User
  */
-export const useGetUserUsersGet = <
-  TData = Awaited<ReturnType<typeof getUserUsersGet>>,
-  TError = AxiosError<HTTPValidationError>,
->(
-  params: GetUserUsersGetParams,
-  options?: {
-    query?: Partial<
-      UseQueryOptions<
-        Awaited<ReturnType<typeof getUserUsersGet>>,
-        TError,
-        TData
-      >
-    >;
-    axios?: AxiosRequestConfig;
-  },
-): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-  const queryOptions = getGetUserUsersGetQueryOptions(params, options);
+export const useGetUserUsersGet = <TData = Awaited<ReturnType<typeof getUserUsersGet>>, TError = AxiosError<HTTPValidationError>>(
+ params: GetUserUsersGetParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getUserUsersGet>>, TError, TData>>, axios?: AxiosRequestConfig}
 
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-    queryKey: QueryKey;
-  };
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
-  query.queryKey = queryOptions.queryKey;
+  const queryOptions = getGetUserUsersGetQueryOptions(params,options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
 
   return query;
-};
+}
+
+
+
 
 /**
  * @summary Add User
  */
 export const addUserUsersPost = (
-  userCreate: UserCreate,
-  options?: AxiosRequestConfig,
-): Promise<AxiosResponse<AddUserUsersPost200>> => {
-  return axios.post(`/users`, userCreate, options);
-};
+    userCreate: UserCreate, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<AddUserUsersPost200>> => {
+    
+    return axios.post(
+      `http://yestoken.space/users`,
+      userCreate,options
+    );
+  }
 
-export const getAddUserUsersPostMutationOptions = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof addUserUsersPost>>,
-    TError,
-    { data: UserCreate },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}): UseMutationOptions<
-  Awaited<ReturnType<typeof addUserUsersPost>>,
-  TError,
-  { data: UserCreate },
-  TContext
-> => {
-  const { mutation: mutationOptions, axios: axiosOptions } = options ?? {};
 
-  const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof addUserUsersPost>>,
-    { data: UserCreate }
-  > = (props) => {
-    const { data } = props ?? {};
 
-    return addUserUsersPost(data, axiosOptions);
-  };
+export const getAddUserUsersPostMutationOptions = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof addUserUsersPost>>, TError,{data: UserCreate}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof addUserUsersPost>>, TError,{data: UserCreate}, TContext> => {
+ const {mutation: mutationOptions, axios: axiosOptions} = options ?? {};
 
-  return { mutationFn, ...mutationOptions };
-};
+      
 
-export type AddUserUsersPostMutationResult = NonNullable<
-  Awaited<ReturnType<typeof addUserUsersPost>>
->;
-export type AddUserUsersPostMutationBody = UserCreate;
-export type AddUserUsersPostMutationError = AxiosError<HTTPValidationError>;
 
-/**
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof addUserUsersPost>>, {data: UserCreate}> = (props) => {
+          const {data} = props ?? {};
+
+          return  addUserUsersPost(data,axiosOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type AddUserUsersPostMutationResult = NonNullable<Awaited<ReturnType<typeof addUserUsersPost>>>
+    export type AddUserUsersPostMutationBody = UserCreate
+    export type AddUserUsersPostMutationError = AxiosError<HTTPValidationError>
+
+    /**
  * @summary Add User
  */
-export const useAddUserUsersPost = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof addUserUsersPost>>,
-    TError,
-    { data: UserCreate },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}) => {
-  const mutationOptions = getAddUserUsersPostMutationOptions(options);
+export const useAddUserUsersPost = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof addUserUsersPost>>, TError,{data: UserCreate}, TContext>, axios?: AxiosRequestConfig}
+) => {
 
-  return useMutation(mutationOptions);
-};
+      const mutationOptions = getAddUserUsersPostMutationOptions(options);
 
+      return useMutation(mutationOptions);
+    }
+    
 /**
  * @summary Update User Info
  */
 export const updateUserInfoUsersPut = (
-  userUpdate: UserUpdate,
-  options?: AxiosRequestConfig,
-): Promise<AxiosResponse<UpdateUserInfoUsersPut200>> => {
-  return axios.put(`/users`, userUpdate, options);
-};
+    userUpdate: UserUpdate, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<UpdateUserInfoUsersPut200>> => {
+    
+    return axios.put(
+      `http://yestoken.space/users`,
+      userUpdate,options
+    );
+  }
 
-export const getUpdateUserInfoUsersPutMutationOptions = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof updateUserInfoUsersPut>>,
-    TError,
-    { data: UserUpdate },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}): UseMutationOptions<
-  Awaited<ReturnType<typeof updateUserInfoUsersPut>>,
-  TError,
-  { data: UserUpdate },
-  TContext
-> => {
-  const { mutation: mutationOptions, axios: axiosOptions } = options ?? {};
 
-  const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof updateUserInfoUsersPut>>,
-    { data: UserUpdate }
-  > = (props) => {
-    const { data } = props ?? {};
 
-    return updateUserInfoUsersPut(data, axiosOptions);
-  };
+export const getUpdateUserInfoUsersPutMutationOptions = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof updateUserInfoUsersPut>>, TError,{data: UserUpdate}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof updateUserInfoUsersPut>>, TError,{data: UserUpdate}, TContext> => {
+ const {mutation: mutationOptions, axios: axiosOptions} = options ?? {};
 
-  return { mutationFn, ...mutationOptions };
-};
+      
 
-export type UpdateUserInfoUsersPutMutationResult = NonNullable<
-  Awaited<ReturnType<typeof updateUserInfoUsersPut>>
->;
-export type UpdateUserInfoUsersPutMutationBody = UserUpdate;
-export type UpdateUserInfoUsersPutMutationError =
-  AxiosError<HTTPValidationError>;
 
-/**
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof updateUserInfoUsersPut>>, {data: UserUpdate}> = (props) => {
+          const {data} = props ?? {};
+
+          return  updateUserInfoUsersPut(data,axiosOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type UpdateUserInfoUsersPutMutationResult = NonNullable<Awaited<ReturnType<typeof updateUserInfoUsersPut>>>
+    export type UpdateUserInfoUsersPutMutationBody = UserUpdate
+    export type UpdateUserInfoUsersPutMutationError = AxiosError<HTTPValidationError>
+
+    /**
  * @summary Update User Info
  */
-export const useUpdateUserInfoUsersPut = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof updateUserInfoUsersPut>>,
-    TError,
-    { data: UserUpdate },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}) => {
-  const mutationOptions = getUpdateUserInfoUsersPutMutationOptions(options);
+export const useUpdateUserInfoUsersPut = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof updateUserInfoUsersPut>>, TError,{data: UserUpdate}, TContext>, axios?: AxiosRequestConfig}
+) => {
 
-  return useMutation(mutationOptions);
-};
+      const mutationOptions = getUpdateUserInfoUsersPutMutationOptions(options);
 
+      return useMutation(mutationOptions);
+    }
+    
 /**
  * @summary Tap
  */
 export const tapUsersTapPut = (
-  params: TapUsersTapPutParams,
-  options?: AxiosRequestConfig,
-): Promise<AxiosResponse<TapUsersTapPut200>> => {
-  return axios.put(`/users/tap`, undefined, {
+    params: TapUsersTapPutParams, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<TapUsersTapPut200>> => {
+    
+    return axios.put(
+      `http://yestoken.space/users/tap`,undefined,{
     ...options,
-    params: { ...params, ...options?.params },
-  });
-};
+        params: {...params, ...options?.params},}
+    );
+  }
 
-export const getTapUsersTapPutMutationOptions = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof tapUsersTapPut>>,
-    TError,
-    { params: TapUsersTapPutParams },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}): UseMutationOptions<
-  Awaited<ReturnType<typeof tapUsersTapPut>>,
-  TError,
-  { params: TapUsersTapPutParams },
-  TContext
-> => {
-  const { mutation: mutationOptions, axios: axiosOptions } = options ?? {};
 
-  const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof tapUsersTapPut>>,
-    { params: TapUsersTapPutParams }
-  > = (props) => {
-    const { params } = props ?? {};
 
-    return tapUsersTapPut(params, axiosOptions);
-  };
+export const getTapUsersTapPutMutationOptions = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof tapUsersTapPut>>, TError,{params: TapUsersTapPutParams}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof tapUsersTapPut>>, TError,{params: TapUsersTapPutParams}, TContext> => {
+ const {mutation: mutationOptions, axios: axiosOptions} = options ?? {};
 
-  return { mutationFn, ...mutationOptions };
-};
+      
 
-export type TapUsersTapPutMutationResult = NonNullable<
-  Awaited<ReturnType<typeof tapUsersTapPut>>
->;
 
-export type TapUsersTapPutMutationError = AxiosError<HTTPValidationError>;
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof tapUsersTapPut>>, {params: TapUsersTapPutParams}> = (props) => {
+          const {params} = props ?? {};
 
-/**
+          return  tapUsersTapPut(params,axiosOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type TapUsersTapPutMutationResult = NonNullable<Awaited<ReturnType<typeof tapUsersTapPut>>>
+    
+    export type TapUsersTapPutMutationError = AxiosError<HTTPValidationError>
+
+    /**
  * @summary Tap
  */
-export const useTapUsersTapPut = <
-  TError = AxiosError<HTTPValidationError>,
-  TContext = unknown,
->(options?: {
-  mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof tapUsersTapPut>>,
-    TError,
-    { params: TapUsersTapPutParams },
-    TContext
-  >;
-  axios?: AxiosRequestConfig;
-}) => {
-  const mutationOptions = getTapUsersTapPutMutationOptions(options);
+export const useTapUsersTapPut = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof tapUsersTapPut>>, TError,{params: TapUsersTapPutParams}, TContext>, axios?: AxiosRequestConfig}
+) => {
 
-  return useMutation(mutationOptions);
-};
+      const mutationOptions = getTapUsersTapPutMutationOptions(options);
 
-export * from "./index";
+      return useMutation(mutationOptions);
+    }
+    
+/**
+ * @summary Get Squads
+ */
+export const getSquadsSquadsGet = (
+     options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<GetSquadsSquadsGet200>> => {
+    
+    return axios.get(
+      `http://yestoken.space/squads`,options
+    );
+  }
+
+
+export const getGetSquadsSquadsGetQueryKey = () => {
+    return [`http://yestoken.space/squads`] as const;
+    }
+
+    
+export const getGetSquadsSquadsGetQueryOptions = <TData = Awaited<ReturnType<typeof getSquadsSquadsGet>>, TError = AxiosError<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getSquadsSquadsGet>>, TError, TData>>, axios?: AxiosRequestConfig}
+) => {
+
+const {query: queryOptions, axios: axiosOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetSquadsSquadsGetQueryKey();
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getSquadsSquadsGet>>> = ({ signal }) => getSquadsSquadsGet({ signal, ...axiosOptions });
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getSquadsSquadsGet>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetSquadsSquadsGetQueryResult = NonNullable<Awaited<ReturnType<typeof getSquadsSquadsGet>>>
+export type GetSquadsSquadsGetQueryError = AxiosError<unknown>
+
+/**
+ * @summary Get Squads
+ */
+export const useGetSquadsSquadsGet = <TData = Awaited<ReturnType<typeof getSquadsSquadsGet>>, TError = AxiosError<unknown>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getSquadsSquadsGet>>, TError, TData>>, axios?: AxiosRequestConfig}
+
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+
+  const queryOptions = getGetSquadsSquadsGetQueryOptions(options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
+
+/**
+ * @summary Get Leagues
+ */
+export const getLeaguesLeaguesGet = (
+     options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<GetLeaguesLeaguesGet200>> => {
+    
+    return axios.get(
+      `http://yestoken.space/leagues`,options
+    );
+  }
+
+
+export const getGetLeaguesLeaguesGetQueryKey = () => {
+    return [`http://yestoken.space/leagues`] as const;
+    }
+
+    
+export const getGetLeaguesLeaguesGetQueryOptions = <TData = Awaited<ReturnType<typeof getLeaguesLeaguesGet>>, TError = AxiosError<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLeaguesLeaguesGet>>, TError, TData>>, axios?: AxiosRequestConfig}
+) => {
+
+const {query: queryOptions, axios: axiosOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetLeaguesLeaguesGetQueryKey();
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getLeaguesLeaguesGet>>> = ({ signal }) => getLeaguesLeaguesGet({ signal, ...axiosOptions });
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getLeaguesLeaguesGet>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetLeaguesLeaguesGetQueryResult = NonNullable<Awaited<ReturnType<typeof getLeaguesLeaguesGet>>>
+export type GetLeaguesLeaguesGetQueryError = AxiosError<unknown>
+
+/**
+ * @summary Get Leagues
+ */
+export const useGetLeaguesLeaguesGet = <TData = Awaited<ReturnType<typeof getLeaguesLeaguesGet>>, TError = AxiosError<unknown>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLeaguesLeaguesGet>>, TError, TData>>, axios?: AxiosRequestConfig}
+
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+
+  const queryOptions = getGetLeaguesLeaguesGetQueryOptions(options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
+
+/**
+ * @summary Add League
+ */
+export const addLeagueLeaguesPost = (
+    leagueCreate: LeagueCreate, options?: AxiosRequestConfig
+ ): Promise<AxiosResponse<AddLeagueLeaguesPost200>> => {
+    
+    return axios.post(
+      `http://yestoken.space/leagues`,
+      leagueCreate,options
+    );
+  }
+
+
+
+export const getAddLeagueLeaguesPostMutationOptions = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof addLeagueLeaguesPost>>, TError,{data: LeagueCreate}, TContext>, axios?: AxiosRequestConfig}
+): UseMutationOptions<Awaited<ReturnType<typeof addLeagueLeaguesPost>>, TError,{data: LeagueCreate}, TContext> => {
+ const {mutation: mutationOptions, axios: axiosOptions} = options ?? {};
+
+      
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof addLeagueLeaguesPost>>, {data: LeagueCreate}> = (props) => {
+          const {data} = props ?? {};
+
+          return  addLeagueLeaguesPost(data,axiosOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type AddLeagueLeaguesPostMutationResult = NonNullable<Awaited<ReturnType<typeof addLeagueLeaguesPost>>>
+    export type AddLeagueLeaguesPostMutationBody = LeagueCreate
+    export type AddLeagueLeaguesPostMutationError = AxiosError<HTTPValidationError>
+
+    /**
+ * @summary Add League
+ */
+export const useAddLeagueLeaguesPost = <TError = AxiosError<HTTPValidationError>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof addLeagueLeaguesPost>>, TError,{data: LeagueCreate}, TContext>, axios?: AxiosRequestConfig}
+) => {
+
+      const mutationOptions = getAddLeagueLeaguesPostMutationOptions(options);
+
+      return useMutation(mutationOptions);
+    }
+    
+export * from './index';
