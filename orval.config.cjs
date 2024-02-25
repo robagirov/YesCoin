@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   yesCoin: {
     output: {
       mode: 'split',
@@ -13,4 +13,4 @@ export default {
       target: 'http://yestoken.space/openapi.json',
     },
   },
-};
+}

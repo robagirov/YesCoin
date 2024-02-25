@@ -1,8 +1,5 @@
 src/app/core/telegram-web-app.js
 src/shared/openApi
-postcss.config.js
-tailwind.config.js
-orval.config.js
 node_modules/
 dist/
 

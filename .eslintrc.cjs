@@ -12,13 +12,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tailwind.config.js'],
+    project: ['./tsconfig.json', './tsconfig.node.json', './tailwind.config.cjs'],
     tsconfigRootDir: __dirname,
   },
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'linebreak-style': ['error', 'unix'],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
-};
+}
