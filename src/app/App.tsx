@@ -24,8 +24,6 @@ import eruda from 'eruda'
 function App() {
   eruda.init()
 
-  console.log('test')
-
   return (
     <QueryProvider>
       <Router>
