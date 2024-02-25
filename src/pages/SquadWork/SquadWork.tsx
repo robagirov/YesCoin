@@ -1,8 +1,8 @@
-import { PageTitle, GlowCircle, Layout, ActionButton } from "shared/ui";
-import { FC } from "react";
+import { PageTitle, GlowCircle, Layout, ActionButton } from 'shared/ui'
+import { FC } from 'react'
 
 interface SquadWorkProps {
-  className?: string;
+  className?: string
 }
 
 export const SquadWork: FC<SquadWorkProps> = () => {
@@ -10,17 +10,9 @@ export const SquadWork: FC<SquadWorkProps> = () => {
     <Layout>
       <Layout.Content>
         <div className="flex gap-x-2.5 mb-9">
-          <ActionButton
-            message="Войти"
-            variant="secondary"
-            onClick={() => false}
-          />
+          <ActionButton message="Войти" variant="secondary" onClick={() => false} />
 
-          <ActionButton
-            variant="secondary"
-            onClick={() => false}
-            message="Подписаться"
-          />
+          <ActionButton variant="secondary" onClick={() => false} message="Подписаться" />
         </div>
 
         <PageTitle title="Сквады" className="mb-12" />
@@ -32,9 +24,7 @@ export const SquadWork: FC<SquadWorkProps> = () => {
             <div className="flex flex-col">
               <span>Жми на монету</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                И получай YesCoin
-              </span>
+              <span className="text-sm text-gray-400 opacity-70 font-light">И получай YesCoin</span>
             </div>
           </div>
 
@@ -44,9 +34,7 @@ export const SquadWork: FC<SquadWorkProps> = () => {
             <div className="flex flex-col">
               <span>Прокачивай Буст</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Чтобы получать монетка
-              </span>
+              <span className="text-sm text-gray-400 opacity-70 font-light">Чтобы получать монетка</span>
             </div>
           </div>
 
@@ -56,29 +44,19 @@ export const SquadWork: FC<SquadWorkProps> = () => {
             <div className="flex flex-col">
               <span>Соревнуйся</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">
-                Дойди до лиги
-              </span>
+              <span className="text-sm text-gray-400 opacity-70 font-light">Дойди до лиги</span>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-y-4">
-          <ActionButton
-            variant="secondary"
-            onClick={() => false}
-            message="Гайд"
-          />
+          <ActionButton variant="secondary" onClick={() => false} message="Гайд" />
 
-          <ActionButton
-            variant="primary"
-            onClick={() => false}
-            message="Хорошо"
-          />
+          <ActionButton variant="primary" onClick={() => false} message="Хорошо" />
         </div>
       </Layout.Content>
 
       <GlowCircle position="bottom" className="opacity-40" />
     </Layout>
-  );
-};
+  )
+}

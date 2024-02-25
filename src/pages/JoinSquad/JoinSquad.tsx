@@ -1,4 +1,4 @@
-import { ActionButton, GlowCircle, PageTitle, Layout } from "shared/ui";
+import { ActionButton, GlowCircle, PageTitle, Layout } from 'shared/ui'
 
 export const JoinSquad = () => {
   return (
@@ -10,19 +10,12 @@ export const JoinSquad = () => {
           <div className="relative w-24 h-24 rounded-full bg-[rgb(243,243,245,0.1)] -left-6" />
         </div>
 
-        <PageTitle
-          title="Присоединиться к Арнольд Криптовалютный Squad"
-          className="mb-72"
-        />
+        <PageTitle title="Присоединиться к Арнольд Криптовалютный Squad" className="mb-72" />
 
-        <ActionButton
-          variant="primary"
-          onClick={() => false}
-          message="Присоединиться"
-        />
+        <ActionButton variant="primary" onClick={() => false} message="Присоединиться" />
       </Layout.Content>
 
       <GlowCircle position="bottom" className="opacity-50" />
     </Layout>
-  );
-};
+  )
+}

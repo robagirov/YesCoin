@@ -1,19 +1,14 @@
-import clsx from "clsx";
-import styles from "./styles.module.scss";
+import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 interface ToggleSwitchProps {
-  options: string[];
-  activeIndex: number;
-  setActiveIndex: (active: number) => void;
-  className?: string;
+  options: string[]
+  activeIndex: number
+  setActiveIndex: (active: number) => void
+  className?: string
 }
 
-export const ToggleSwitch = ({
-  options,
-  className,
-  activeIndex,
-  setActiveIndex,
-}: ToggleSwitchProps) => {
+export const ToggleSwitch = ({ options, className, activeIndex, setActiveIndex }: ToggleSwitchProps) => {
   return (
     <div className={clsx(styles.container, className)}>
       <div
@@ -24,14 +19,10 @@ export const ToggleSwitch = ({
       />
 
       {options.map((option, index) => (
-        <button
-          key={index}
-          className={styles.button}
-          onClick={() => setActiveIndex(index)}
-        >
+        <button key={index} className={styles.button} onClick={() => setActiveIndex(index)}>
           {option}
         </button>
       ))}
     </div>
-  );
-};
+  )
+}

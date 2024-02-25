@@ -1,1 +1,1 @@
-export { EnergyRemain } from "./EnergyRemain.tsx";
+export { EnergyRemain } from './EnergyRemain.tsx'

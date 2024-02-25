@@ -1,1 +1,1 @@
-export { GlowCircle } from "./GlowCircle";
+export { GlowCircle } from './GlowCircle'

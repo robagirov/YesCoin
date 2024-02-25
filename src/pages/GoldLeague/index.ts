@@ -1,1 +1,1 @@
-export { GoldLeague } from "./GoldLeague";
+export { GoldLeague } from './GoldLeague'

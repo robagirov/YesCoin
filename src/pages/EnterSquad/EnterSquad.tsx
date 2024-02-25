@@ -1,16 +1,8 @@
-import {
-  ActionButton,
-  BackCard,
-  GlowCircle,
-  InfoSection,
-  PageTitle,
-  SquadItem,
-  Layout,
-} from "shared/ui";
-import { Link } from "react-router-dom";
-import { ROUTES } from "shared/consts";
+import { ActionButton, BackCard, GlowCircle, InfoSection, PageTitle, SquadItem, Layout } from 'shared/ui'
+import { Link } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export const EnterSquad = () => {
   return (
@@ -22,12 +14,7 @@ export const EnterSquad = () => {
           <InfoSection message="Эти сквады активно набирают игроков Выбирай любой" />
         </div>
 
-        <ActionButton
-          variant="primary"
-          onClick={() => false}
-          className={styles.button}
-          message="Выбрать другой сквад"
-        />
+        <ActionButton variant="primary" onClick={() => false} className={styles.button} message="Выбрать другой сквад" />
 
         <BackCard className={styles.squadList}>
           <Link to={ROUTES.SQUAD_NAME}>
@@ -70,5 +57,5 @@ export const EnterSquad = () => {
 
       <GlowCircle position="middle-top" className="opacity-50" />
     </Layout>
-  );
-};
+  )
+}

@@ -1,28 +1,19 @@
-import {
-  BackCard,
-  ListItem,
-  ModalView,
-  PageTitle,
-  SwitchBar,
-  Layout,
-  GlowCircle,
-  ActionButton,
-} from "shared/ui";
-import { useState } from "react";
-import { squadTopList } from "./model/mock.ts";
-import { Link } from "react-router-dom";
-import { ROUTES } from "shared/consts";
+import { BackCard, ListItem, ModalView, PageTitle, SwitchBar, Layout, GlowCircle, ActionButton } from 'shared/ui'
+import { useState } from 'react'
+import { squadTopList } from './model/mock.ts'
+import { Link } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export const SquadName = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
 
-  const onCloseModal = () => setModalOpen(false);
+  const onCloseModal = () => setModalOpen(false)
 
-  const onOpenModal = () => setModalOpen(true);
+  const onOpenModal = () => setModalOpen(true)
 
   return (
     <>
@@ -55,36 +46,19 @@ export const SquadName = () => {
 
             <div className={styles.buttons}>
               <Link to={ROUTES.JOIN_SQUAD}>
-                <ActionButton
-                  variant="primary"
-                  onClick={() => false}
-                  message="Присоединиться в Сквад"
-                />
+                <ActionButton variant="primary" onClick={() => false} message="Присоединиться в Сквад" />
               </Link>
 
-              <ActionButton
-                variant="secondary"
-                onClick={onOpenModal}
-                message="Бустануть"
-              />
+              <ActionButton variant="secondary" onClick={onOpenModal} message="Бустануть" />
             </div>
           </div>
 
           <div>
-            <SwitchBar
-              options={["День", "Неделя"]}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-            />
+            <SwitchBar options={['День', 'Неделя']} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
 
             <BackCard className={styles.list}>
               {squadTopList?.[activeIndex]?.map((person, index) => (
-                <ListItem
-                  key={index}
-                  number={person.number}
-                  title={person.title}
-                  subtitle={person.subtitle}
-                />
+                <ListItem key={index} number={person.number} title={person.title} subtitle={person.subtitle} />
               ))}
             </BackCard>
           </div>
@@ -95,27 +69,15 @@ export const SquadName = () => {
 
       <ModalView isOpen={modalOpen}>
         <div className="h-full z-10 flex flex-col justify-end">
-          <PageTitle
-            title="Буст вашего Сквада на 24 часа"
-            className="mb-56 mt-32"
-          />
+          <PageTitle title="Буст вашего Сквада на 24 часа" className="mb-56 mt-32" />
 
-          <ActionButton
-            className="mb-6"
-            variant="secondary"
-            message="100$"
-            onClick={() => false}
-          />
+          <ActionButton className="mb-6" variant="secondary" message="100$" onClick={() => false} />
 
-          <ActionButton
-            variant="primary"
-            message="Буст на 24 часа"
-            onClick={onCloseModal}
-          />
+          <ActionButton variant="primary" message="Буст на 24 часа" onClick={onCloseModal} />
         </div>
 
         <GlowCircle position="bottom" className="opacity-15 -z-10" />
       </ModalView>
     </>
-  );
-};
+  )
+}

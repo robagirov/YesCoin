@@ -1,8 +1,8 @@
-import clsx from "clsx";
-import styles from "./styles.module.scss";
+import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 interface BoostCardProps {
-  className?: string;
+  className?: string
 }
 
 export const BoostCard = ({ className }: BoostCardProps) => {
@@ -15,5 +15,5 @@ export const BoostCard = ({ className }: BoostCardProps) => {
 
       <div className={styles.pic} />
     </div>
-  );
-};
+  )
+}

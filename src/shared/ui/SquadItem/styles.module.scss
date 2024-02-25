@@ -1,4 +1,4 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .item {
   position: relative;
@@ -10,7 +10,7 @@
 .pic {
   width: 5rem;
   height: 5rem;
-  background-color: rgba(243,243,245,0.1);
+  background-color: rgba(243, 243, 245, 0.1);
   object-fit: cover;
 }
 

@@ -1,1 +1,1 @@
-export { MoveItem } from "./MoveItem";
+export { MoveItem } from './MoveItem'

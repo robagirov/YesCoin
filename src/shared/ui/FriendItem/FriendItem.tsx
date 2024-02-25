@@ -1,20 +1,17 @@
-import styles from "./FriendItem.module.css";
-import { GoldLeagueLink } from "features";
+import styles from './FriendItem.module.css'
+import { GoldLeagueLink } from 'features'
 
 interface FriendItemProps {
-  avatar?: string;
-  name: string;
-  status?: "gold";
+  avatar?: string
+  name: string
+  status?: 'gold'
 }
 
 export const FriendItem = ({ avatar, name }: FriendItemProps) => {
   return (
     <div className={styles.wrapper}>
       <img
-        src={
-          avatar ||
-          "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
-        }
+        src={avatar || 'https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg'}
         className={styles.picture}
         alt="Фото профиля"
       />
@@ -29,5 +26,5 @@ export const FriendItem = ({ avatar, name }: FriendItemProps) => {
         <span className={styles.yellowText}>+50k</span>
       </div>
     </div>
-  );
-};
+  )
+}

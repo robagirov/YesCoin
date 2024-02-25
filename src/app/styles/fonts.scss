@@ -1,39 +1,44 @@
 @font-face {
-  font-family: 'Steppe';
-  src: url('../../../assets/fonts/Steppe-Bold.eot');
-  src: local('Steppe Bold'), local('Steppe-Bold'),
-  url('../../../assets/fonts/Steppe-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../../../assets/fonts/Steppe-Bold.woff2') format('woff2'),
-  url('../../../assets/fonts/Steppe-Bold.woff') format('woff'),
-  url('../../../assets/fonts/Steppe-Bold.ttf') format('truetype');
+  font-family: "Steppe";
+  src: url("../../../assets/fonts/Steppe-Bold.eot");
+  src:
+    local("Steppe Bold"),
+    local("Steppe-Bold"),
+    url("../../../assets/fonts/Steppe-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../../assets/fonts/Steppe-Bold.woff2") format("woff2"),
+    url("../../../assets/fonts/Steppe-Bold.woff") format("woff"),
+    url("../../../assets/fonts/Steppe-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Steppe';
-  src: url('../../../assets/fonts/Steppe-Medium.eot');
-  src: local('Steppe Medium'), local('Steppe-Medium'),
-  url('../../../assets/fonts/Steppe-Medium.eot?#iefix') format('embedded-opentype'),
-  url('../../../assets/fonts/Steppe-Medium.woff2') format('woff2'),
-  url('../../../assets/fonts/Steppe-Medium.woff') format('woff'),
-  url('../../../assets/fonts/Steppe-Medium.ttf') format('truetype');
+  font-family: "Steppe";
+  src: url("../../../assets/fonts/Steppe-Medium.eot");
+  src:
+    local("Steppe Medium"),
+    local("Steppe-Medium"),
+    url("../../../assets/fonts/Steppe-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../../../assets/fonts/Steppe-Medium.woff2") format("woff2"),
+    url("../../../assets/fonts/Steppe-Medium.woff") format("woff"),
+    url("../../../assets/fonts/Steppe-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Steppe';
-  src: url('../../../assets/fonts/Steppe-Light.eot');
-  src: local('Steppe Light'), local('Steppe-Light'),
-  url('../../../assets/fonts/Steppe-Light.eot?#iefix') format('embedded-opentype'),
-  url('../../../assets/fonts/Steppe-Light.woff2') format('woff2'),
-  url('../../../assets/fonts/Steppe-Light.woff') format('woff'),
-  url('../../../assets/fonts/Steppe-Light.ttf') format('truetype');
+  font-family: "Steppe";
+  src: url("../../../assets/fonts/Steppe-Light.eot");
+  src:
+    local("Steppe Light"),
+    local("Steppe-Light"),
+    url("../../../assets/fonts/Steppe-Light.eot?#iefix") format("embedded-opentype"),
+    url("../../../assets/fonts/Steppe-Light.woff2") format("woff2"),
+    url("../../../assets/fonts/Steppe-Light.woff") format("woff"),
+    url("../../../assets/fonts/Steppe-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
-

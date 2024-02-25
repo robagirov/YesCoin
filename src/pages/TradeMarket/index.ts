@@ -1,1 +1,1 @@
-export { TradeMarket } from "./TradeMarket";
+export { TradeMarket } from './TradeMarket'

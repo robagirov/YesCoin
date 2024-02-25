@@ -1,22 +1,13 @@
-import {
-  BackCard,
-  ListItem,
-  PageTitle,
-  SwitchBar,
-  GlowCircle,
-  Layout,
-  EnergyRemain,
-  ToggleSwitch,
-} from "shared/ui";
-import { useState } from "react";
-import { squadTopList } from "./model/mock.ts";
-import { Link } from "react-router-dom";
-import { ROUTES } from "shared/consts";
-import styles from "./styles.module.scss";
+import { BackCard, ListItem, PageTitle, SwitchBar, GlowCircle, Layout, EnergyRemain, ToggleSwitch } from 'shared/ui'
+import { useState } from 'react'
+import { squadTopList } from './model/mock.ts'
+import { Link } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
+import styles from './styles.module.scss'
 
 export const GoldLeague = () => {
-  const [activeType, setActiveType] = useState(0);
-  const [activePeriod, setActivePeriod] = useState(0);
+  const [activeType, setActiveType] = useState(0)
+  const [activePeriod, setActivePeriod] = useState(0)
 
   return (
     <Layout>
@@ -41,12 +32,7 @@ export const GoldLeague = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </div>
           </Link>
@@ -61,25 +47,16 @@ export const GoldLeague = () => {
             <ToggleSwitch
               className={styles.switch}
               activeIndex={activePeriod}
-              options={["Miners", "Squads"]}
+              options={['Miners', 'Squads']}
               setActiveIndex={setActivePeriod}
             />
 
             <div>
-              <SwitchBar
-                options={["День", "Неделя"]}
-                activeIndex={activeType}
-                setActiveIndex={setActiveType}
-              />
+              <SwitchBar options={['День', 'Неделя']} activeIndex={activeType} setActiveIndex={setActiveType} />
 
               <BackCard className={styles.back}>
                 {squadTopList?.[activeType]?.map((person, index) => (
-                  <ListItem
-                    key={index}
-                    number={person.number}
-                    title={person.title}
-                    subtitle={person.subtitle}
-                  />
+                  <ListItem key={index} number={person.number} title={person.title} subtitle={person.subtitle} />
                 ))}
               </BackCard>
             </div>
@@ -89,5 +66,5 @@ export const GoldLeague = () => {
 
       <GlowCircle position="middle-top" className={styles.glow} />
     </Layout>
-  );
-};
+  )
+}

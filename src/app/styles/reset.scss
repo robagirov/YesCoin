@@ -1,31 +1,31 @@
 /* Запрет на выделение текста */
 * {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Плавная прокрутка  */
 * {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Сброс стилей для обеспечения одинакового отображения во всех браузерах */
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Управление моделью расчёта размеров для всех элементов */
-    margin: 0; /* Удаление внешних отступов */
-    padding: 0; /* Удаление внутренних отступов */
-    border: 0; /* Удаление границ */
+  box-sizing: border-box; /* Управление моделью расчёта размеров для всех элементов */
+  margin: 0; /* Удаление внешних отступов */
+  padding: 0; /* Удаление внутренних отступов */
+  border: 0; /* Удаление границ */
 }
 
 /* Подчеркивание и цвет ссылок  */
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Скрытие полосы прокрутки для всех элементов и веб-страницы в целом */
@@ -33,23 +33,23 @@ a {
 *::before,
 *::after,
 html {
-    scrollbar-width: none; /* Для Firefox */
-    -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
 }
 
 *::-webkit-scrollbar {
-    display: none; /* Для WebKit-браузеров, таких как Safari и Chrome */
+  display: none; /* Для WebKit-браузеров, таких как Safari и Chrome */
 }
 
 /* Отображение шрифтов  */
 html {
-    -webkit-text-size-adjust: 100%; /* Предотвращение автоматического изменения размера текста в Safari */
+  -webkit-text-size-adjust: 100%; /* Предотвращение автоматического изменения размера текста в Safari */
 }
 
 /* Улучшение отображения шрифтов на macOS и iOS */
 body {
-    -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов для WebKit браузеров */
-    -moz-osx-font-smoothing: grayscale; /* Сглаживание шрифтов для Firefox на Mac */
+  -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов для WebKit браузеров */
+  -moz-osx-font-smoothing: grayscale; /* Сглаживание шрифтов для Firefox на Mac */
 }
 
 /* Стили для основных интерактивных элементов */
@@ -58,21 +58,21 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: inherit; /* Наследование шрифта от body */
-    font-size: 100%; /* Наследование размера шрифта от body */
-    line-height: 1.15; /* Наследование высоты строки от body */
-    overflow: visible; /* Предотвращение обрезки контента */
+  font-family: inherit; /* Наследование шрифта от body */
+  font-size: 100%; /* Наследование размера шрифта от body */
+  line-height: 1.15; /* Наследование высоты строки от body */
+  overflow: visible; /* Предотвращение обрезки контента */
 }
 
 /* Удаление стилей для элементов форм в Firefox и Safari */
 button,
 input {
-    overflow: visible;
+  overflow: visible;
 }
 
 button,
 select {
-    text-transform: none; /* Отмена преобразования текста кнопок и элементов select */
+  text-transform: none; /* Отмена преобразования текста кнопок и элементов select */
 }
 
 /* Устранение несоответствий между кнопками в разных браузерах */
@@ -80,10 +80,10 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button; /* Установка стандартного вида для кнопок в WebKit браузерах */
+  -webkit-appearance: button; /* Установка стандартного вида для кнопок в WebKit браузерах */
 }
 
 /* Удаление внутренних отступов и границ для изображений */
 img {
-    border-style: none; /* Удаление стиля границ для изображений */
+  border-style: none; /* Удаление стиля границ для изображений */
 }

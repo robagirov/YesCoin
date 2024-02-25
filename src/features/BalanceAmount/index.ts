@@ -1,1 +1,1 @@
-export { BalanceAmount } from "./ui/BalanceAmount";
+export { BalanceAmount } from './ui/BalanceAmount'

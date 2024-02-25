@@ -1,53 +1,43 @@
-import {
-  Layout,
-  FeatureTab,
-  EnergyRemain,
-  ActionButton,
-  GlowCircle,
-} from "shared/ui";
-import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from "features";
-import styles from "./styles.module.scss";
-import { ROUTES } from "shared/consts";
-import WalletIcon from "./assets/wallet.svg?react";
+import { Layout, FeatureTab, EnergyRemain, ActionButton, GlowCircle } from 'shared/ui'
+import { BalanceAmount, FeatureNavigation, GoldLeagueLink } from 'features'
+import styles from './styles.module.scss'
+import { ROUTES } from 'shared/consts'
+import WalletIcon from './assets/wallet.svg?react'
 
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useTelegram } from "shared/api";
-import { MainCoin } from "./ui";
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useTelegram } from 'shared/api'
+import { MainCoin } from './ui'
 
 export const MainBoard = () => {
-  const telegram = useTelegram();
+  const telegram = useTelegram()
 
-  const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000));
-  const [energy, setEnergy] = useState(5000);
+  const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000))
+  const [energy, setEnergy] = useState(5000)
 
   const onClickCoin = () => {
     if (energy <= 0) {
-      console.log("No more energy!");
+      console.log('No more energy!')
 
-      return;
+      return
     }
 
-    setBalance((prevValue) => prevValue + 1);
-    setEnergy((prevValue) => prevValue - 1);
-  };
+    setBalance((prevValue) => prevValue + 1)
+    setEnergy((prevValue) => prevValue - 1)
+  }
 
   useEffect(() => {
-    if (!telegram) return;
+    if (!telegram) return
 
-    telegram.expand();
-    telegram.setBackgroundColor("#996bff");
-  }, [telegram]);
+    telegram.expand()
+    telegram.setBackgroundColor('#996bff')
+  }, [telegram])
 
   return (
     <Layout>
       <Layout.Content>
         <Link to={ROUTES.ENTER_SQUAD} className={styles.actionButtonLink}>
-          <ActionButton
-            variant="primary"
-            message="Войти в Сквад"
-            onClick={() => false}
-          />
+          <ActionButton variant="primary" message="Войти в Сквад" onClick={() => false} />
         </Link>
 
         <div className={styles.moneyWrapper}>
@@ -85,5 +75,5 @@ export const MainBoard = () => {
         </div>
       </Layout.Content>
     </Layout>
-  );
-};
+  )
+}

@@ -1,24 +1,16 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface SwitchBarProps {
-  options: string[];
-  activeIndex: number;
-  setActiveIndex: (active: number) => void;
+  options: string[]
+  activeIndex: number
+  setActiveIndex: (active: number) => void
 }
 
-export const SwitchBar = ({
-  options,
-  activeIndex,
-  setActiveIndex,
-}: SwitchBarProps) => {
+export const SwitchBar = ({ options, activeIndex, setActiveIndex }: SwitchBarProps) => {
   return (
     <div className={styles.root}>
       {options.map((option, index) => (
-        <button
-          key={option}
-          className={styles.button}
-          onClick={() => setActiveIndex(index)}
-        >
+        <button key={option} className={styles.button} onClick={() => setActiveIndex(index)}>
           {option}
         </button>
       ))}
@@ -31,5 +23,5 @@ export const SwitchBar = ({
         }}
       />
     </div>
-  );
-};
+  )
+}

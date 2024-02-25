@@ -1,1 +1,1 @@
-export { FarmCoins } from "./FarmCoins";
+export { FarmCoins } from './FarmCoins'

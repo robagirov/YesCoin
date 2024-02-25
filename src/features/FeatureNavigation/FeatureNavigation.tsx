@@ -1,8 +1,8 @@
-import styles from "./FeatureNavigation.module.css";
-import { FC, ReactNode } from "react";
+import styles from './FeatureNavigation.module.css'
+import { FC, ReactNode } from 'react'
 
 interface FeatureNavigationProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const FeatureNavigation: FC<FeatureNavigationProps> = ({ children }) => {
@@ -10,5 +10,5 @@ export const FeatureNavigation: FC<FeatureNavigationProps> = ({ children }) => {
     <div className={styles.border}>
       <div className={styles.wrapper}>{children}</div>
     </div>
-  );
-};
+  )
+}

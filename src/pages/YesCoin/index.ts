@@ -1,1 +1,1 @@
-export { YesCoin } from "./YesCoin";
+export { YesCoin } from './YesCoin'

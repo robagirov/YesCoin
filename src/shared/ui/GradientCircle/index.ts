@@ -1,1 +1,1 @@
-export { GradientCircle } from "./GradientCircle.tsx";
+export { GradientCircle } from './GradientCircle.tsx'

@@ -1,1 +1,1 @@
-export { FeatureTab } from "./FeatureTab";
+export { FeatureTab } from './FeatureTab'

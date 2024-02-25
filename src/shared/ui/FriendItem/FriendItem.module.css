@@ -1,49 +1,49 @@
 .wrapper {
-    display: flex;
+  display: flex;
 }
 
 .picture {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background: rgb(243 243 245 / 10%);
-    object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgb(243 243 245 / 10%);
+  object-fit: cover;
 }
 
 .info {
-    flex: 1;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 4rem 0 1.5rem;
+  flex: 1;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem 0 1.5rem;
 
-    &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        border-left: 2px solid rgb(255 255 255 / 70%);
-        border-bottom: 2px solid rgb(255 255 255 / 70%);
-        border-radius: 2px;
-        height: 1.4rem;
-        width: 1.4rem;
-        right: 7%;
-        top: 40%;
-        transform: rotate(225deg);
-    }
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    border-left: 2px solid rgb(255 255 255 / 70%);
+    border-bottom: 2px solid rgb(255 255 255 / 70%);
+    border-radius: 2px;
+    height: 1.4rem;
+    width: 1.4rem;
+    right: 7%;
+    top: 40%;
+    transform: rotate(225deg);
+  }
 }
 
 .infoTitle {
-    color: rgb(255 255 255);
-    line-height: 2.4rem;
+  color: rgb(255 255 255);
+  line-height: 2.4rem;
 }
 
 .yellowText {
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: radial-gradient(rgb(255, 248, 181), rgb(255, 222, 107));;
-    line-height: 24px;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: radial-gradient(rgb(255, 248, 181), rgb(255, 222, 107));
+  line-height: 24px;
 }

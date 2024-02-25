@@ -1,15 +1,15 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: #000;
-    height: 100vh;
-    padding: 0 2.8rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #000;
+  height: 100vh;
+  padding: 0 2.8rem;
 }
 
 .content {
-    padding-bottom: vertical-sizing(32px);
+  padding-bottom: vertical-sizing(32px);
 }

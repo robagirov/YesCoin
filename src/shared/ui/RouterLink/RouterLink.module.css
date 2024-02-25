@@ -1,10 +1,10 @@
 .routerLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 6px;
-    background: rgba(24, 24, 24, 0.9);
-    color: white;
-    height: 5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 6px;
+  background: rgba(24, 24, 24, 0.9);
+  color: white;
+  height: 5rem;
 }

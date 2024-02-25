@@ -1,26 +1,22 @@
-import styles from "./styles.module.scss";
-import clsx from "clsx";
+import styles from './styles.module.scss'
+import clsx from 'clsx'
 
 interface GlowCircleProps {
-  position: "top" | "middle-top" | "center" | "bottom";
-  isTriple?: boolean;
-  className?: string;
+  position: 'top' | 'middle-top' | 'center' | 'bottom'
+  isTriple?: boolean
+  className?: string
 }
 
-export const GlowCircle = ({
-  position,
-  isTriple,
-  className,
-}: GlowCircleProps) => {
+export const GlowCircle = ({ position, isTriple, className }: GlowCircleProps) => {
   return (
     <div
       className={clsx(
         styles.wrapper,
         {
-          [styles.top]: position === "top",
-          [styles.middleTop]: position === "middle-top",
-          [styles.center]: position === "center",
-          [styles.bottom]: position === "bottom",
+          [styles.top]: position === 'top',
+          [styles.middleTop]: position === 'middle-top',
+          [styles.center]: position === 'center',
+          [styles.bottom]: position === 'bottom',
         },
         className,
       )}
@@ -31,5 +27,5 @@ export const GlowCircle = ({
 
       {isTriple && <div className={styles.glow} />}
     </div>
-  );
-};
+  )
+}

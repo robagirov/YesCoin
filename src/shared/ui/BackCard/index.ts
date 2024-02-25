@@ -1,1 +1,1 @@
-export { BackCard } from "./BackCard";
+export { BackCard } from './BackCard'

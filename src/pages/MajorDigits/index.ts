@@ -1,1 +1,1 @@
-export { MajorDigits } from "./MajorDigits";
+export { MajorDigits } from './MajorDigits'

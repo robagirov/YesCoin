@@ -1,3 +1,5 @@
 src/app/core/telegram-web-app.js
-postcss.config.js
-tailwind.config.js
+src/shared/openApi
+lint-staged.config.cjs
+node_modules/
+dist/

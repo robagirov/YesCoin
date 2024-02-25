@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import styles from "./styles.module.scss";
+import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 interface ArrowRightProps {
-  className?: string;
+  className?: string
 }
 
 export const ArrowRight = ({ className }: ArrowRightProps) => {
-  return <div className={clsx(styles.arrow, className)} />;
-};
+  return <div className={clsx(styles.arrow, className)} />
+}

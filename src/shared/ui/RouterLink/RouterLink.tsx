@@ -1,8 +1,8 @@
-import { Link, LinkProps } from "react-router-dom";
-import styles from "./RouterLink.module.css";
+import { Link, LinkProps } from 'react-router-dom'
+import styles from './RouterLink.module.css'
 
 interface RouterLinkProps extends LinkProps {
-  text: string;
+  text: string
 }
 
 export const RouterLink = ({ to, text }: RouterLinkProps) => {
@@ -10,5 +10,5 @@ export const RouterLink = ({ to, text }: RouterLinkProps) => {
     <Link to={to} className={styles.routerLink}>
       {text}
     </Link>
-  );
-};
+  )
+}
