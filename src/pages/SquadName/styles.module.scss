@@ -1,0 +1,72 @@
+@import 'src/app/styles/mixins';
+
+.image {
+  width: vertical-sizing(90px);
+  height: vertical-sizing(90px);
+  border-radius: 1.2rem;
+  background-color: rgba(243,243,245,0.1);
+  margin: 0 auto vertical-sizing(35px) auto;
+}
+
+.title {
+  margin-bottom: vertical-sizing(5px);
+}
+
+.subtitle {
+  margin-bottom: vertical-sizing(10px);
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+  display: block;
+  margin-bottom: vertical-sizing(15px);
+}
+
+.squadInfo {
+  border-radius: 1.2rem;
+  background-color: rgba(243,243,245,0.1);
+  padding: vertical-sizing(30px)  1.5rem vertical-sizing(15px) 1.5rem;
+  margin-bottom: vertical-sizing(15px);
+}
+
+.counts {
+  display: flex;
+  margin-bottom: vertical-sizing(30px);
+}
+
+.count {
+  padding-left: 2rem;
+
+  &:last-child {
+    padding-left: 2.8rem;
+  }
+
+  &__divider {
+    height: vertical-sizing(50px);
+    width: 1px;
+    background-color: rgb(46,46,46);
+    margin-left: 3.5rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__sign {
+    opacity: 0.3;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: vertical-sizing(10px);
+}
+
+.list {
+  border-radius: 0;
+  margin-bottom: -(vertical-sizing(32px));
+  height: vertical-sizing(190px);
+}

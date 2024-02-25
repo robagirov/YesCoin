@@ -1,0 +1,92 @@
+@import 'src/app/styles/mixins';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: vertical-sizing(10px);
+
+  &__balance {
+    color: rgba(255,255,255,0.7);
+
+  }
+
+  margin-bottom: vertical-sizing(70px);
+}
+
+.totals {
+  display: flex;
+  padding-left: 2.1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: vertical-sizing(90px);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 3rem;
+    padding: vertical-sizing(20px) 0;
+  }
+}
+
+.item__circles {
+  display: flex;
+}
+
+.circle {
+  width: 3.9rem;
+  height: 3.9rem;
+  border-radius: 50%;
+  background-color: rgba(243,243,245,0.1);
+
+  &:not(:first-child) {
+    margin-left: -1rem;
+  }
+}
+
+.number {
+  font-size: 2rem;
+}
+
+.label {
+  color: rgba(255,255,255,0.7);
+}
+
+.divider {
+  width: 25rem;
+  height: 1px;
+  border: 1px solid rgba(46,46,46);
+  margin-left: 2.1rem;
+}
+
+.glow {
+  opacity: 0.5;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: vertical-sizing(30px);
+}
+
+.more {
+  margin-bottom: vertical-sizing(30px);
+}
+
+.main {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.secondary {
+  color: rgba(255,255,255,0.7);
+}
+
+.error {
+  color: rgb(255,107,107);
+}
+
+.okButton {
+  margin: 0 auto;
+}

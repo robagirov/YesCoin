@@ -10,25 +10,26 @@ import {
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
 
+import styles from "./styles.module.scss";
+
 export const EnterSquad = () => {
   return (
     <Layout>
       <Layout.Content>
-        <PageTitle title="Залетай в сквад" className="mb-4" />
+        <div className={styles.header}>
+          <PageTitle title="Залетай в сквад" />
 
-        <InfoSection
-          message="Эти сквады активно набирают игроков Выбирай любой"
-          className="mb-9"
-        />
+          <InfoSection message="Эти сквады активно набирают игроков Выбирай любой" />
+        </div>
 
         <ActionButton
-          className="mb-4"
           variant="primary"
           onClick={() => false}
+          className={styles.button}
           message="Выбрать другой сквад"
         />
 
-        <BackCard height={443} className="-mb-8">
+        <BackCard className={styles.squadList}>
           <Link to={ROUTES.SQUAD_NAME}>
             <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
           </Link>

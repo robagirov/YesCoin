@@ -1,0 +1,25 @@
+@import 'src/app/styles/mixins';
+
+.root {
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  padding: vertical-sizing(16px) 2rem;
+  position: relative;
+  background-color: rgba(243,243,245,0.1);
+}
+
+.button {
+  text-align: center;
+  width: 100%;
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(153, 107, 255);
+  height: 1px;
+  transition: transform 0.3s ease-out;
+}

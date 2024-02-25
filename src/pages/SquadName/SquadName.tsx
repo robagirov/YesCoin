@@ -13,6 +13,8 @@ import { squadTopList } from "./model/mock.ts";
 import { Link } from "react-router-dom";
 import { ROUTES } from "shared/consts";
 
+import styles from "./styles.module.scss";
+
 export const SquadName = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -26,31 +28,32 @@ export const SquadName = () => {
     <>
       <Layout>
         <Layout.Content>
-          <div className="w-20 h-20 rounded-xl bg-grey-900 mb-9 bg-[rgba(243,243,245,0.1)] mx-auto" />
+          <div className={styles.image} />
 
-          <PageTitle title="Имя Сквада" className="mb-1.5" />
+          <PageTitle title="Имя Сквада" className={styles.title} />
 
-          <p className="mb-2.5 text-center">Diamond</p>
-          <Link to={ROUTES.SQUAD_WORK} className="text-center block mb-2.5">
+          <p className={styles.subtitle}>Diamond</p>
+
+          <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
             Как работают Сквады?
           </Link>
 
-          <div className="rounded-xl bg-[rgba(243,243,245,0.1)] op p-3.5 mb-4">
-            <div className="flex mb-7">
-              <div className="pl-5">
-                <p className="text-xl">61.578B</p>
-                <p className="opacity-30">всего очков</p>
+          <div className={styles.squadInfo}>
+            <div className={styles.counts}>
+              <div className={styles.count}>
+                <p className={styles.count__text}>61.578B</p>
+                <p className={styles.count__sign}>всего очков</p>
               </div>
 
-              <div className="h-12 w-px bg-[rgb(46,46,46)] ml-9" />
+              <div className={styles.count__divider} />
 
-              <div className="pl-7">
-                <p className="text-xl">61.578B</p>
-                <p className="opacity-30">всего очков</p>
+              <div className={styles.count}>
+                <p className={styles.count__text}>61.578B</p>
+                <p className={styles.count__sign}>всего очков</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-2">
+            <div className={styles.buttons}>
               <Link to={ROUTES.JOIN_SQUAD}>
                 <ActionButton
                   variant="primary"
@@ -74,7 +77,7 @@ export const SquadName = () => {
               setActiveIndex={setActiveIndex}
             />
 
-            <BackCard height={224} className="rounded-none -mb-8">
+            <BackCard className={styles.list}>
               {squadTopList?.[activeIndex]?.map((person, index) => (
                 <ListItem
                   key={index}

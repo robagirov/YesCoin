@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { ArrowRight } from "../ArrowRight";
 
+import styles from "./styles.module.scss";
+
 interface SquadItemProps {
   className?: string;
   image?: string;
@@ -15,27 +17,20 @@ export const SquadItem = ({
   subtitle,
 }: SquadItemProps) => {
   return (
-    <div
-      className={clsx(
-        "relative flex items-center space-x-4 p-x-4 rounded-lg",
-        className,
-      )}
-    >
+    <div className={clsx(styles.item, className)}>
       <img
         src={
           image ||
           "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
         }
-        className="w-12 h-12 bg-[rgba(243,243,245,0.1)] object-cover"
+        className={styles.pic}
         alt="Изображение сквада"
       />
 
-      <div className="flex flex-col">
-        <span className="text-white">{title}</span>
+      <div className={styles.text}>
+        <span>{title}</span>
 
-        <span className="text-sm text-gray-400 opacity-70 font-light">
-          {subtitle}
-        </span>
+        <span className={styles.subtitle}>{subtitle}</span>
       </div>
 
       <ArrowRight />

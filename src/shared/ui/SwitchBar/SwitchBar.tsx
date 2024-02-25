@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import styles from "./styles.module.scss";
 
 interface SwitchBarProps {
   options: string[];
@@ -12,13 +12,11 @@ export const SwitchBar = ({
   setActiveIndex,
 }: SwitchBarProps) => {
   return (
-    <div className="flex justify-center rounded-t-md p-5 relative bg-[rgba(243,243,245,0.1)]">
+    <div className={styles.root}>
       {options.map((option, index) => (
         <button
           key={option}
-          className={clsx("text-center w-full p-y-4", {
-            ["font-bold"]: index === activeIndex,
-          })}
+          className={styles.button}
           onClick={() => setActiveIndex(index)}
         >
           {option}
@@ -26,7 +24,7 @@ export const SwitchBar = ({
       ))}
 
       <div
-        className="absolute bottom-0 left-0 bg-purple-500 h-px transition-transform duration-300 ease-in-out"
+        className={styles.line}
         style={{
           width: `${100 / options.length}%`,
           transform: `translateX(${activeIndex * 100}%)`,
