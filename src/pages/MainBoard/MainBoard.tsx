@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useTelegram } from 'shared/api'
 import { MainCoin } from './ui'
+import { useGetUserUsersGet } from '../../shared/openApi'
 
 export const MainBoard = () => {
   const telegram = useTelegram()
+  const { data } = useGetUserUsersGet({ telegram_user_id: 423233660 })
+  console.log('=>(MainBoard.tsx:16) data', data)
 
   const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000))
   const [energy, setEnergy] = useState(5000)

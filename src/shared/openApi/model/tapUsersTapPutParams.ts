@@ -6,5 +6,5 @@
  */
 
 export type TapUsersTapPutParams = {
-  telegram_user_id: number;
+telegram_user_id: number;
 };
