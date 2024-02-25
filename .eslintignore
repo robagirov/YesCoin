@@ -1,7 +1,7 @@
 src/app/core/telegram-web-app.js
 src/shared/openApi
 lint-staged.config.cjs
-tailwind.config.js
 postcss.config.js
+tailwind.config.js
 node_modules/
 dist/

@@ -6,5 +6,5 @@ const gitCommand = (filenames) => `git add ${filenames.join(' ')}`
 module.exports = {
   '*.{cjs,js,jsx,ts,tsx}': [formatCommand, eslintCommand, gitCommand],
   '*.{css,scss}': [formatCommand, gitCommand],
-  '!*.{cjs,js,jsx,ts,tsx,css,scss}': [formatCommand, gitCommand],
+  // '!*.{cjs,js,jsx,ts,tsx,css,scss}': [formatCommand, gitCommand],
 }
