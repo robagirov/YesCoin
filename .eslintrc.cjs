@@ -12,7 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tailwind.config.cjs'],
+    project: ['./tsconfig.json', './tsconfig.node.json', './tailwind.config.js'],
     tsconfigRootDir: __dirname,
   },
   parser: '@typescript-eslint/parser',
