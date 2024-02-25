@@ -1,7 +1,7 @@
-import { NavigationBar } from "features";
-import { ActionButton, GlowCircle, RouterLink, Layout } from "shared/ui";
-import styles from "./styles.module.scss";
-import { ROUTES } from "shared/consts";
+import { NavigationBar } from 'features'
+import { ActionButton, GlowCircle, RouterLink, Layout } from 'shared/ui'
+import styles from './styles.module.scss'
+import { ROUTES } from 'shared/consts'
 
 export const TradeMarket = () => {
   return (
@@ -15,11 +15,7 @@ export const TradeMarket = () => {
         </div>
 
         <div className={styles.button}>
-          <ActionButton
-            variant="primary"
-            message="Connect TON wallet"
-            onClick={() => false}
-          />
+          <ActionButton variant="primary" message="Connect TON wallet" onClick={() => false} />
         </div>
 
         <h1 className={styles.header}>Market</h1>
@@ -40,5 +36,5 @@ export const TradeMarket = () => {
 
       <GlowCircle position="bottom" className="opacity-70" />
     </Layout>
-  );
-};
+  )
+}

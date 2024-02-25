@@ -1,19 +1,16 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface MoveItemProps {
-  avatar?: string;
-  title: string;
-  coins: number;
+  avatar?: string
+  title: string
+  coins: number
 }
 
 export const MoveItem = ({ avatar, title, coins }: MoveItemProps) => {
   return (
     <div className={styles.wrapper}>
       <img
-        src={
-          avatar ||
-          "https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg"
-        }
+        src={avatar || 'https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg'}
         className={styles.picture}
         alt="Фото профиля"
       />
@@ -23,5 +20,5 @@ export const MoveItem = ({ avatar, title, coins }: MoveItemProps) => {
         <span className={styles.infoCount}>+{coins.toLocaleString()}</span>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,13 +1,5 @@
-import styles from "./styles.module.scss";
-import {
-  BackCard,
-  InfoTrigger,
-  MoveItem,
-  PageTitle,
-  Layout,
-  Subtitle,
-  GlowCircle,
-} from "shared/ui";
+import styles from './styles.module.scss'
+import { BackCard, InfoTrigger, MoveItem, PageTitle, Layout, Subtitle, GlowCircle } from 'shared/ui'
 
 export const FarmCoins = () => {
   return (
@@ -40,5 +32,5 @@ export const FarmCoins = () => {
 
       <GlowCircle position="bottom" className="opacity-40" />
     </Layout>
-  );
-};
+  )
+}

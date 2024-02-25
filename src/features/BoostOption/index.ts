@@ -1,1 +1,1 @@
-export { BoostOption } from "./BoostOption";
+export { BoostOption } from './BoostOption'

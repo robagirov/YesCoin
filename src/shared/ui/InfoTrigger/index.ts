@@ -1,1 +1,1 @@
-export { InfoTrigger } from "./InfoTrigger.tsx";
+export { InfoTrigger } from './InfoTrigger.tsx'

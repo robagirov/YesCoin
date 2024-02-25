@@ -1,9 +1,9 @@
 # YesCoin App
 
 > ## !!! ВАЖНО: Генерация API через Orval
-> 
-> Так как `orval` на данном этапе не поддерживает `ES module`, 
-> перед каждой генерацией необходимо удалять из `package.json` строчку `"type": "module"`, 
+>
+> Так как `orval` на данном этапе не поддерживает `ES module`,
+> перед каждой генерацией необходимо удалять из `package.json` строчку `"type": "module"`,
 > а после генерации возвращать ее обратно.
 
 ## Стилизация
@@ -11,7 +11,6 @@
 Все размеры задаются задаются в rem, который задан для html.
 
 Все вертикальные margin и padding задаются в vh которые вычисляется через функцию vertical-spacing.
-
 
 # React + TypeScript + Vite
 
@@ -32,12 +31,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-};
+}
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`

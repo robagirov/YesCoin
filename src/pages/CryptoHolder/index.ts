@@ -1,1 +1,1 @@
-export { CryptoHolder } from "./CryptoHolder";
+export { CryptoHolder } from './CryptoHolder'

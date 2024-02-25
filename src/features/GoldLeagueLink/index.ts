@@ -1,1 +1,1 @@
-export { GoldLeagueLink } from "./GoldLeagueLink.tsx";
+export { GoldLeagueLink } from './GoldLeagueLink.tsx'

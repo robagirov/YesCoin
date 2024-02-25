@@ -1,1 +1,1 @@
-export { ModalView } from "./ModalView";
+export { ModalView } from './ModalView'

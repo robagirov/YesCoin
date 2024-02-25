@@ -1,63 +1,63 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .actionButtonLink {
-    display: block;
-    width: 100%;
-    margin-bottom: vertical-sizing(44px);
+  display: block;
+  width: 100%;
+  margin-bottom: vertical-sizing(44px);
 }
 
 .moneyWrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: vertical-sizing(16px);
-    align-items: center;
-    margin-bottom: vertical-sizing(56px);
+  display: flex;
+  flex-direction: column;
+  row-gap: vertical-sizing(16px);
+  align-items: center;
+  margin-bottom: vertical-sizing(56px);
 }
 
 .coin {
-    position: relative;
-    height: vertical-sizing(286px);
-    margin-bottom: vertical-sizing(60px);
+  position: relative;
+  height: vertical-sizing(286px);
+  margin-bottom: vertical-sizing(60px);
 }
 
 .coinGlow {
-    z-index: -1;
+  z-index: -1;
 }
 
 .footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: vertical-sizing(10px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: vertical-sizing(10px);
 }
 
 .resources {
-    display: grid;
-    grid-template-columns: 11rem 1fr;
-    column-gap: 0.8rem;
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  column-gap: 0.8rem;
 }
 
 .borderWrapper {
-    padding: 1px;
-    border-radius: 16px;
-    background: linear-gradient(224.11deg, #FFFFFF 7.8%, rgba(255, 255, 255, 0) 90.12%);
+  padding: 1px;
+  border-radius: 16px;
+  background: linear-gradient(224.11deg, #ffffff 7.8%, rgba(255, 255, 255, 0) 90.12%);
 }
 
 .pageButton {
-    height: 6.3rem;
-    border-radius: 16px;
-    row-gap: 2px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 6.3rem;
+  border-radius: 16px;
+  row-gap: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    background: radial-gradient(64% 50% at 50% 39.32%, #CCB5FF 0%, #996BFF 100%),
-                radial-gradient(46.2% 75.26% at 50% 15.4%, #F5F0FF 0%, #E2D6FF 100%),
-                linear-gradient(224deg, #FFFFFF 7.8%, rgba(255, 255, 255, 0) 90.12%);
+  background: radial-gradient(64% 50% at 50% 39.32%, #ccb5ff 0%, #996bff 100%),
+    radial-gradient(46.2% 75.26% at 50% 15.4%, #f5f0ff 0%, #e2d6ff 100%),
+    linear-gradient(224deg, #ffffff 7.8%, rgba(255, 255, 255, 0) 90.12%);
 }
 
 .pageSign {
-    font-size: 1.2rem;
-    font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 700;
 }

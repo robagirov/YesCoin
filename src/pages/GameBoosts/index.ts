@@ -1,1 +1,1 @@
-export { GameBoosts } from "./GameBoosts";
+export { GameBoosts } from './GameBoosts'

@@ -6,7 +6,6 @@
 //     .join(' --file ')}`;
 
 const eslintCommand = (filenames) => `eslint --debug ${filenames.join(' ')} --fix`
-// const formatCommand = 'npm run format'
 const formatCommand = (filenames) => `prettier --write ${filenames.join(' ')}`
 const gitCommand = (filenames) => `git add ${filenames.join(' ')}`
 // const stylelintCommand = 'stylelint --allow-empty-input "**/*.{css,scss}"';

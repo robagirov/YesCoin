@@ -1,1 +1,1 @@
-export { MainCoin } from "./MainCoin.tsx";
+export { MainCoin } from './MainCoin.tsx'

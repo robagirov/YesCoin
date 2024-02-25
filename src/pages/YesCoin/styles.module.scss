@@ -1,4 +1,4 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .buttons {
   display: flex;
@@ -27,7 +27,7 @@
   width: 4.6rem;
   height: 4.6rem;
   border-radius: 0.6rem;
-  background-color: rgba(243,243,245,0.1);
+  background-color: rgba(243, 243, 245, 0.1);
   background-size: cover;
 }
 

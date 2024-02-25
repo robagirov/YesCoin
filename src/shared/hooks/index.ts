@@ -1,1 +1,1 @@
-export { useIsHomePage } from "./useIsHomePage";
+export { useIsHomePage } from './useIsHomePage'

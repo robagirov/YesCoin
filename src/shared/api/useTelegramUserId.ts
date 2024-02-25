@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { useTelegram } from "./useTelegram.ts";
+import { useEffect, useState } from 'react'
+import { useTelegram } from './useTelegram.ts'
 
 export function useTelegramUserId() {
-  const [userId, setUserId] = useState<number | undefined>();
+  const [userId, setUserId] = useState<number | undefined>()
 
-  const telegram = useTelegram();
+  const telegram = useTelegram()
 
   useEffect(() => {
     if (telegram) {
-      const telegramUserId = telegram.initDataUnsafe.user?.id;
+      const telegramUserId = telegram.initDataUnsafe.user?.id
 
-      setUserId(telegramUserId);
+      setUserId(telegramUserId)
     }
-  }, [telegram]);
+  }, [telegram])
 
-  return userId;
+  return userId
 }

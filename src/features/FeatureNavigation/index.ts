@@ -1,1 +1,1 @@
-export { FeatureNavigation } from "./FeatureNavigation";
+export { FeatureNavigation } from './FeatureNavigation'

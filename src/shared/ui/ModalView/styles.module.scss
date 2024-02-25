@@ -1,19 +1,18 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .dialog {
-    position: absolute;
-    opacity: 0.5;
-    bottom: -100%;
-    z-index: 10;
-    width: 100vw;
-    padding: vertical-sizing(28px) 2.8rem;
-    background: rgb(37, 36, 39);
-    border-radius: 16px 16px 0 0;
-    transition: all 0.25s ease-out;
+  position: absolute;
+  opacity: 0.5;
+  bottom: -100%;
+  z-index: 10;
+  width: 100vw;
+  padding: vertical-sizing(28px) 2.8rem;
+  background: rgb(37, 36, 39);
+  border-radius: 16px 16px 0 0;
+  transition: all 0.25s ease-out;
 }
 
 .open {
-    opacity: 1;
-    bottom: 0;
+  opacity: 1;
+  bottom: 0;
 }
-

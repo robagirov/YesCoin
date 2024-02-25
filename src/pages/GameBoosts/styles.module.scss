@@ -1,4 +1,4 @@
-@import 'src/app/styles/mixins';
+@import "src/app/styles/mixins";
 
 .balance {
   display: flex;
@@ -23,7 +23,7 @@
 }
 
 .boostList {
-  height: vertical-sizing(334px)
+  height: vertical-sizing(334px);
 }
 
 .pageGlow {

@@ -1,1 +1,1 @@
-export { JoinSquad } from "./JoinSquad";
+export { JoinSquad } from './JoinSquad'

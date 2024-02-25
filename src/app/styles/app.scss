@@ -1,20 +1,21 @@
 html {
-    font-size: calc(10vw / 3.9);
+  font-size: calc(10vw / 3.9);
 }
 
-html, body {
-    overflow: hidden;
-    height: 100%;
+html,
+body {
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
-    font-family:  "Steppe", Georgia, sans-serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 2rem;
-    background-color: #000;
-    color: #fff;
+  font-family: "Steppe", Georgia, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 2rem;
+  background-color: #000;
+  color: #fff;
 }
 
 img {

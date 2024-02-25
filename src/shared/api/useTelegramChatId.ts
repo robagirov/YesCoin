@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 export function useTelegramChatId() {
-  const [chatId, setChatId] = useState(524856122); // Значение по умолчанию
+  const [chatId, setChatId] = useState(524856122) // Значение по умолчанию
 
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       try {
-        const initData = window.Telegram.WebApp.initDataUnsafe;
+        const initData = window.Telegram.WebApp.initDataUnsafe
 
         if (initData && initData.chat) {
-          setChatId(initData.chat.id);
+          setChatId(initData.chat.id)
         }
       } catch (error) {
-        console.error("Ошибка при получении ID чата:", error);
+        console.error('Ошибка при получении ID чата:', error)
 
-        setChatId(524856122);
+        setChatId(524856122)
       }
     }
-  }, []);
+  }, [])
 
-  return chatId;
+  return chatId
 }

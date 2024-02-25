@@ -1,1 +1,1 @@
-export { BoostCard } from "./BoostCard";
+export { BoostCard } from './BoostCard'

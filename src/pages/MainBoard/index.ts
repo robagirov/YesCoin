@@ -1,1 +1,1 @@
-export { MainBoard } from "./MainBoard";
+export { MainBoard } from './MainBoard'

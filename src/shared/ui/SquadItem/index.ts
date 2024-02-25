@@ -1,1 +1,1 @@
-export { SquadItem } from "./SquadItem";
+export { SquadItem } from './SquadItem'

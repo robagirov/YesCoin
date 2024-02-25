@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
-import { ROUTES } from "../consts";
+import { useLocation } from 'react-router-dom'
+import { ROUTES } from '../consts'
 
 export const useIsHomePage = (): boolean => {
-  const location = useLocation();
+  const location = useLocation()
 
-  return location.pathname === ROUTES.MAIN_BOARD;
-};
+  return location.pathname === ROUTES.MAIN_BOARD
+}
