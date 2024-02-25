@@ -19,11 +19,11 @@ export const MajorDigits = () => {
       <Layout>
         <Layout.Content>
           <div className={styles.header}>
-            <p className={styles.header__balance}>Общий баланс YesCoin</p>
+            <p className={styles.header__balance}>Общий количество YesCoin</p>
 
             <PageTitle title={(153411234123).toLocaleString()} />
 
-            <InfoTrigger text="Что означает эта цифра" onClick={onOpenModal} />
+            <InfoTrigger text="Что значит это число?" onClick={onOpenModal} />
           </div>
 
           <div className={styles.totals}>
@@ -51,7 +51,7 @@ export const MajorDigits = () => {
 
               <div>
                 <p className={styles.number}>10,245,234</p>
-                <p className={styles.label}>Всего игроков</p>
+                <p className={styles.label}>Игроков за сегодня</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ export const MajorDigits = () => {
 
               <div>
                 <p className={styles.number}>10,245,234</p>
-                <p className={styles.label}>Всего игроков</p>
+                <p className={styles.label}>Текущий онлайн</p>
               </div>
             </div>
           </div>
@@ -78,11 +78,11 @@ export const MajorDigits = () => {
       </Layout>
 
       <ModalView isOpen={modalOpen}>
-        <PageTitle title="Details" className={styles.modalTitle} />
+        <PageTitle title="Детали" className={styles.modalTitle} />
 
         <div className={styles.more}>
           <p className={styles.main}>10,245,234,235,536</p>
-          <p className={styles.secondary}>Общий баланс YesCoin</p>
+          <p className={styles.secondary}>Общее количество YesCoin</p>
         </div>
 
         <div className={styles.more}>

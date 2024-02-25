@@ -19,7 +19,7 @@ export const GameBoosts = () => {
       <Layout>
         <Layout.Content>
           <div className={styles.balance}>
-            <p className={styles.balance__text}>Баланс</p>
+            <p className={styles.balance__text}>Ваш баланс</p>
 
             <BalanceAmount amount={5000000} />
 
@@ -31,23 +31,23 @@ export const GameBoosts = () => {
           <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
 
           <div className={styles.freeBoosts}>
-            <BoostCard />
+            <BoostCard name="Yes-ракета" />
 
-            <BoostCard />
+            <BoostCard name="Yes-энергия" />
           </div>
 
           <Subtitle title="Бусты" className={styles.subtitle} />
 
           <BackCard className={styles.boostList}>
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+            <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
 
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+            <BoostOption cost={10000} title="Дополнительная энергия" onClick={onOpenModal} />
 
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+            <BoostOption cost={10000} title="Скорость восстановления" onClick={onOpenModal} />
 
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+            <BoostOption cost={10000} title="Yes-майнер" onClick={onOpenModal} />
 
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+            <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
 
             <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
           </BackCard>

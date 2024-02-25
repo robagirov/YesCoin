@@ -1,4 +1,5 @@
 import { ActionButton, GlowCircle, PageTitle, Layout } from 'shared/ui'
+import styles from './styles.module.scss'
 
 export const JoinSquad = () => {
   return (
@@ -11,6 +12,11 @@ export const JoinSquad = () => {
         </div>
 
         <PageTitle title="Присоединиться к Арнольд Криптовалютный Squad" className="mb-72" />
+
+        <div className={styles.additional}>
+          <div>Твой фарминг монет увеличивает счет сквада в лидерборде</div>
+          <div>Скажи Yes новым друзьям и совместному фармингу</div>
+        </div>
 
         <ActionButton variant="primary" onClick={() => false} message="Присоединиться" />
       </Layout.Content>

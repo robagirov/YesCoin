@@ -13,7 +13,7 @@ export const YourFriends = () => {
         <div className={styles['title-wrapper']}>
           <PageTitle title="Ваши друзья" />
 
-          <InfoTrigger text="Как сделать 1М Коинов" />
+          <InfoTrigger text="Как нафармить 1М Коинов" />
         </div>
 
         <div className={styles['to-leader']}>
@@ -22,7 +22,7 @@ export const YourFriends = () => {
           <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
         </div>
 
-        <div className={styles['subtitle']}>Друзья</div>
+        <div className={styles['subtitle']}>Yes-друзья</div>
 
         <div className={styles['friends-list-wrapper']}>
           <BackCard className={styles['friends-list']}>

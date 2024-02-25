@@ -33,14 +33,14 @@ export const SquadName = () => {
             <div className={styles.counts}>
               <div className={styles.count}>
                 <p className={styles.count__text}>61.578B</p>
-                <p className={styles.count__sign}>всего очков</p>
+                <p className={styles.count__sign}>всего монет</p>
               </div>
 
               <div className={styles.count__divider} />
 
               <div className={styles.count}>
                 <p className={styles.count__text}>61.578B</p>
-                <p className={styles.count__sign}>всего очков</p>
+                <p className={styles.count__sign}>игроков</p>
               </div>
             </div>
 

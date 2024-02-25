@@ -11,7 +11,7 @@ export const EnterSquad = () => {
         <div className={styles.header}>
           <PageTitle title="Залетай в сквад" />
 
-          <InfoSection message="Эти сквады активно набирают игроков Выбирай любой" />
+          <InfoSection message="Эти сквады активно набирают игроков Скажи Yes любому" />
         </div>
 
         <ActionButton variant="primary" onClick={() => false} className={styles.button} message="Выбрать другой сквад" />

@@ -7,7 +7,7 @@ export const PartyKings = () => {
     <Layout>
       <Layout.Content>
         <div className={clsx(styles.header, 'flex flex-col items-center')}>
-          <PageTitle title="Короли вечеринки" />
+          <PageTitle title="Yes-топ" />
 
           <InfoSection message="Приглашай больше друзей чтобы попасть сюда" className={styles.info} />
         </div>
