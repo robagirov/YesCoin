@@ -1,13 +1,9 @@
-import { ReactNode, useCallback, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useIsHomePage } from 'shared/hooks'
 import { useTelegram } from 'shared/api'
 import { useNavigate } from 'react-router-dom'
 
-interface TelegramProviderProps {
-  children: ReactNode
-}
-
-export const TelegramProvider = ({ children }: TelegramProviderProps) => {
+export const TelegramProvider = () => {
   const navigate = useNavigate()
 
   const isHomePage = useIsHomePage()
@@ -35,5 +31,5 @@ export const TelegramProvider = ({ children }: TelegramProviderProps) => {
     }
   }, [handleBack, telegram.BackButton])
 
-  return children
+  return null
 }
