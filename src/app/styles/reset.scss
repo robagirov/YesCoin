@@ -1,15 +1,6 @@
-/* Запрет на выделение текста */
 * {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Плавная прокрутка  */
-* {
-  scroll-behavior: smooth;
+  user-select: none; /* Запрет на выделение текста */
+  scroll-behavior: smooth; /* Плавная прокрутка  */
 }
 
 /* Сброс стилей для обеспечения одинакового отображения во всех браузерах */
@@ -43,7 +34,7 @@ html {
 
 /* Отображение шрифтов  */
 html {
-  -webkit-text-size-adjust: 100%; /* Предотвращение автоматического изменения размера текста в Safari */
+  text-size-adjust: 100%; /* Предотвращение автоматического изменения размера текста в Safari */
 }
 
 /* Улучшение отображения шрифтов на macOS и iOS */

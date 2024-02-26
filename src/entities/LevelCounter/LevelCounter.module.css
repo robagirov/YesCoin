@@ -2,7 +2,7 @@
   flex: 1;
   height: 6.5rem;
   border-radius: 16px;
-  background: radial-gradient(rgb(245, 240, 255), rgb(226, 214, 255));
+  background: radial-gradient(rgb(245 240 255), rgb(226 214 255));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,11 +17,11 @@
 .current-count {
   font-size: 2.2rem;
   font-weight: 700;
-  color: rgb(153, 107, 255);
+  color: rgb(153 107 255);
 }
 
 .common-count {
   font-size: 1.4rem;
   font-weight: 700;
-  color: rgb(191, 163, 255);
+  color: rgb(191 163 255);
 }
