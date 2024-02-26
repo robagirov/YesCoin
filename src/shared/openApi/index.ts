@@ -48,7 +48,7 @@ export const getUserUsersGet = (
  ): Promise<AxiosResponse<GetUserUsersGet200>> => {
     
     return axios.get(
-      `http://yestoken.space/users`,{
+      `https://yestoken.space/users`,{
     ...options,
         params: {...params, ...options?.params},}
     );
@@ -56,7 +56,7 @@ export const getUserUsersGet = (
 
 
 export const getGetUserUsersGetQueryKey = (params: GetUserUsersGetParams,) => {
-    return [`http://yestoken.space/users`, ...(params ? [params]: [])] as const;
+    return [`https://yestoken.space/users`, ...(params ? [params]: [])] as const;
     }
 
     
@@ -109,7 +109,7 @@ export const addUserUsersPost = (
  ): Promise<AxiosResponse<AddUserUsersPost200>> => {
     
     return axios.post(
-      `http://yestoken.space/users`,
+      `https://yestoken.space/users`,
       userCreate,options
     );
   }
@@ -159,7 +159,7 @@ export const updateUserInfoUsersPut = (
  ): Promise<AxiosResponse<UpdateUserInfoUsersPut200>> => {
     
     return axios.put(
-      `http://yestoken.space/users`,
+      `https://yestoken.space/users`,
       userUpdate,options
     );
   }
@@ -209,7 +209,7 @@ export const tapUsersTapPut = (
  ): Promise<AxiosResponse<TapUsersTapPut200>> => {
     
     return axios.put(
-      `http://yestoken.space/users/tap`,undefined,{
+      `https://yestoken.space/users/tap`,undefined,{
     ...options,
         params: {...params, ...options?.params},}
     );
@@ -260,13 +260,13 @@ export const getSquadsSquadsGet = (
  ): Promise<AxiosResponse<GetSquadsSquadsGet200>> => {
     
     return axios.get(
-      `http://yestoken.space/squads`,options
+      `https://yestoken.space/squads`,options
     );
   }
 
 
 export const getGetSquadsSquadsGetQueryKey = () => {
-    return [`http://yestoken.space/squads`] as const;
+    return [`https://yestoken.space/squads`] as const;
     }
 
     
@@ -319,13 +319,13 @@ export const getLeaguesLeaguesGet = (
  ): Promise<AxiosResponse<GetLeaguesLeaguesGet200>> => {
     
     return axios.get(
-      `http://yestoken.space/leagues`,options
+      `https://yestoken.space/leagues`,options
     );
   }
 
 
 export const getGetLeaguesLeaguesGetQueryKey = () => {
-    return [`http://yestoken.space/leagues`] as const;
+    return [`https://yestoken.space/leagues`] as const;
     }
 
     
@@ -378,7 +378,7 @@ export const addLeagueLeaguesPost = (
  ): Promise<AxiosResponse<AddLeagueLeaguesPost200>> => {
     
     return axios.post(
-      `http://yestoken.space/leagues`,
+      `https://yestoken.space/leagues`,
       leagueCreate,options
     );
   }

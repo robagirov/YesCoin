@@ -2,7 +2,7 @@ module.exports = {
   yesCoin: {
     output: {
       mode: 'split',
-      baseUrl: 'http://yestoken.space',
+      baseUrl: 'https://yestoken.space',
       workspace: './src/shared/openApi/',
       target: 'index.ts',
       schemas: 'model',
@@ -11,7 +11,7 @@ module.exports = {
       prettier: true,
     },
     input: {
-      target: 'http://yestoken.space/openapi.json',
+      target: 'https://yestoken.space/openapi.json',
     },
   },
 }
