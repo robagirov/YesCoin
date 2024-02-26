@@ -7,7 +7,7 @@
   row-gap: vertical-sizing(10px);
 
   &__balance {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgb(255 255 255 / 70%);
   }
 
   margin-bottom: vertical-sizing(70px);
@@ -37,7 +37,7 @@
   width: 3.9rem;
   height: 3.9rem;
   border-radius: 50%;
-  background-color: rgba(243, 243, 245, 0.1);
+  background-color: rgb(243 243 245 / 10%);
 
   &:not(:first-child) {
     margin-left: -1rem;
@@ -49,13 +49,13 @@
 }
 
 .label {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
 }
 
 .divider {
   width: 25rem;
   height: 1px;
-  border: 1px solid rgba(46, 46, 46);
+  border: 1px solid rgb(46 46 46);
   margin-left: 2.1rem;
 }
 
@@ -79,11 +79,11 @@
 }
 
 .secondary {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
 }
 
 .error {
-  color: rgb(255, 107, 107);
+  color: rgb(255 107 107);
 }
 
 .okButton {

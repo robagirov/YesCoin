@@ -1,10 +1,10 @@
 .border {
   padding: 1px;
   border-radius: 16px;
-  background: linear-gradient(224.11deg, #ffffff 7.7%, rgba(255, 255, 255, 0) 90.12%);
+  background: linear-gradient(224.11deg, #fff 7.7%, rgb(255 255 255 / 0%) 90.12%);
 
   & a:not(:last-child) {
-    &:after {
+    &::after {
       content: "";
       display: block;
       left: 100%;
@@ -12,7 +12,7 @@
       position: absolute;
       width: 1px;
       height: 6.9rem;
-      background: rgba(153, 107, 255, 1);
+      background: rgb(153 107 255 / 100%);
     }
   }
 }
@@ -23,8 +23,7 @@
   border-radius: 16px;
   background: radial-gradient(64.1% 50% at 50% 39.32%, #ccb5ff 0%, #996bff 100%),
     radial-gradient(46.3% 75.26% at 50% 15.39%, #f5f0ff 0%, #e2d6ff 100%),
-    linear-gradient(224.11deg, #ffffff 7.7%, rgba(255, 255, 255, 0) 90.12%);
-
+    linear-gradient(224.11deg, #fff 7.7%, rgb(255 255 255 / 0%) 90.12%);
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -40,7 +40,7 @@
 .borderWrapper {
   padding: 1px;
   border-radius: 16px;
-  background: linear-gradient(224.11deg, #ffffff 7.8%, rgba(255, 255, 255, 0) 90.12%);
+  background: linear-gradient(224.11deg, #fff 7.8%, rgb(255 255 255 / 0%) 90.12%);
 }
 
 .pageButton {
@@ -51,10 +51,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background: radial-gradient(64% 50% at 50% 39.32%, #ccb5ff 0%, #996bff 100%),
     radial-gradient(46.2% 75.26% at 50% 15.4%, #f5f0ff 0%, #e2d6ff 100%),
-    linear-gradient(224deg, #ffffff 7.8%, rgba(255, 255, 255, 0) 90.12%);
+    linear-gradient(224deg, #fff 7.8%, rgb(255 255 255 / 0%) 90.12%);
 }
 
 .pageSign {
