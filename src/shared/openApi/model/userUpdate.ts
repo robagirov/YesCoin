@@ -4,9 +4,9 @@
  * YesCoin-API
  * OpenAPI spec version: 0.1.0
  */
-import type { UserUpdateBalance } from './userUpdateBalance';
+import type { UserUpdateBalance } from './userUpdateBalance'
 
 export interface UserUpdate {
-  balance: UserUpdateBalance;
-  telegram_id: number;
+  balance: UserUpdateBalance
+  telegram_id: number
 }

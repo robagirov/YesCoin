@@ -6,8 +6,8 @@
  */
 
 export interface SquadRead {
-  balance: number;
-  group: string;
-  name: string;
-  rate: number;
+  balance: number
+  group: string
+  name: string
+  rate: number
 }

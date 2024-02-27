@@ -1,5 +1,4 @@
 src/app/core/telegram-web-app.js
-src/shared/openApi
 node_modules/
 dist/
 

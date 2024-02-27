@@ -6,6 +6,6 @@
  */
 
 export interface LeagueCreate {
-  name: string;
-  type: string;
+  name: string
+  type: string
 }

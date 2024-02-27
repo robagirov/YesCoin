@@ -9,21 +9,32 @@ import { useEffect } from 'react'
 import { useTelegram, useTelegramUserId } from 'shared/api'
 import { MainCoin } from './ui'
 import { useGetUser, useTap } from 'shared/openApi'
+import { useQueryClient } from '@tanstack/react-query'
 
 export const MainBoard = () => {
+  const queryClient = useQueryClient()
   const telegram = useTelegram()
-  const userId = useTelegramUserId()
-  const { data: user } = useGetUser(userId, { query: { queryKey: ['user'] } })
+  const user_id = useTelegramUserId()
+  const { data: user, queryKey: userQueryKey } = useGetUser(user_id)
   const { mutate } = useTap()
 
   const onClickCoin = () => {
-    if ((user?.energy ?? 0) <= 0) {
+    if (!user) return
+
+    if (user.energy <= 0) {
       console.log('No more energy!')
 
       return
     }
 
-    mutate({ params: { user_id: userId } })
+    mutate(
+      { params: { user_id } },
+      {
+        onSuccess: (data) => {
+          queryClient.setQueryData(userQueryKey, { ...user, ...data })
+        },
+      },
+    )
   }
 
   useEffect(() => {

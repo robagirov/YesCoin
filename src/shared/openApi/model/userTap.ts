@@ -6,6 +6,6 @@
  */
 
 export interface UserTap {
-  balance: number;
-  energy: number;
+  balance: number
+  energy: number
 }
