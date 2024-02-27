@@ -7,6 +7,12 @@ module.exports = {
       target: 'index.ts',
       schemas: 'model',
       client: 'react-query',
+      override: {
+        mutator: {
+          path: '../api/axiosInstance.ts',
+          name: 'axiosInstance',
+        },
+      },
       tsconfig: true,
       prettier: true,
     },

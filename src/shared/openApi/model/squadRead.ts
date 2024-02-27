@@ -5,4 +5,9 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export type TapUsersTapPut200 = {};
+export interface SquadRead {
+  balance: number;
+  group: string;
+  name: string;
+  rate: number;
+}

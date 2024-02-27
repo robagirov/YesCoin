@@ -5,4 +5,6 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export type AddLeagueLeaguesPost200 = {};
+export type TapParams = {
+user_id: number;
+};
