@@ -6,6 +6,6 @@
  */
 
 export interface UserCreate {
-  telegram_id: number;
-  username: string;
+  telegram_id: number
+  username: string
 }

@@ -5,4 +5,4 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export type UserUpdateBalance = number | null;
+export type UserUpdateBalance = number | null
