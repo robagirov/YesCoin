@@ -5,28 +5,25 @@ import { ROUTES } from 'shared/consts'
 import WalletIcon from './assets/wallet.svg?react'
 
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { useTelegram } from 'shared/api'
+import { useEffect } from 'react'
+import { useTelegram, useTelegramUserId } from 'shared/api'
 import { MainCoin } from './ui'
-import { useGetUserUsersGet } from '../../shared/openApi'
+import { useGetUser, useTap } from 'shared/openApi'
 
 export const MainBoard = () => {
   const telegram = useTelegram()
-  const { data } = useGetUserUsersGet({ telegram_user_id: 423233660 })
-  console.log('=>(MainBoard.tsx:16) data', data)
-
-  const [balance, setBalance] = useState(Math.floor(Math.random() * 10000000))
-  const [energy, setEnergy] = useState(5000)
+  const userId = useTelegramUserId()
+  const { data: user } = useGetUser(userId, { query: { queryKey: ['user'] } })
+  const { mutate } = useTap()
 
   const onClickCoin = () => {
-    if (energy <= 0) {
+    if ((user?.energy ?? 0) <= 0) {
       console.log('No more energy!')
 
       return
     }
 
-    setBalance((prevValue) => prevValue + 1)
-    setEnergy((prevValue) => prevValue - 1)
+    mutate({ params: { user_id: userId } })
   }
 
   useEffect(() => {
@@ -44,7 +41,7 @@ export const MainBoard = () => {
         </Link>
 
         <div className={styles.moneyWrapper}>
-          <BalanceAmount amount={balance} />
+          <BalanceAmount amount={user?.balance ?? 0} />
 
           <GoldLeagueLink />
         </div>
@@ -60,21 +57,18 @@ export const MainBoard = () => {
             <Link to={ROUTES.TRADE_MARKET} className={styles.borderWrapper}>
               <div className={styles.pageButton}>
                 <WalletIcon />
-
                 <span className={styles.pageSign}>Кошелек</span>
               </div>
             </Link>
 
             <FeatureNavigation>
               <FeatureTab feature="Друзья" to={ROUTES.YOUR_FRIENDS} />
-
               <FeatureTab feature="Фарминг" to={ROUTES.FARM_COINS} />
-
               <FeatureTab feature="Бусты" to={ROUTES.GAME_BOOST} />
             </FeatureNavigation>
           </div>
 
-          <EnergyRemain remain={energy} />
+          <EnergyRemain remain={user?.energy ?? 0} />
         </div>
       </Layout.Content>
     </Layout>

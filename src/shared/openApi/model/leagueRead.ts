@@ -5,4 +5,7 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export type GetLeaguesLeaguesGet200 = {};
+export interface LeagueRead {
+  name: string;
+  type: string;
+}

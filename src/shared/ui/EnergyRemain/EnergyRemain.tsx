@@ -6,12 +6,16 @@ interface EnergyRemainProps {
   className?: string
 }
 
+const MAX_ENERGY = 1000
+
 export const EnergyRemain = ({ remain, className }: EnergyRemainProps) => {
   return (
     <div className={clsx(styles.progress, className)}>
-      <div className={styles.bar} style={{ width: `${(remain / 5500) * 100}%` }} />
+      <div className={styles.bar} style={{ width: `${(remain / MAX_ENERGY) * 100}%` }} />
 
-      <div className={styles.counter}>{remain} / 5500</div>
+      <div className={styles.counter}>
+        {remain} / {MAX_ENERGY}
+      </div>
     </div>
   )
 }

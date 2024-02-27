@@ -5,6 +5,7 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export type GetUserUsersGetParams = {
-telegram_user_id: number;
-};
+export interface UserTap {
+  balance: number;
+  energy: number;
+}

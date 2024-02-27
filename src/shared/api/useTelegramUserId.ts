@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { useTelegram } from './useTelegram.ts'
 
 export function useTelegramUserId() {
@@ -6,7 +6,7 @@ export function useTelegramUserId() {
 
   const telegram = useTelegram()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (telegram) {
       const telegramUserId = telegram.initDataUnsafe.user?.id
 
@@ -14,5 +14,5 @@ export function useTelegramUserId() {
     }
   }, [telegram])
 
-  return userId
+  return userId || import.meta.env?.VITE_LOCAL_USER_ID
 }
