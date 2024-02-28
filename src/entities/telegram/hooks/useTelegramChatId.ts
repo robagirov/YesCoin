@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 
 export function useTelegramChatId() {
   const [chatId, setChatId] = useState(524856122) // Значение по умолчанию
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       try {
         const initData = window.Telegram.WebApp.initDataUnsafe
