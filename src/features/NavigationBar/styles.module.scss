@@ -1,7 +1,37 @@
 @import "src/app/styles/mixins";
 
-.navigationBar {
-  display: flex;
+.bar {
   width: 100%;
-  column-gap: 1rem;
+  height: 6.8rem;
+  border-radius: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: var(--transparent-substrate-background);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+
+.icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.sign {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.divider {
+  width: 1px;
+  height: 3.8rem;
+  background-color: #fff;
+  opacity: 0.07;
 }

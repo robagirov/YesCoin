@@ -41,6 +41,7 @@ export function RouterProvider({ children }: Props) {
         <Route path={ROUTES.SQUAD_WORK} element={<SquadWork />} />
         <Route path={ROUTES.MAJOR_DIGITS} element={<MajorDigits />} />
       </Routes>
+
       {children}
     </Router>
   )

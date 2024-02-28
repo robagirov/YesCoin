@@ -1,0 +1,26 @@
+.wrapper {
+  width: 27rem;
+  height: 27rem;
+  border-radius: 50%;
+  background-image: url("./circle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.5) inset;
+}
+
+.edge, .yes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edge {
+  width: 27.1rem;
+  height: 27.1rem;
+}
+
+.yes {
+  width: 12.8rem;
+  height: 12.8rem;
+}

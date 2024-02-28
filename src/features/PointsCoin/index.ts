@@ -1,0 +1,1 @@
+export { PointsCoin } from './PointsCoin'

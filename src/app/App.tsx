@@ -1,10 +1,7 @@
-import eruda from 'eruda'
 import { QueryProvider, TelegramProvider, RouterProvider } from './providers'
 import './styles/index.scss'
 
 function App() {
-  eruda.init()
-
   return (
     <QueryProvider>
       <RouterProvider>
