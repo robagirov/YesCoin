@@ -1,11 +1,10 @@
 import { useCallback, useEffect } from 'react'
 import { useIsHomePage } from 'shared/hooks'
-import { useTelegram } from 'shared/api'
+import { useTelegram } from 'entities/telegram'
 import { useNavigate } from 'react-router-dom'
 
 export const TelegramProvider = () => {
   const navigate = useNavigate()
-
   const isHomePage = useIsHomePage()
   const telegram = useTelegram()
 
