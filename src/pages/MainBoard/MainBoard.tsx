@@ -1,13 +1,9 @@
 import { Layout } from 'shared/ui'
 import { BalanceAmount, GoldLeagueLink, ChooseSquadButton, NavigationBar } from 'features'
 import styles from './styles.module.scss'
-import { ROUTES } from 'shared/consts'
-import WalletIcon from './assets/wallet.svg?react'
-
-import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useTelegram, useTelegramUserId } from 'entities/telegram'
-import { MainCoin } from './ui'
+import { MainCoin } from 'widgets/MainCoin'
 import { useGetUser, useTap } from 'shared/openApi'
 import { useQueryClient } from '@tanstack/react-query'
 
