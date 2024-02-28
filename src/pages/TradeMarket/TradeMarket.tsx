@@ -1,19 +1,10 @@
-import { NavigationBar } from 'features'
-import { ActionButton, GlowCircle, RouterLink, Layout } from 'shared/ui'
+import { ActionButton, GlowCircle, Layout } from 'shared/ui'
 import styles from './styles.module.scss'
-import { ROUTES } from 'shared/consts'
 
 export const TradeMarket = () => {
   return (
     <Layout>
       <Layout.Content>
-        <div className={styles.bar}>
-          <NavigationBar>
-            <RouterLink to={ROUTES.MAIN_BOARD} text="Главная" />
-            <RouterLink to={ROUTES.CRYPTO_HOLDER} text="Кошелек" />
-          </NavigationBar>
-        </div>
-
         <div className={styles.button}>
           <ActionButton variant="primary" message="Connect TON wallet" onClick={() => false} />
         </div>
