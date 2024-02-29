@@ -1,4 +1,14 @@
-import { BackCard, ListItem, ModalView, PageTitle, SwitchBar, Layout, GlowCircle, ActionButton } from 'shared/ui'
+import {
+  BackCard,
+  ListItem,
+  ModalView,
+  PageTitle,
+  SwitchBar,
+  GlowCircle,
+  ActionButton,
+  LayoutContent,
+  SecondLayout,
+} from 'shared/ui'
 import { useState } from 'react'
 import { squadTopList } from './model/mock.ts'
 import { Link } from 'react-router-dom'
@@ -16,56 +26,65 @@ export const SquadName = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <>
-      <Layout>
-        <Layout.Content>
-          <div className={styles.image} />
+    <SecondLayout>
+      <LayoutContent>
+        <div className={styles.image} />
 
-          <PageTitle title="Имя Сквада" className={styles.title} />
+        <PageTitle title="Имя Сквада" className={styles.title} />
 
-          <p className={styles.subtitle}>Diamond</p>
+        <p className={styles.subtitle}>Diamond</p>
 
-          <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
-            Как работают Сквады?
-          </Link>
+        <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
+          Как работают Сквады?
+        </Link>
 
-          <div className={styles.squadInfo}>
-            <div className={styles.counts}>
-              <div className={styles.count}>
-                <p className={styles.count__text}>61.578B</p>
-                <p className={styles.count__sign}>всего монет</p>
-              </div>
-
-              <div className={styles.count__divider} />
-
-              <div className={styles.count}>
-                <p className={styles.count__text}>61.578B</p>
-                <p className={styles.count__sign}>игроков</p>
-              </div>
+        <div className={styles.squadInfo}>
+          <div className={styles.counts}>
+            <div className={styles.count}>
+              <p className={styles.count__text}>61.578B</p>
+              <p className={styles.count__sign}>всего монет</p>
             </div>
 
-            <div className={styles.buttons}>
-              <Link to={ROUTES.JOIN_SQUAD}>
-                <ActionButton variant="primary" onClick={() => false} message="Присоединиться в Сквад" />
-              </Link>
+            <div className={styles.count__divider} />
 
-              <ActionButton variant="secondary" onClick={onOpenModal} message="Бустануть" />
+            <div className={styles.count}>
+              <p className={styles.count__text}>61.578B</p>
+              <p className={styles.count__sign}>игроков</p>
             </div>
           </div>
 
-          <div>
-            <SwitchBar options={['День', 'Неделя']} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+          <div className={styles.buttons}>
+            <Link to={ROUTES.JOIN_SQUAD}>
+              <ActionButton
+                variant="primary"
+                onClick={() => false}
+                message="Присоединиться в Сквад"
+              />
+            </Link>
 
-            <BackCard className={styles.list}>
-              {squadTopList?.[activeIndex]?.map((person, index) => (
-                <ListItem key={index} number={person.number} title={person.title} subtitle={person.subtitle} />
-              ))}
-            </BackCard>
+            <ActionButton variant="secondary" onClick={onOpenModal} message="Бустануть" />
           </div>
-        </Layout.Content>
+        </div>
 
-        <GlowCircle position="top" className="opacity-50" />
-      </Layout>
+        <div>
+          <SwitchBar
+            options={['День', 'Неделя']}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
+
+          <BackCard className={styles.list}>
+            {squadTopList?.[activeIndex]?.map((person, index) => (
+              <ListItem
+                key={index}
+                number={person.number}
+                title={person.title}
+                subtitle={person.subtitle}
+              />
+            ))}
+          </BackCard>
+        </div>
+      </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
         <div className="h-full z-10 flex flex-col justify-end">
@@ -78,6 +97,6 @@ export const SquadName = () => {
 
         <GlowCircle position="bottom" className="opacity-15 -z-10" />
       </ModalView>
-    </>
+    </SecondLayout>
   )
 }

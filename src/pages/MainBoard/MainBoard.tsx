@@ -1,4 +1,4 @@
-import { Layout } from 'shared/ui'
+import { MainLayout } from 'shared/ui'
 import { BalanceAmount, GoldLeagueLink, ChooseSquadButton, NavigationBar } from 'features'
 import styles from './styles.module.scss'
 import { useEffect } from 'react'
@@ -40,7 +40,7 @@ export const MainBoard = () => {
   }, [telegram])
 
   return (
-    <Layout>
+    <MainLayout>
       <div className={styles.content}>
         <ChooseSquadButton />
 
@@ -54,6 +54,6 @@ export const MainBoard = () => {
 
         <NavigationBar />
       </div>
-    </Layout>
+    </MainLayout>
   )
 }

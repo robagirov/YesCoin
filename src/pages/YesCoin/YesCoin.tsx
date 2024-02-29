@@ -1,11 +1,11 @@
-import { ActionButton, GlowCircle, Layout, PageTitle } from 'shared/ui'
+import { ActionButton, LayoutContent, PageTitle, SecondLayout } from 'shared/ui'
 
 import styles from './styles.module.scss'
 
 export const YesCoin = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className={styles.buttons}>
           <ActionButton message="Войти" variant="secondary" onClick={() => false} />
 
@@ -61,9 +61,7 @@ export const YesCoin = () => {
 
           <ActionButton message="Хорошо" variant="primary" onClick={() => false} />
         </div>
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className={styles.pageGlow} />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

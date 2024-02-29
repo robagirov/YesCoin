@@ -1,10 +1,10 @@
-import { ActionButton, GlowCircle, PageTitle, Layout } from 'shared/ui'
+import { ActionButton, PageTitle, SecondLayout, LayoutContent } from 'shared/ui'
 import styles from './styles.module.scss'
 
 export const JoinSquad = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className="flex justify-center mb-12">
           <div className="w-24 h-24 rounded-xl bg-[rgb(243,243,245,0.1)]" />
 
@@ -19,9 +19,7 @@ export const JoinSquad = () => {
         </div>
 
         <ActionButton variant="primary" onClick={() => false} message="Присоединиться" />
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className="opacity-50" />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

@@ -1,4 +1,4 @@
-import { PageTitle, GlowCircle, Layout, ActionButton } from 'shared/ui'
+import { PageTitle, ActionButton, LayoutContent, SecondLayout } from 'shared/ui'
 import { FC } from 'react'
 
 interface SquadWorkProps {
@@ -7,8 +7,8 @@ interface SquadWorkProps {
 
 export const SquadWork: FC<SquadWorkProps> = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className="flex gap-x-2.5 mb-9">
           <ActionButton message="Войти" variant="secondary" onClick={() => false} />
 
@@ -34,7 +34,9 @@ export const SquadWork: FC<SquadWorkProps> = () => {
             <div className="flex flex-col">
               <span>Прокачивай Буст</span>
 
-              <span className="text-sm text-gray-400 opacity-70 font-light">Чтобы получать монетка</span>
+              <span className="text-sm text-gray-400 opacity-70 font-light">
+                Чтобы получать монетка
+              </span>
             </div>
           </div>
 
@@ -54,9 +56,7 @@ export const SquadWork: FC<SquadWorkProps> = () => {
 
           <ActionButton variant="primary" onClick={() => false} message="Хорошо" />
         </div>
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className="opacity-40" />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }
