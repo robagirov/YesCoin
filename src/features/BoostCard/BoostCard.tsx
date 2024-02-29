@@ -6,7 +6,7 @@ interface BoostCardProps {
   className?: string
 }
 
-export const BoostCard = ({ name, className }: BoostCardProps) => {
+export function BoostCard({ name, className }: BoostCardProps) {
   return (
     <div className={clsx(styles.root, className)}>
       <div>

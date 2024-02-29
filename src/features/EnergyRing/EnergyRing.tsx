@@ -6,7 +6,7 @@ interface Props {
   totalEnergy: number
 }
 
-export const EnergyRing = ({ totalEnergy, energyLeft }: Props) => {
+export function EnergyRing({ totalEnergy, energyLeft }: Props) {
   const circleRef = useRef<SVGPathElement>(null)
   const [circumference, setCircumference] = useState(0)
 
@@ -32,7 +32,12 @@ export const EnergyRing = ({ totalEnergy, energyLeft }: Props) => {
   }, [energyLeft, totalEnergy, circumference])
 
   return (
-    <svg className={styles.circle} viewBox="0 0 296 296" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={styles.circle}
+      viewBox="0 0 296 296"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         ref={circleRef}
         d="M148 3C67.9187 3 3 67.9187 3 148C3 228.081 67.9187 293 148 293C228.081 293 293 228.081 293 148C293 92.5529 261.878 44.3748 216.15 19.9809"

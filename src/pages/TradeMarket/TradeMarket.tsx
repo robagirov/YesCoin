@@ -1,7 +1,7 @@
 import { ActionButton, LayoutContent } from 'shared/ui'
 import styles from './styles.module.scss'
 
-export const TradeMarket = () => {
+export function TradeMarket() {
   return (
     <LayoutContent>
       <div className={styles.button}>

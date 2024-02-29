@@ -8,12 +8,12 @@ import {
   LayoutContent,
 } from 'shared/ui'
 import { useState } from 'react'
-import { squadTopList } from './model/mock.ts'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import { squadTopList } from './model/mock.ts'
 import styles from './styles.module.scss'
 
-export const GoldLeague = () => {
+export function GoldLeague() {
   const [activeType, setActiveType] = useState(0)
   const [activePeriod, setActivePeriod] = useState(0)
 
@@ -66,9 +66,9 @@ export const GoldLeague = () => {
             />
 
             <BackCard className={styles.back}>
-              {squadTopList?.[activeType]?.map((person, index) => (
+              {squadTopList?.[activeType]?.map((person) => (
                 <ListItem
-                  key={index}
+                  key={person.number}
                   number={person.number}
                   title={person.title}
                   subtitle={person.subtitle}

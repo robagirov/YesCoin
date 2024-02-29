@@ -1,7 +1,7 @@
 import { ActionButton, PageTitle, LayoutContent } from 'shared/ui'
 import styles from './styles.module.scss'
 
-export const JoinSquad = () => {
+export function JoinSquad() {
   return (
     <LayoutContent>
       <div className="flex justify-center mb-12">

@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import { ROUTES } from 'shared/consts'
 import { PageTransition } from 'shared/ui'
 import { MainBoard } from './MainBoard'
@@ -15,7 +16,6 @@ import { SquadName } from './SquadName'
 import { JoinSquad } from './JoinSquad'
 import { SquadWork } from './SquadWork'
 import { MajorDigits } from './MajorDigits'
-import { AnimatePresence } from 'framer-motion'
 
 export function PageRoutes() {
   const location = useLocation()

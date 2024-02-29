@@ -1,12 +1,11 @@
-import { ActionButton, BackCard, InfoTrigger, LayoutContent } from 'shared/ui'
-import { PageTitle } from 'shared/ui'
+import { ActionButton, BackCard, InfoTrigger, LayoutContent, PageTitle } from 'shared/ui'
 
-import styles from './styles.module.scss'
 import { FriendItem } from 'shared/ui/FriendItem'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import styles from './styles.module.scss'
 
-export const YourFriends = () => {
+export function YourFriends() {
   return (
     <LayoutContent>
       <div className={styles['title-wrapper']}>
@@ -21,7 +20,7 @@ export const YourFriends = () => {
         <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
       </div>
 
-      <div className={styles['subtitle']}>Yes-друзья</div>
+      <div className={styles.subtitle}>Yes-друзья</div>
 
       <div className={styles['friends-list-wrapper']}>
         <BackCard className={styles['friends-list']}>

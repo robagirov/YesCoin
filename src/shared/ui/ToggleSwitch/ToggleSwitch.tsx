@@ -8,7 +8,12 @@ interface ToggleSwitchProps {
   className?: string
 }
 
-export const ToggleSwitch = ({ options, className, activeIndex, setActiveIndex }: ToggleSwitchProps) => {
+export function ToggleSwitch({
+  options,
+  className,
+  activeIndex,
+  setActiveIndex,
+}: ToggleSwitchProps) {
   return (
     <div className={clsx(styles.container, className)}>
       <div
@@ -19,7 +24,12 @@ export const ToggleSwitch = ({ options, className, activeIndex, setActiveIndex }
       />
 
       {options.map((option, index) => (
-        <button key={index} className={styles.button} onClick={() => setActiveIndex(index)}>
+        <button
+          type="button"
+          key={option}
+          className={styles.button}
+          onClick={() => setActiveIndex(index)}
+        >
           {option}
         </button>
       ))}

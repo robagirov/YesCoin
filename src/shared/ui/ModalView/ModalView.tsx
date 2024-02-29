@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { ReactNode } from 'react'
-import styles from './styles.module.scss'
+import type { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
+import styles from './styles.module.scss'
 
 interface ModalViewProps {
   isOpen: boolean
@@ -9,9 +9,8 @@ interface ModalViewProps {
   children: ReactNode
 }
 
-export const ModalView = ({ className, children, isOpen }: ModalViewProps) => {
-  return createPortal(
+export const ModalView = ({ className, children, isOpen }: ModalViewProps) =>
+  createPortal(
     <div className={clsx(styles.dialog, { [styles.open]: isOpen }, className)}>{children}</div>,
     document.getElementById('portal')!,
   )
-}

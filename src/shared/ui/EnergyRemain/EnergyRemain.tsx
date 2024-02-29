@@ -8,7 +8,7 @@ interface EnergyRemainProps {
 
 const MAX_ENERGY = 1000
 
-export const EnergyRemain = ({ remain, className }: EnergyRemainProps) => {
+export function EnergyRemain({ remain, className }: EnergyRemainProps) {
   return (
     <div className={clsx(styles.progress, className)}>
       <div className={styles.bar} style={{ width: `${(remain / MAX_ENERGY) * 100}%` }} />

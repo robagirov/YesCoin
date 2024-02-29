@@ -6,11 +6,16 @@ interface SwitchBarProps {
   setActiveIndex: (active: number) => void
 }
 
-export const SwitchBar = ({ options, activeIndex, setActiveIndex }: SwitchBarProps) => {
+export function SwitchBar({ options, activeIndex, setActiveIndex }: SwitchBarProps) {
   return (
     <div className={styles.root}>
       {options.map((option, index) => (
-        <button key={option} className={styles.button} onClick={() => setActiveIndex(index)}>
+        <button
+          type="button"
+          key={option}
+          className={styles.button}
+          onClick={() => setActiveIndex(index)}
+        >
           {option}
         </button>
       ))}

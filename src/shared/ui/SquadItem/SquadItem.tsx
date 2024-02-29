@@ -10,7 +10,7 @@ interface SquadItemProps {
   subtitle: string
 }
 
-export const SquadItem = ({ className, image, title, subtitle }: SquadItemProps) => {
+export function SquadItem({ className, image, title, subtitle }: SquadItemProps) {
   return (
     <div className={clsx(styles.item, className)}>
       <img

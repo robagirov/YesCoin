@@ -4,7 +4,7 @@ import { ROUTES } from 'shared/consts'
 
 import styles from './styles.module.scss'
 
-export const EnterSquad = () => {
+export function EnterSquad() {
   return (
     <LayoutContent>
       <div className={styles.header}>

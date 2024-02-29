@@ -2,14 +2,13 @@ import clsx from 'clsx'
 import styles from './styles.module.scss'
 
 interface ListItemProps {
-  className?: string
   number: number
   avatar?: string
   title: string
   subtitle: string
 }
 
-export const ListItem = ({ number, avatar, title, subtitle }: ListItemProps) => {
+export function ListItem({ number, avatar, title, subtitle }: ListItemProps) {
   return (
     <div className={clsx(styles.wrapper, 'flex items-center rounded-lg')}>
       <div className="text-white">{number}</div>

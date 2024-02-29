@@ -3,7 +3,7 @@ import { useIsHomePage } from 'shared/hooks'
 import { useTelegram } from 'entities/telegram'
 import { useNavigate } from 'react-router-dom'
 
-export const TelegramProvider = () => {
+export function TelegramProvider() {
   const navigate = useNavigate()
   const isHomePage = useIsHomePage()
   const telegram = useTelegram()

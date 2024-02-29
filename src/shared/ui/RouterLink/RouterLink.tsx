@@ -5,7 +5,7 @@ interface RouterLinkProps extends LinkProps {
   text: string
 }
 
-export const RouterLink = ({ to, text }: RouterLinkProps) => {
+export function RouterLink({ to, text }: RouterLinkProps) {
   return (
     <Link to={to} className={styles.routerLink}>
       {text}

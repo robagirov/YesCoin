@@ -2,7 +2,7 @@ import { ActionButton, LayoutContent, PageTitle } from 'shared/ui'
 
 import styles from './styles.module.scss'
 
-export const YesCoin = () => {
+export function YesCoin() {
   return (
     <LayoutContent>
       <div className={styles.buttons}>

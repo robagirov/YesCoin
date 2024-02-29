@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './GradientCircle.module.css'
 
 interface GradientCircleProps {
@@ -6,7 +5,7 @@ interface GradientCircleProps {
   color: string
 }
 
-export const GradientCircle: React.FC<GradientCircleProps> = ({ size, color }) => {
+export function GradientCircle({ size, color }: GradientCircleProps) {
   const innerCircleStyle = {
     background: color,
     width: size,
