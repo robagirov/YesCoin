@@ -13,13 +13,14 @@ export function TelegramProvider() {
   useEffect(() => {
     if (!telegram) return
 
+    telegram.setHeaderColor('#000000')
+
     if (isHomePage) {
       telegram.BackButton.hide()
 
       return
     }
 
-    telegram.setHeaderColor('#000000')
     telegram.BackButton.show()
   }, [telegram, isHomePage])
 
