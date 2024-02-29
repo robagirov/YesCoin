@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
 import styles from './styles.module.scss'
 import GoldIcon from './GoldIcon.svg?react'
 import PresentIcon from './PresentIcon.svg?react'
 import CoinIcon from './CoinIcon.svg?react'
 import RocketIcon from './RocketIcon.svg?react'
-import { Link } from 'react-router-dom'
-import { ROUTES } from 'shared/consts'
 
-export const NavigationBar = () => {
+export function NavigationBar() {
   return (
     <div className={styles.bar}>
       <Link to={ROUTES.CRYPTO_HOLDER} className={styles.item}>

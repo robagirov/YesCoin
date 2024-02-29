@@ -1,7 +1,7 @@
-import styles from './styles.module.scss'
 import { BackCard, InfoTrigger, MoveItem, PageTitle, Subtitle, LayoutContent } from 'shared/ui'
+import styles from './styles.module.scss'
 
-export const FarmCoins = () => {
+export function FarmCoins() {
   return (
     <LayoutContent>
       <div className={styles.content}>

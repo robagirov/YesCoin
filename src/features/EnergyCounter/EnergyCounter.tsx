@@ -5,7 +5,7 @@ interface Props {
   totalEnergy: number
 }
 
-export const EnergyCounter = ({ energyLeft, totalEnergy }: Props) => {
+export function EnergyCounter({ energyLeft, totalEnergy }: Props) {
   return (
     <div className={styles.energy}>
       <span className={styles.left}>{energyLeft}</span>

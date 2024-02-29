@@ -1,13 +1,13 @@
-import styles from './FriendItem.module.css'
 import { GoldLeagueLink } from 'features'
+import styles from './FriendItem.module.css'
 
 interface FriendItemProps {
   avatar?: string
   name: string
-  status?: 'gold'
+  // status?: 'gold'
 }
 
-export const FriendItem = ({ avatar, name }: FriendItemProps) => {
+export function FriendItem({ avatar, name }: FriendItemProps) {
   return (
     <div className={styles.wrapper}>
       <img

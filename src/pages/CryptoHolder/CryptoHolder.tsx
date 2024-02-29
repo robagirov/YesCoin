@@ -1,9 +1,9 @@
 import { LayoutContent, ToggleSwitch, ActionButton } from 'shared/ui'
 import { BalanceAmount } from 'features'
-import styles from './styles.module.scss'
 import { useState } from 'react'
+import styles from './styles.module.scss'
 
-export const CryptoHolder = () => {
+export function CryptoHolder() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (

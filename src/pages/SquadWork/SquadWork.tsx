@@ -1,11 +1,6 @@
 import { PageTitle, ActionButton, LayoutContent } from 'shared/ui'
-import { FC } from 'react'
 
-interface SquadWorkProps {
-  className?: string
-}
-
-export const SquadWork: FC<SquadWorkProps> = () => {
+export function SquadWork() {
   return (
     <LayoutContent>
       <div className="flex gap-x-2.5 mb-9">

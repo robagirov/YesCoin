@@ -1,10 +1,10 @@
 import { ActionButton, InfoTrigger, ModalView, PageTitle, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import styles from './styles.module.scss'
 
-export const MajorDigits = () => {
+export function MajorDigits() {
   const [modalOpen, setModalOpen] = useState(false)
 
   const navigate = useNavigate()

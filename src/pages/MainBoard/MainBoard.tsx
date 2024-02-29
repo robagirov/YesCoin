@@ -1,16 +1,16 @@
 import { BalanceAmount, GoldLeagueLink, ChooseSquadButton, NavigationBar } from 'features'
-import styles from './styles.module.scss'
 import { useEffect } from 'react'
 import { useTelegram, useTelegramUserId } from 'entities/telegram'
 import { MainCoin } from 'widgets/MainCoin'
 import { useGetUser, useTap } from 'shared/openApi'
 import { useQueryClient } from '@tanstack/react-query'
+import styles from './styles.module.scss'
 
-export const MainBoard = () => {
+export function MainBoard() {
   const queryClient = useQueryClient()
   const telegram = useTelegram()
-  const user_id = useTelegramUserId()
-  const { data: user, queryKey: userQueryKey } = useGetUser(user_id)
+  const userId = useTelegramUserId()
+  const { data: user, queryKey: userQueryKey } = useGetUser(userId)
   const { mutate } = useTap()
 
   const onClickCoin = () => {
@@ -23,7 +23,7 @@ export const MainBoard = () => {
     }
 
     mutate(
-      { params: { user_id } },
+      { params: { user_id: userId } },
       {
         onSuccess: (data) => {
           queryClient.setQueryData(userQueryKey, { ...user, ...data })

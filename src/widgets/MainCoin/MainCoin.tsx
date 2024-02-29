@@ -1,5 +1,5 @@
-import styles from './styles.module.scss'
 import { EnergyCounter, EnergyRing, PointsCoin } from 'features'
+import styles from './styles.module.scss'
 
 interface Props {
   energyLeft: number
@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void
 }
 
-export const MainCoin = ({ energyLeft, totalEnergy, onClick }: Props) => {
+export function MainCoin({ energyLeft, totalEnergy, onClick }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.circle} onClick={onClick}>

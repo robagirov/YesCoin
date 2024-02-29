@@ -1,8 +1,8 @@
 import { PageTitle, BackCard, InfoSection, ActionButton, ListItem, LayoutContent } from 'shared/ui'
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import styles from './styles.module.scss'
 
-export const PartyKings = () => {
+export function PartyKings() {
   return (
     <LayoutContent>
       <div className={clsx(styles.header, 'flex flex-col items-center')}>

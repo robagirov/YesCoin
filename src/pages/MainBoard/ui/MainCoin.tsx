@@ -2,9 +2,15 @@ interface MainCoinProps {
   onClick: () => void
 }
 
-export const MainCoin = ({ onClick }: MainCoinProps) => {
+export function MainCoin({ onClick }: MainCoinProps) {
   return (
-    <svg className="mx-auto w-full h-full" onClick={onClick} viewBox="0 0 286 286" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className="mx-auto w-full h-full"
+      onClick={onClick}
+      viewBox="0 0 286 286"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="143" cy="143" r="142" fill="#D9D9D9" />
       <circle cx="143" cy="143" r="142" fill="url(#paint0_radial_140_334)" />
       <circle cx="143" cy="143" r="142" stroke="url(#paint1_linear_140_334)" strokeWidth="2" />

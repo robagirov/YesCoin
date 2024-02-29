@@ -1,7 +1,7 @@
-import styles from './LevelCounter.module.css'
 import PurpleBorderCircle from 'shared/icon/PurpleBorderCircle.svg?react'
+import styles from './LevelCounter.module.css'
 
-export const LevelCounter = () => {
+export function LevelCounter() {
   return (
     <div className={styles.wrapper}>
       <PurpleBorderCircle />

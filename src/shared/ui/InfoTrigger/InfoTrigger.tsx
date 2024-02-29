@@ -1,5 +1,5 @@
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 interface InfoTriggerProps {
   text: string
@@ -7,7 +7,7 @@ interface InfoTriggerProps {
   className?: string
 }
 
-export const InfoTrigger = ({ text, onClick, className }: InfoTriggerProps) => {
+export function InfoTrigger({ text, onClick, className }: InfoTriggerProps) {
   return (
     <p onClick={onClick} className={clsx(styles.subtitle, className, 'text-center')}>
       {text}

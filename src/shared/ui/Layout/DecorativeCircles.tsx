@@ -1,7 +1,7 @@
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import styles from './styles.module.scss'
 
-export const DecorativeCircles = () => {
+export function DecorativeCircles() {
   return (
     <div className={styles.circles}>
       <div className={clsx(styles.circle, styles.royal)} />

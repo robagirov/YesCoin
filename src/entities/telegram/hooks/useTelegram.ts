@@ -1,3 +1,1 @@
-export const useTelegram = () => {
-  return window.Telegram?.WebApp
-}
+export const useTelegram = () => window.Telegram?.WebApp

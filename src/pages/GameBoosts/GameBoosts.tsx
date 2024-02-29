@@ -15,7 +15,7 @@ import { ROUTES } from 'shared/consts'
 
 import styles from './styles.module.scss'
 
-export const GameBoosts = () => {
+export function GameBoosts() {
   const [modalOpen, setModalOpen] = useState(false)
 
   const onCloseModal = () => setModalOpen(false)

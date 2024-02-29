@@ -11,11 +11,14 @@ interface BoostItemProps {
   onClick?: () => void
 }
 
-export const BoostOption = ({ className, onClick, cost, title, picture }: BoostItemProps) => {
+export function BoostOption({ className, onClick, cost, title, picture }: BoostItemProps) {
   return (
     <div className={clsx(styles.option, className)} onClick={onClick}>
       <img
-        src={picture || 'https://contenthub-static.crypto.com/wp_media/2023/05/WHAT_ARE_MEMECOINS_OTP.jpg'}
+        src={
+          picture ||
+          'https://contenthub-static.crypto.com/wp_media/2023/05/WHAT_ARE_MEMECOINS_OTP.jpg'
+        }
         className={styles.pic}
         alt="Фото профиля"
       />

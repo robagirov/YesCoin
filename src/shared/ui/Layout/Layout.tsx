@@ -1,18 +1,18 @@
 import type { ReactNode } from 'react'
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import { useLocation } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
+import styles from './styles.module.scss'
 import { DecorativeCircles } from './DecorativeCircles'
 import { BackBlur } from './BackBlur'
-import { useLocation } from 'react-router-dom'
 import { GlowCircle } from '../GlowCircle'
-import { ROUTES } from 'shared/consts'
 
 interface ViewMarkupProps {
   children: ReactNode
   className?: string
 }
 
-export const Layout = ({ children, className }: ViewMarkupProps) => {
+export function Layout({ children, className }: ViewMarkupProps) {
   const location = useLocation()
 
   return (

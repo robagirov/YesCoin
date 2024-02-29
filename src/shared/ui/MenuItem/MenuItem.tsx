@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-export const MenuItem = () => {
+export function MenuItem() {
   return (
     <div className={styles.item}>
       <svg className={styles.icon}>

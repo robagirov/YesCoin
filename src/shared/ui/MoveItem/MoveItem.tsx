@@ -6,7 +6,7 @@ interface MoveItemProps {
   coins: number
 }
 
-export const MoveItem = ({ avatar, title, coins }: MoveItemProps) => {
+export function MoveItem({ avatar, title, coins }: MoveItemProps) {
   return (
     <div className={styles.wrapper}>
       <img

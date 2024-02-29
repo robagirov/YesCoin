@@ -1,8 +1,8 @@
-import { QueryProvider, TelegramProvider } from './providers'
 import './styles/index.scss'
 import { BrowserRouter } from 'react-router-dom'
 import { PageRoutes } from 'pages'
 import { Layout } from 'shared/ui'
+import { QueryProvider, TelegramProvider } from './providers'
 
 function App() {
   return (

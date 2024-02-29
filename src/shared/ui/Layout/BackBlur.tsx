@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
 
-export const BackBlur = () => {
+export function BackBlur() {
   return <div className={styles.backBlur} />
 }

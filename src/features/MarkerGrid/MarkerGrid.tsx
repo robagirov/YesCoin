@@ -1,3 +1,3 @@
-export const MarkerGrid = () => {
+export function MarkerGrid() {
   return <>sdf</>
 }

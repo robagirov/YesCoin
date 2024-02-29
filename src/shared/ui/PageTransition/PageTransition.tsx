@@ -27,7 +27,7 @@ const PAGE_TRANSITION: Transition = {
   duration: 0.1,
 }
 
-export const PageTransition = ({ className, children }: PageTransitionProps) => {
+export function PageTransition({ className, children }: PageTransitionProps) {
   return (
     <motion.div
       className={clsx(className, styles.transition)}

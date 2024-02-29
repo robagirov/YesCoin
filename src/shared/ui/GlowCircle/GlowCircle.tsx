@@ -1,5 +1,5 @@
-import styles from './styles.module.scss'
 import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 interface GlowCircleProps {
   position: 'top' | 'middle-top' | 'center' | 'bottom'
@@ -7,7 +7,7 @@ interface GlowCircleProps {
   className?: string
 }
 
-export const GlowCircle = ({ position, isTriple, className }: GlowCircleProps) => {
+export function GlowCircle({ position, isTriple, className }: GlowCircleProps) {
   return (
     <div
       className={clsx(

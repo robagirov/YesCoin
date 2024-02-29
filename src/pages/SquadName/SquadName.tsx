@@ -9,13 +9,13 @@ import {
   LayoutContent,
 } from 'shared/ui'
 import { useState } from 'react'
-import { squadTopList } from './model/mock.ts'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import { squadTopList } from './model/mock.ts'
 
 import styles from './styles.module.scss'
 
-export const SquadName = () => {
+export function SquadName() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const [modalOpen, setModalOpen] = useState(false)
@@ -73,9 +73,9 @@ export const SquadName = () => {
           />
 
           <BackCard className={styles.list}>
-            {squadTopList?.[activeIndex]?.map((person, index) => (
+            {squadTopList?.[activeIndex]?.map((person) => (
               <ListItem
-                key={index}
+                key={person.number}
                 number={person.number}
                 title={person.title}
                 subtitle={person.subtitle}

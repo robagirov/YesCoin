@@ -5,6 +5,6 @@ interface ArrowRightProps {
   className?: string
 }
 
-export const ArrowRight = ({ className }: ArrowRightProps) => {
+export function ArrowRight({ className }: ArrowRightProps) {
   return <div className={clsx(styles.arrow, className)} />
 }
