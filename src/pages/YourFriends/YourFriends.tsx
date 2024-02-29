@@ -1,4 +1,4 @@
-import { ActionButton, BackCard, InfoTrigger, LayoutContent, SecondLayout } from 'shared/ui'
+import { ActionButton, BackCard, InfoTrigger, LayoutContent } from 'shared/ui'
 import { PageTitle } from 'shared/ui'
 
 import styles from './styles.module.scss'
@@ -8,35 +8,33 @@ import { ROUTES } from 'shared/consts'
 
 export const YourFriends = () => {
   return (
-    <SecondLayout>
-      <LayoutContent>
-        <div className={styles['title-wrapper']}>
-          <PageTitle title="Ваши друзья" />
+    <LayoutContent>
+      <div className={styles['title-wrapper']}>
+        <PageTitle title="Ваши друзья" />
 
-          <InfoTrigger text="Как нафармить 1М Коинов" />
-        </div>
+        <InfoTrigger text="Как нафармить 1М Коинов" />
+      </div>
 
-        <div className={styles['to-leader']}>
-          <span style={{ textAlign: 'left' }}>+0</span>
+      <div className={styles['to-leader']}>
+        <span style={{ textAlign: 'left' }}>+0</span>
 
-          <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
-        </div>
+        <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
+      </div>
 
-        <div className={styles['subtitle']}>Yes-друзья</div>
+      <div className={styles['subtitle']}>Yes-друзья</div>
 
-        <div className={styles['friends-list-wrapper']}>
-          <BackCard className={styles['friends-list']}>
-            <FriendItem name="Бизьяна Битзайн" />
-            <FriendItem name="Бизьяна Битзайн" />
-            <FriendItem name="Бизьяна Битзайн" />
-            <FriendItem name="Бизьяна Битзайн" />
-            <FriendItem name="Бизьяна Битзайн" />
-            <FriendItem name="Бизьяна Битзайн" />
-          </BackCard>
-        </div>
+      <div className={styles['friends-list-wrapper']}>
+        <BackCard className={styles['friends-list']}>
+          <FriendItem name="Бизьяна Битзайн" />
+          <FriendItem name="Бизьяна Битзайн" />
+          <FriendItem name="Бизьяна Битзайн" />
+          <FriendItem name="Бизьяна Битзайн" />
+          <FriendItem name="Бизьяна Битзайн" />
+          <FriendItem name="Бизьяна Битзайн" />
+        </BackCard>
+      </div>
 
-        <ActionButton variant="primary" message="Invite a fren" onClick={() => false} />
-      </LayoutContent>
-    </SecondLayout>
+      <ActionButton variant="primary" message="Invite a fren" onClick={() => false} />
+    </LayoutContent>
   )
 }

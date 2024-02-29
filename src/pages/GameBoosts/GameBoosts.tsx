@@ -5,7 +5,6 @@ import {
   GlowCircle,
   InfoTrigger,
   ActionButton,
-  SecondLayout,
   LayoutContent,
 } from 'shared/ui'
 
@@ -24,7 +23,7 @@ export const GameBoosts = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <SecondLayout>
+    <>
       <LayoutContent>
         <div className={styles.balance}>
           <p className={styles.balance__text}>Ваш баланс</p>
@@ -66,6 +65,6 @@ export const GameBoosts = () => {
 
         <GlowCircle position="bottom" className={styles.modalGlow} />
       </ModalView>
-    </SecondLayout>
+    </>
   )
 }

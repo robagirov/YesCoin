@@ -1,4 +1,2 @@
-export { BaseLayout } from './BaseLayout.tsx'
-export { MainLayout } from './MainLayout.tsx'
+export { Layout } from './Layout.tsx'
 export { LayoutContent } from './LayoutContent.tsx'
-export { SecondLayout } from './SecondLayout.tsx'
