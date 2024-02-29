@@ -1,4 +1,3 @@
-import { MainLayout } from 'shared/ui'
 import { BalanceAmount, GoldLeagueLink, ChooseSquadButton, NavigationBar } from 'features'
 import styles from './styles.module.scss'
 import { useEffect } from 'react'
@@ -40,20 +39,18 @@ export const MainBoard = () => {
   }, [telegram])
 
   return (
-    <MainLayout>
-      <div className={styles.content}>
-        <ChooseSquadButton />
+    <div className={styles.content}>
+      <ChooseSquadButton />
 
-        <div>
-          <BalanceAmount amount={user?.balance ?? 0} />
+      <div>
+        <BalanceAmount amount={user?.balance ?? 0} />
 
-          <GoldLeagueLink />
-        </div>
-
-        <MainCoin energyLeft={user?.energy ?? 0} totalEnergy={1000} onClick={onClickCoin} />
-
-        <NavigationBar />
+        <GoldLeagueLink />
       </div>
-    </MainLayout>
+
+      <MainCoin energyLeft={user?.energy ?? 0} totalEnergy={1000} onClick={onClickCoin} />
+
+      <NavigationBar />
+    </div>
   )
 }

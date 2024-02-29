@@ -7,7 +7,6 @@ import {
   GlowCircle,
   ActionButton,
   LayoutContent,
-  SecondLayout,
 } from 'shared/ui'
 import { useState } from 'react'
 import { squadTopList } from './model/mock.ts'
@@ -26,7 +25,7 @@ export const SquadName = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <SecondLayout>
+    <>
       <LayoutContent>
         <div className={styles.image} />
 
@@ -97,6 +96,6 @@ export const SquadName = () => {
 
         <GlowCircle position="bottom" className="opacity-15 -z-10" />
       </ModalView>
-    </SecondLayout>
+    </>
   )
 }

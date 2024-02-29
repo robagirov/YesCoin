@@ -1,11 +1,4 @@
-import {
-  ActionButton,
-  InfoTrigger,
-  ModalView,
-  PageTitle,
-  LayoutContent,
-  SecondLayout,
-} from 'shared/ui'
+import { ActionButton, InfoTrigger, ModalView, PageTitle, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.scss'
@@ -22,7 +15,7 @@ export const MajorDigits = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <SecondLayout>
+    <>
       <LayoutContent>
         <div className={styles.header}>
           <p className={styles.header__balance}>Общий количество YesCoin</p>
@@ -109,6 +102,6 @@ export const MajorDigits = () => {
           onClick={onCloseModal}
         />
       </ModalView>
-    </SecondLayout>
+    </>
   )
 }

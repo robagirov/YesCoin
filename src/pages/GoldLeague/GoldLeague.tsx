@@ -5,7 +5,6 @@ import {
   SwitchBar,
   EnergyRemain,
   ToggleSwitch,
-  SecondLayout,
   LayoutContent,
 } from 'shared/ui'
 import { useState } from 'react'
@@ -19,73 +18,66 @@ export const GoldLeague = () => {
   const [activePeriod, setActivePeriod] = useState(0)
 
   return (
-    <SecondLayout>
-      <LayoutContent>
-        <div className={styles.wrapper}>
-          <Link to={ROUTES.MAJOR_DIGITS}>
-            <div className={styles.coiners}>
-              <div className={styles.inner}>
-                <div className={styles.coins}>
-                  <div className={styles.coin} />
-                  <div className={styles.coin} />
-                  <div className={styles.coin} />
-                </div>
-
-                <span>32,543,654 YesCoiners</span>
+    <LayoutContent>
+      <div className={styles.wrapper}>
+        <Link to={ROUTES.MAJOR_DIGITS}>
+          <div className={styles.coiners}>
+            <div className={styles.inner}>
+              <div className={styles.coins}>
+                <div className={styles.coin} />
+                <div className={styles.coin} />
+                <div className={styles.coin} />
               </div>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-white opacity-70"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              <span>32,543,654 YesCoiners</span>
             </div>
-          </Link>
 
-          <div className={styles.list}>
-            <PageTitle title="Золотая Лига" className={styles.title} />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-white opacity-70"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </Link>
 
-            <p className={styles.counter}>929,324 / 2M</p>
+        <div className={styles.list}>
+          <PageTitle title="Золотая Лига" className={styles.title} />
 
-            <EnergyRemain remain={5000} className={styles.remain} />
+          <p className={styles.counter}>929,324 / 2M</p>
 
-            <ToggleSwitch
-              className={styles.switch}
-              activeIndex={activePeriod}
-              options={['Игроки', 'Сквады']}
-              setActiveIndex={setActivePeriod}
+          <EnergyRemain remain={5000} className={styles.remain} />
+
+          <ToggleSwitch
+            className={styles.switch}
+            activeIndex={activePeriod}
+            options={['Игроки', 'Сквады']}
+            setActiveIndex={setActivePeriod}
+          />
+
+          <div>
+            <SwitchBar
+              options={['День', 'Неделя']}
+              activeIndex={activeType}
+              setActiveIndex={setActiveType}
             />
 
-            <div>
-              <SwitchBar
-                options={['День', 'Неделя']}
-                activeIndex={activeType}
-                setActiveIndex={setActiveType}
-              />
-
-              <BackCard className={styles.back}>
-                {squadTopList?.[activeType]?.map((person, index) => (
-                  <ListItem
-                    key={index}
-                    number={person.number}
-                    title={person.title}
-                    subtitle={person.subtitle}
-                  />
-                ))}
-              </BackCard>
-            </div>
+            <BackCard className={styles.back}>
+              {squadTopList?.[activeType]?.map((person, index) => (
+                <ListItem
+                  key={index}
+                  number={person.number}
+                  title={person.title}
+                  subtitle={person.subtitle}
+                />
+              ))}
+            </BackCard>
           </div>
         </div>
-      </LayoutContent>
-    </SecondLayout>
+      </div>
+    </LayoutContent>
   )
 }
