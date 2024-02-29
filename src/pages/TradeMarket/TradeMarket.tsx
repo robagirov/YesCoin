@@ -1,10 +1,10 @@
-import { ActionButton, GlowCircle, Layout } from 'shared/ui'
+import { ActionButton, LayoutContent, SecondLayout } from 'shared/ui'
 import styles from './styles.module.scss'
 
 export const TradeMarket = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className={styles.button}>
           <ActionButton variant="primary" message="Connect TON wallet" onClick={() => false} />
         </div>
@@ -23,9 +23,7 @@ export const TradeMarket = () => {
             </div>
           ))}
         </div>
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className="opacity-70" />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

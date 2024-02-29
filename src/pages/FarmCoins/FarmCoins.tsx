@@ -1,10 +1,18 @@
 import styles from './styles.module.scss'
-import { BackCard, InfoTrigger, MoveItem, PageTitle, Layout, Subtitle, GlowCircle } from 'shared/ui'
+import {
+  BackCard,
+  InfoTrigger,
+  MoveItem,
+  PageTitle,
+  Subtitle,
+  SecondLayout,
+  LayoutContent,
+} from 'shared/ui'
 
 export const FarmCoins = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className={styles.content}>
           <div className={styles.head}>
             <PageTitle title="Только Yes фармингу" />
@@ -27,9 +35,7 @@ export const FarmCoins = () => {
             <MoveItem coins={10000} title="Подпишись на канал" />
           </BackCard>
         </div>
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className="opacity-40" />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

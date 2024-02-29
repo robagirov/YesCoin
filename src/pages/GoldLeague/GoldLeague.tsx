@@ -1,4 +1,13 @@
-import { BackCard, ListItem, PageTitle, SwitchBar, GlowCircle, Layout, EnergyRemain, ToggleSwitch } from 'shared/ui'
+import {
+  BackCard,
+  ListItem,
+  PageTitle,
+  SwitchBar,
+  EnergyRemain,
+  ToggleSwitch,
+  SecondLayout,
+  LayoutContent,
+} from 'shared/ui'
 import { useState } from 'react'
 import { squadTopList } from './model/mock.ts'
 import { Link } from 'react-router-dom'
@@ -10,8 +19,8 @@ export const GoldLeague = () => {
   const [activePeriod, setActivePeriod] = useState(0)
 
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className={styles.wrapper}>
           <Link to={ROUTES.MAJOR_DIGITS}>
             <div className={styles.coiners}>
@@ -32,7 +41,12 @@ export const GoldLeague = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </Link>
@@ -52,19 +66,26 @@ export const GoldLeague = () => {
             />
 
             <div>
-              <SwitchBar options={['День', 'Неделя']} activeIndex={activeType} setActiveIndex={setActiveType} />
+              <SwitchBar
+                options={['День', 'Неделя']}
+                activeIndex={activeType}
+                setActiveIndex={setActiveType}
+              />
 
               <BackCard className={styles.back}>
                 {squadTopList?.[activeType]?.map((person, index) => (
-                  <ListItem key={index} number={person.number} title={person.title} subtitle={person.subtitle} />
+                  <ListItem
+                    key={index}
+                    number={person.number}
+                    title={person.title}
+                    subtitle={person.subtitle}
+                  />
                 ))}
               </BackCard>
             </div>
           </div>
         </div>
-      </Layout.Content>
-
-      <GlowCircle position="middle-top" className={styles.glow} />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

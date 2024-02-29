@@ -1,4 +1,4 @@
-import { ActionButton, BackCard, GlowCircle, InfoTrigger, Layout } from 'shared/ui'
+import { ActionButton, BackCard, InfoTrigger, LayoutContent, SecondLayout } from 'shared/ui'
 import { PageTitle } from 'shared/ui'
 
 import styles from './styles.module.scss'
@@ -8,8 +8,8 @@ import { ROUTES } from 'shared/consts'
 
 export const YourFriends = () => {
   return (
-    <Layout>
-      <Layout.Content>
+    <SecondLayout>
+      <LayoutContent>
         <div className={styles['title-wrapper']}>
           <PageTitle title="Ваши друзья" />
 
@@ -36,9 +36,7 @@ export const YourFriends = () => {
         </div>
 
         <ActionButton variant="primary" message="Invite a fren" onClick={() => false} />
-      </Layout.Content>
-
-      <GlowCircle position="bottom" className="opacity-40" />
-    </Layout>
+      </LayoutContent>
+    </SecondLayout>
   )
 }

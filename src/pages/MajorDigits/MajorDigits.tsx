@@ -1,4 +1,11 @@
-import { ActionButton, GlowCircle, InfoTrigger, ModalView, PageTitle, Layout } from 'shared/ui'
+import {
+  ActionButton,
+  InfoTrigger,
+  ModalView,
+  PageTitle,
+  LayoutContent,
+  SecondLayout,
+} from 'shared/ui'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.scss'
@@ -15,67 +22,63 @@ export const MajorDigits = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <>
-      <Layout>
-        <Layout.Content>
-          <div className={styles.header}>
-            <p className={styles.header__balance}>Общий количество YesCoin</p>
+    <SecondLayout>
+      <LayoutContent>
+        <div className={styles.header}>
+          <p className={styles.header__balance}>Общий количество YesCoin</p>
 
-            <PageTitle title={(153411234123).toLocaleString()} />
+          <PageTitle title={(153411234123).toLocaleString()} />
 
-            <InfoTrigger text="Что значит это число?" onClick={onOpenModal} />
-          </div>
+          <InfoTrigger text="Что значит это число?" onClick={onOpenModal} />
+        </div>
 
-          <div className={styles.totals}>
-            <div className={clsx(styles.totals__item, styles.item)}>
-              <div className={styles.item__circles}>
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-              </div>
-
-              <div>
-                <p className={styles.number}>10,245,234</p>
-                <p className={styles.label}>Всего игроков</p>
-              </div>
+        <div className={styles.totals}>
+          <div className={clsx(styles.totals__item, styles.item)}>
+            <div className={styles.item__circles}>
+              <div className={styles.circle} />
+              <div className={styles.circle} />
+              <div className={styles.circle} />
             </div>
 
-            <div className={styles.divider} />
-
-            <div className={clsx(styles.totals__item, styles.item)}>
-              <div className={styles.item__circles}>
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-              </div>
-
-              <div>
-                <p className={styles.number}>10,245,234</p>
-                <p className={styles.label}>Игроков за сегодня</p>
-              </div>
-            </div>
-
-            <div className={styles.divider} />
-
-            <div className={clsx(styles.totals__item, styles.item)}>
-              <div className={styles.item__circles}>
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-                <div className={styles.circle} />
-              </div>
-
-              <div>
-                <p className={styles.number}>10,245,234</p>
-                <p className={styles.label}>Текущий онлайн</p>
-              </div>
+            <div>
+              <p className={styles.number}>10,245,234</p>
+              <p className={styles.label}>Всего игроков</p>
             </div>
           </div>
 
-          <ActionButton variant="primary" onClick={goBack} message="Хорошо" />
-        </Layout.Content>
+          <div className={styles.divider} />
 
-        <GlowCircle position="bottom" className={styles.glow} />
-      </Layout>
+          <div className={clsx(styles.totals__item, styles.item)}>
+            <div className={styles.item__circles}>
+              <div className={styles.circle} />
+              <div className={styles.circle} />
+              <div className={styles.circle} />
+            </div>
+
+            <div>
+              <p className={styles.number}>10,245,234</p>
+              <p className={styles.label}>Игроков за сегодня</p>
+            </div>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={clsx(styles.totals__item, styles.item)}>
+            <div className={styles.item__circles}>
+              <div className={styles.circle} />
+              <div className={styles.circle} />
+              <div className={styles.circle} />
+            </div>
+
+            <div>
+              <p className={styles.number}>10,245,234</p>
+              <p className={styles.label}>Текущий онлайн</p>
+            </div>
+          </div>
+        </div>
+
+        <ActionButton variant="primary" onClick={goBack} message="Хорошо" />
+      </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
         <PageTitle title="Детали" className={styles.modalTitle} />
@@ -99,8 +102,13 @@ export const MajorDigits = () => {
           <p className={styles.secondary}>Сожжено и потрачено</p>
         </div>
 
-        <ActionButton className={styles.okButton} variant="primary" message="Хорошо" onClick={onCloseModal} />
+        <ActionButton
+          className={styles.okButton}
+          variant="primary"
+          message="Хорошо"
+          onClick={onCloseModal}
+        />
       </ModalView>
-    </>
+    </SecondLayout>
   )
 }

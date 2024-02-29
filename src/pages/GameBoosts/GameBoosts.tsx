@@ -1,4 +1,13 @@
-import { Subtitle, BackCard, ModalView, Layout, GlowCircle, InfoTrigger, ActionButton } from 'shared/ui'
+import {
+  Subtitle,
+  BackCard,
+  ModalView,
+  GlowCircle,
+  InfoTrigger,
+  ActionButton,
+  SecondLayout,
+  LayoutContent,
+} from 'shared/ui'
 
 import { BalanceAmount, BoostCard, BoostOption } from 'features'
 import { useState } from 'react'
@@ -15,52 +24,48 @@ export const GameBoosts = () => {
   const onOpenModal = () => setModalOpen(true)
 
   return (
-    <>
-      <Layout>
-        <Layout.Content>
-          <div className={styles.balance}>
-            <p className={styles.balance__text}>Ваш баланс</p>
+    <SecondLayout>
+      <LayoutContent>
+        <div className={styles.balance}>
+          <p className={styles.balance__text}>Ваш баланс</p>
 
-            <BalanceAmount amount={5000000} />
+          <BalanceAmount amount={5000000} />
 
-            <Link to={ROUTES.YES_COIN}>
-              <InfoTrigger text="Как работают Бусты?" />
-            </Link>
-          </div>
+          <Link to={ROUTES.YES_COIN}>
+            <InfoTrigger text="Как работают Бусты?" />
+          </Link>
+        </div>
 
-          <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
+        <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
 
-          <div className={styles.freeBoosts}>
-            <BoostCard name="Yes-ракета" />
+        <div className={styles.freeBoosts}>
+          <BoostCard name="Yes-ракета" />
 
-            <BoostCard name="Yes-энергия" />
-          </div>
+          <BoostCard name="Yes-энергия" />
+        </div>
 
-          <Subtitle title="Бусты" className={styles.subtitle} />
+        <Subtitle title="Бусты" className={styles.subtitle} />
 
-          <BackCard className={styles.boostList}>
-            <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
-
-            <BoostOption cost={10000} title="Дополнительная энергия" onClick={onOpenModal} />
-
-            <BoostOption cost={10000} title="Скорость восстановления" onClick={onOpenModal} />
-
-            <BoostOption cost={10000} title="Yes-майнер" onClick={onOpenModal} />
-
-            <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
-
-            <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
-          </BackCard>
-        </Layout.Content>
-
-        <GlowCircle position="bottom" className={styles.pageGlow} />
-      </Layout>
+        <BackCard className={styles.boostList}>
+          <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
+          <BoostOption cost={10000} title="Дополнительная энергия" onClick={onOpenModal} />
+          <BoostOption cost={10000} title="Скорость восстановления" onClick={onOpenModal} />
+          <BoostOption cost={10000} title="Yes-майнер" onClick={onOpenModal} />
+          <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
+          <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+        </BackCard>
+      </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
-        <ActionButton className={styles.confirm} variant="primary" message="Спасибо" onClick={onCloseModal} />
+        <ActionButton
+          className={styles.confirm}
+          variant="primary"
+          message="Спасибо"
+          onClick={onCloseModal}
+        />
 
         <GlowCircle position="bottom" className={styles.modalGlow} />
       </ModalView>
-    </>
+    </SecondLayout>
   )
 }
