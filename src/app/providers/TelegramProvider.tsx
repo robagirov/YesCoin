@@ -21,7 +21,6 @@ export function TelegramProvider() {
       return
     }
 
-    telegram.setHeaderColor('#000000')
     telegram.BackButton.show()
   }, [telegram, isHomePage])
 
