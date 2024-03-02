@@ -40,7 +40,8 @@ export function EnergyRing({ totalEnergy, energyLeft }: Props) {
     >
       <path
         ref={circleRef}
-        d="M148 3C67.9187 3 3 67.9187 3 148C3 228.081 67.9187 293 148 293C228.081 293 293 228.081 293 148C293 92.5529 261.878 44.3748 216.15 19.9809"
+        className={styles.path}
+        d="M148 3 a 145 145 0 1 0 0.00001 0"
         stroke="#00FF66"
         strokeWidth="6"
         strokeLinecap="round"

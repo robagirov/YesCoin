@@ -6,3 +6,7 @@
   height: 29.6rem;
   transform: translate(-50%, -50%);
 }
+
+.path {
+  transition: stroke-dashoffset 1s ease-out;
+}
