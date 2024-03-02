@@ -11,15 +11,12 @@ interface PageTransitionProps {
 const TRANSITION_VARIANTS: Variants = {
   in: {
     opacity: 0,
-    x: '-100vw',
   },
   anim: {
     opacity: 1,
-    x: 0,
   },
   out: {
     opacity: 0,
-    x: '100vw',
   },
 }
 
