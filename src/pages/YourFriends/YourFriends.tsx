@@ -11,7 +11,7 @@ export function YourFriends() {
   const telegram = useTelegram()
 
   const inviteHandler: MouseEventHandler = () => {
-    telegram.sendData('/fren')
+    telegram.sendData(JSON.stringify('/fren'))
   }
 
   return (
