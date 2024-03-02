@@ -1,9 +1,10 @@
 import clsx from 'clsx'
+import type { MouseEventHandler } from 'react'
 import styles from './ActionButton.module.scss'
 
 interface ActionButtonProps {
   variant: 'primary' | 'secondary'
-  onClick: () => void
+  onClick: MouseEventHandler<HTMLButtonElement>
   message: string
   className?: string
 }

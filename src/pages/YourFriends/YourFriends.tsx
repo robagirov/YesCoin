@@ -3,9 +3,17 @@ import { ActionButton, BackCard, InfoTrigger, LayoutContent, PageTitle } from 's
 import { FriendItem } from 'shared/ui/FriendItem'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import type { MouseEventHandler } from 'react'
+import { useTelegram } from 'entities/telegram'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
+  const telegram = useTelegram()
+
+  const inviteHandler: MouseEventHandler = () => {
+    telegram.sendData('/fren')
+  }
+
   return (
     <LayoutContent>
       <div className={styles['title-wrapper']}>
@@ -33,7 +41,7 @@ export function YourFriends() {
         </BackCard>
       </div>
 
-      <ActionButton variant="primary" message="Invite a fren" onClick={() => false} />
+      <ActionButton variant="primary" message="Invite a fren" onClick={inviteHandler} />
     </LayoutContent>
   )
 }
