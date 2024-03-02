@@ -5,10 +5,11 @@
   background-image: url("./circle.png");
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 4px 40px 0 rgb(0 0 0 / 50%) inset;
 }
 
-.edge, .yes {
+.edge,
+.yes {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -18,9 +19,20 @@
 .edge {
   width: 27.1rem;
   height: 27.1rem;
+  animation: rotate-self 10s linear infinite;
 }
 
 .yes {
   width: 12.8rem;
   height: 12.8rem;
+}
+
+@keyframes rotate-self {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
 }
