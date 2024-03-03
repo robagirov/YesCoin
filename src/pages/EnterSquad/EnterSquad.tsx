@@ -10,6 +10,8 @@ export function EnterSquad() {
 
   const joinSquadHandler: MouseEventHandler = () => {
     telegram.openTelegramLink(getTelegramBotCreateSquadLink())
+
+    telegram.close()
   }
 
   return (

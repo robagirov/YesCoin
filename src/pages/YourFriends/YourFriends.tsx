@@ -12,6 +12,8 @@ export function YourFriends() {
 
   const inviteHandler: MouseEventHandler = () => {
     telegram.openTelegramLink(getTelegramBotInviteLink())
+
+    telegram.close()
   }
 
   return (
