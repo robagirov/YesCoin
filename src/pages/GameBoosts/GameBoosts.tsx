@@ -13,14 +13,19 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 
+import { boostData, freeBoostData } from './mock.ts'
 import styles from './styles.module.scss'
 
 export function GameBoosts() {
   const [modalOpen, setModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState('')
 
   const onCloseModal = () => setModalOpen(false)
 
-  const onOpenModal = () => setModalOpen(true)
+  const onOpenModal = (content: string) => {
+    setModalContent(content)
+    setModalOpen(true)
+  }
 
   return (
     <>
@@ -38,28 +43,34 @@ export function GameBoosts() {
         <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
 
         <div className={styles.freeBoosts}>
-          <BoostCard name="Yes-ракета" />
-
-          <BoostCard name="Yes-энергия" />
+          {freeBoostData.map(([boostName, boostDesc]) => (
+            <div key={boostName} onClick={() => onOpenModal(boostDesc)} style={{ flex: '1' }}>
+              <BoostCard name={boostName} />
+            </div>
+          ))}
         </div>
 
         <Subtitle title="Бусты" className={styles.subtitle} />
 
         <BackCard className={styles.boostList}>
-          <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
-          <BoostOption cost={10000} title="Дополнительная энергия" onClick={onOpenModal} />
-          <BoostOption cost={10000} title="Скорость восстановления" onClick={onOpenModal} />
-          <BoostOption cost={10000} title="Yes-майнер" onClick={onOpenModal} />
-          <BoostOption cost={10000} title="Мультитап" onClick={onOpenModal} />
-          <BoostOption cost={10000} title="Двойной клик" onClick={onOpenModal} />
+          {boostData.map(([boostName, boostDesc]) => (
+            <BoostOption
+              key={boostName}
+              cost={10000}
+              title={boostName}
+              onClick={() => onOpenModal(boostDesc)}
+            />
+          ))}
         </BackCard>
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
+        <Subtitle title={modalContent} className={styles.modalContent} />
+
         <ActionButton
           className={styles.confirm}
           variant="primary"
-          message="Спасибо"
+          message="Активировать"
           onClick={onCloseModal}
         />
 

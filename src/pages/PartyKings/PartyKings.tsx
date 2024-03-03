@@ -14,7 +14,7 @@ export function PartyKings() {
       <ActionButton
         className="mb-4"
         variant="primary"
-        message="Пригласить друзей"
+        message="Пригласить друга"
         onClick={() => false}
       />
 

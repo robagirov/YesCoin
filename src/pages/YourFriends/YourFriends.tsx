@@ -21,7 +21,7 @@ export function YourFriends() {
       <div className={styles['title-wrapper']}>
         <PageTitle title="Ваши друзья" />
 
-        <InfoTrigger text="Как нафармить 1М Коинов" />
+        <InfoTrigger text="Зови друзей и получай монетки!" />
       </div>
 
       <div className={styles['to-leader']}>
@@ -43,7 +43,7 @@ export function YourFriends() {
         </BackCard>
       </div>
 
-      <ActionButton variant="primary" message="Invite a fren" onClick={inviteHandler} />
+      <ActionButton variant="primary" message="Пригласить друга" onClick={inviteHandler} />
     </LayoutContent>
   )
 }
