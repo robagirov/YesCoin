@@ -1,11 +1,11 @@
 @import "src/app/styles/mixins";
 
 .dialog {
-  position: absolute;
-  opacity: 0.5;
-  bottom: -100%;
-  z-index: 10;
+  z-index: 12;
   width: 100vw;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
   padding: vertical-sizing(28px) 2.8rem;
   background: rgb(37 36 39);
   border-radius: 16px 16px 0 0;
@@ -14,5 +14,5 @@
 
 .open {
   opacity: 1;
-  bottom: 0;
+  transform: translateY(-100%);
 }
