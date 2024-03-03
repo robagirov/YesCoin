@@ -10,10 +10,12 @@ interface Props {
 export function MainCoin({ energyLeft, totalEnergy, onClick }: Props) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.circle} onClick={onClick}>
+      <div className={styles.circle}>
         <EnergyRing energyLeft={energyLeft} totalEnergy={totalEnergy} />
 
-        <PointsCoin />
+        <button className={styles.button} type="button" aria-label="tap" onClick={onClick}>
+          <PointsCoin />
+        </button>
       </div>
 
       <EnergyCounter energyLeft={energyLeft} totalEnergy={totalEnergy} />
