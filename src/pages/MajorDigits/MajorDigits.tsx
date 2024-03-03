@@ -70,7 +70,7 @@ export function MajorDigits() {
           </div>
         </div>
 
-        <ActionButton variant="primary" onClick={goBack} message="Хорошо" />
+        <ActionButton variant="primary" onClick={goBack} message="Пригласить друга" />
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>

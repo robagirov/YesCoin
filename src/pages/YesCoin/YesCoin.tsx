@@ -40,7 +40,7 @@ export function YesCoin() {
           <div className={styles.content}>
             <span>Yes соревнованиям</span>
 
-            <span className={styles.label}>Дойди до лучшей лиги</span>
+            <span className={styles.label}>Дойди до лучшего LVL</span>
           </div>
         </div>
 
@@ -58,7 +58,7 @@ export function YesCoin() {
       <div className={styles.bottom}>
         <ActionButton message="Гайд" variant="secondary" onClick={() => false} />
 
-        <ActionButton message="Хорошо" variant="primary" onClick={() => false} />
+        <ActionButton message="Пригласить друга" variant="primary" onClick={() => false} />
       </div>
     </LayoutContent>
   )
