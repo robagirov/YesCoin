@@ -4,15 +4,16 @@ import { FriendItem } from 'shared/ui/FriendItem'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 import type { MouseEventHandler } from 'react'
-import { useTelegram } from 'entities/Telegram'
+import { getTelegramBotInviteLink, useTelegram } from 'entities/Telegram'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
   const telegram = useTelegram()
 
   const inviteHandler: MouseEventHandler = () => {
-    // TODO: не работает, надо решать через сообщения бэку
-    telegram.sendData(JSON.stringify('/fren'))
+    telegram.openTelegramLink(getTelegramBotInviteLink())
+
+    telegram.close()
   }
 
   return (
