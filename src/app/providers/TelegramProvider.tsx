@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react'
 import { useIsHomePage } from 'shared/hooks'
-import { useTelegram } from 'entities/telegram'
+import { useTelegram } from 'entities/Telegram'
 import { useNavigate } from 'react-router-dom'
 
 export function TelegramProvider() {

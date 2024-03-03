@@ -4,7 +4,7 @@ import { FriendItem } from 'shared/ui/FriendItem'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 import type { MouseEventHandler } from 'react'
-import { useTelegram } from 'entities/telegram'
+import { useTelegram } from 'entities/Telegram'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
