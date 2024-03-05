@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import clsx from 'clsx'
 import { ROUTES } from 'shared/consts'
 import { Link } from 'react-router-dom'
@@ -7,12 +8,10 @@ interface ChooseSquadProps {
   className?: string
 }
 
-export function ChooseSquadButton({ className }: ChooseSquadProps) {
-  return (
-    <Link to={ROUTES.ENTER_SQUAD}>
-      <button type="button" className={clsx(styles.button, className)}>
-        Выбрать сквад →
-      </button>
-    </Link>
-  )
-}
+export const ChooseSquadButton = memo(({ className }: ChooseSquadProps) => (
+  <Link to={ROUTES.ENTER_SQUAD}>
+    <button type="button" className={clsx(styles.button, className)}>
+      Выбрать сквад →
+    </button>
+  </Link>
+))

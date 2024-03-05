@@ -1,13 +1,14 @@
-import { BalanceAmount, GoldLeagueLink, ChooseSquadButton, NavigationBar } from 'features'
+import { BalanceAmount, ChooseSquadButton, GoldLeagueLink, NavigationBar } from 'features'
 import { useEffect } from 'react'
 import { MainCoin } from 'widgets/MainCoin'
 import { useGetUser, useTap } from 'shared/openApi'
 import { useQueryClient } from '@tanstack/react-query'
 import { useTelegram, useTelegramUserId } from 'entities/Telegram'
-import useWebSocket from 'react-use-websocket'
+import useWebSocket, { ReadyState } from 'react-use-websocket'
 import styles from './styles.module.scss'
 
-const WS_URL = 'ws://yestoken.space:8000/game/ws/'
+const WS_URL = 'wss://yestoken.space/game/ws/'
+const MAX_ENERGY = 1000
 
 export function MainBoard() {
   const queryClient = useQueryClient()
@@ -15,9 +16,12 @@ export function MainBoard() {
   const userId = useTelegramUserId()
   const { data: user, queryKey: userQueryKey } = useGetUser(userId)
   const { mutate } = useTap()
-  const { sendJsonMessage, lastJsonMessage } = useWebSocket<string>(`${WS_URL}${userId}`, {
-    onOpen: () => sendJsonMessage({ event_method: 'energy_recovery' }),
-  })
+  const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket<{ energy: number }>(
+    `${WS_URL}${userId}`,
+    {
+      onOpen: () => sendJsonMessage({ event_method: 'energy_recovery' }),
+    },
+  )
 
   const onClickCoin = () => {
     if (!user) return
@@ -27,6 +31,8 @@ export function MainBoard() {
 
       return
     }
+
+    window.navigator.vibrate(100)
 
     mutate(
       { params: { user_id: userId } },
@@ -44,6 +50,10 @@ export function MainBoard() {
     telegram.expand()
   }, [telegram])
 
+  if (readyState !== ReadyState.OPEN) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div className={styles.content}>
       <ChooseSquadButton />
@@ -54,8 +64,8 @@ export function MainBoard() {
       </div>
 
       <MainCoin
-        energyLeft={Number(lastJsonMessage?.replace('energy=', '')) || 0}
-        totalEnergy={1000}
+        energyLeft={lastJsonMessage?.energy ?? 0}
+        totalEnergy={MAX_ENERGY}
         onClick={onClickCoin}
       />
 
