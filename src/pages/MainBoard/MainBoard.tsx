@@ -8,7 +8,7 @@ import useWebSocket, { ReadyState } from 'react-use-websocket'
 import { Loader } from 'shared/ui'
 import styles from './styles.module.scss'
 
-const WS_URL = 'wss://yestoken.space/game/ws/'
+const WS_URL = 'wss://yestoken.space/ws/'
 const MAX_ENERGY = 1000
 
 export function MainBoard() {
