@@ -1,10 +1,10 @@
-import { ActionButton, BackCard, InfoTrigger, LayoutContent, PageTitle } from 'shared/ui'
+import { ActionButton, BackCard, LayoutContent } from 'shared/ui'
 
 import { FriendItem } from 'shared/ui/FriendItem'
-import { Link } from 'react-router-dom'
-import { ROUTES } from 'shared/consts'
 import type { MouseEventHandler } from 'react'
 import { getTelegramBotInviteLink, useTelegram } from 'entities/Telegram'
+import { Typography } from 'shared/ui/Typography'
+import { ToLeaders } from 'features/ToLeaders'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
@@ -18,30 +18,28 @@ export function YourFriends() {
 
   return (
     <LayoutContent>
-      <div className={styles['title-wrapper']}>
-        <PageTitle title="Ваши друзья" />
+      <div className={styles.header}>
+        <Typography variant="h2">Ваши друзья</Typography>
 
-        <InfoTrigger text="Зови друзей и получай монетки!" />
+        <Typography variant="h6" color="purple">
+          Зови друзей и получай монетки!
+        </Typography>
       </div>
 
-      <div className={styles['to-leader']}>
-        <span style={{ textAlign: 'left' }}>+0</span>
+      <ToLeaders className={styles.leader} />
 
-        <Link to={ROUTES.PARTY_KINGS}>Топ 300 лидеров</Link>
-      </div>
+      <Typography variant="h3" className={styles.subtitle}>
+        Друзья
+      </Typography>
 
-      <div className={styles.subtitle}>Yes-друзья</div>
-
-      <div className={styles['friends-list-wrapper']}>
-        <BackCard className={styles['friends-list']}>
-          <FriendItem name="Бизьяна Битзайн" />
-          <FriendItem name="Бизьяна Битзайн" />
-          <FriendItem name="Бизьяна Битзайн" />
-          <FriendItem name="Бизьяна Битзайн" />
-          <FriendItem name="Бизьяна Битзайн" />
-          <FriendItem name="Бизьяна Битзайн" />
-        </BackCard>
-      </div>
+      <BackCard className={styles.friends}>
+        <FriendItem name="Бизьяна Битзайн" />
+        <FriendItem name="Бизьяна Битзайн" />
+        <FriendItem name="Бизьяна Битзайн" />
+        <FriendItem name="Бизьяна Битзайн" />
+        <FriendItem name="Бизьяна Битзайн" />
+        <FriendItem name="Бизьяна Битзайн" />
+      </BackCard>
 
       <ActionButton variant="primary" message="Пригласить друга" onClick={inviteHandler} />
     </LayoutContent>

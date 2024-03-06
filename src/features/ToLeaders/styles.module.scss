@@ -1,0 +1,27 @@
+@import "src/app/styles/mixins";
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2.9rem;
+  padding-right: 11.5rem;
+  height: vertical-sizing(68px);
+
+  @include backing;
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 5.2rem;
+    width: 1px;
+    background: rgb(255 255 255 / 70%);
+    left: 23%;
+  }
+
+  &::after {
+    @include pseudoArrow(3rem);
+  }
+}

@@ -11,7 +11,7 @@ type Props = {
 export function QueryProvider({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       {children}
     </QueryClientProvider>
   )

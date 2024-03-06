@@ -1,6 +1,11 @@
 @import "src/app/styles/mixins";
 
 .root {
-  row-gap: vertical-sizing(12px);
+  display: flex;
+  flex-direction: column;
+  row-gap: vertical-sizing(10px);
   padding: vertical-sizing(20px) 2rem;
+  overflow-y: auto;
+
+  @include backing
 }

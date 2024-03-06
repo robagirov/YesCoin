@@ -60,8 +60,9 @@ export function MainBoard() {
     <div className={styles.content}>
       <ChooseSquadButton />
 
-      <div>
+      <div className={styles.header}>
         <BalanceAmount amount={user?.balance ?? 0} />
+
         <GoldLeagueLink />
       </div>
 

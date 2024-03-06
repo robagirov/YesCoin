@@ -1,5 +1,6 @@
 import LuminousCircle from 'shared/icon/LuminousCircle.svg?react'
 import clsx from 'clsx'
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 interface BalanceAmountProps {
@@ -14,7 +15,7 @@ export function BalanceAmount({ amount, className }: BalanceAmountProps) {
     <div className={clsx(styles.container, className)}>
       <LuminousCircle />
 
-      <span className={styles.amount}>{formattedAmount}</span>
+      <Typography variant="h1">{formattedAmount}</Typography>
     </div>
   )
 }
