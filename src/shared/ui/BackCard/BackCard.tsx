@@ -11,14 +11,7 @@ interface BackCardProps {
 
 export function BackCard({ children, height, className }: BackCardProps) {
   return (
-    <div
-      className={clsx(
-        styles.root,
-        'flex flex-col rounded-md bg-[rgba(243,243,245,0.1)] overflow-y-auto',
-        className,
-      )}
-      style={{ height }}
-    >
+    <div className={clsx(styles.root, className)} style={{ height }}>
       {children}
     </div>
   )

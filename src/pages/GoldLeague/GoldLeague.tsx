@@ -49,7 +49,7 @@ export function GoldLeague() {
 
           <p className={styles.counter}>929,324 / 2M</p>
 
-          <EnergyRemain remain={5000} className={styles.remain} />
+          <EnergyRemain remain={900} className={styles.remain} />
 
           <ToggleSwitch
             className={styles.switch}

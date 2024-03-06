@@ -1,6 +1,6 @@
 @import "src/app/styles/mixins";
 
-.title-wrapper {
+.header {
   display: flex;
   flex-direction: column;
   row-gap: vertical-sizing(10px);
@@ -8,54 +8,15 @@
   margin-bottom: vertical-sizing(28px);
 }
 
-.to-leader {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 2.9rem;
-  padding-right: 8.5rem;
-  width: 100%;
-  border-radius: 6px;
-  background: rgb(24 24 24 / 90%);
-  color: white;
-  height: 5.2rem;
+.leader {
   margin-bottom: vertical-sizing(94px);
-
-  &::before,
-  &::after {
-    display: block;
-    content: "";
-    position: absolute;
-  }
-
-  &::before {
-    height: 5.7rem;
-    width: 1px;
-    background: rgb(255 255 255 / 70%);
-    left: 23%;
-  }
-
-  &::after {
-    border-left: 2px solid rgb(255 255 255 / 70%);
-    border-bottom: 2px solid rgb(255 255 255 / 70%);
-    border-radius: 2px;
-    height: 1.4rem;
-    width: 1.4rem;
-    right: 7%;
-    transform: rotate(225deg);
-  }
 }
 
 .subtitle {
-  font-size: 2.2rem;
   margin-bottom: 2rem;
 }
 
-.friends-list-wrapper {
-  margin-bottom: vertical-sizing(20px);
-}
-
-.friends-list {
+.friends {
   height: vertical-sizing(334px);
+  margin-bottom: vertical-sizing(20px);
 }

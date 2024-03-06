@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import type { MouseEventHandler } from 'react'
+import { Typography } from 'shared/ui/Typography'
 import styles from './ActionButton.module.scss'
 
 interface ActionButtonProps {
@@ -24,7 +25,9 @@ export function ActionButton({
       })}
       onClick={onClick}
     >
-      {message}
+      <Typography variant="h5" align="center">
+        {message}
+      </Typography>
     </button>
   )
 }

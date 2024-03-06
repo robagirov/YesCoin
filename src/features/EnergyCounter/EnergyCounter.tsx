@@ -1,3 +1,4 @@
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 interface Props {
@@ -8,11 +9,17 @@ interface Props {
 export function EnergyCounter({ energyLeft, totalEnergy }: Props) {
   return (
     <div className={styles.energy}>
-      <span className={styles.left}>{energyLeft}</span>
+      <Typography variant="h5" className={styles.left}>
+        {energyLeft}
+      </Typography>
 
-      <span className={styles.separator}>/</span>
+      <Typography variant="h5" className={styles.separator}>
+        /
+      </Typography>
 
-      <span className={styles.total}>{totalEnergy}</span>
+      <Typography variant="h5" className={styles.total}>
+        {totalEnergy}
+      </Typography>
     </div>
   )
 }
