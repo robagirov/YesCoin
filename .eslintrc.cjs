@@ -4,10 +4,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
   ],
   parserOptions: {
@@ -34,6 +34,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react/no-array-index-key': 'warn',
+    'react/prop-types': 'off',
+    'react/display-name': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
