@@ -51,9 +51,10 @@ export function MainBoard() {
     telegram.expand()
   }, [telegram])
 
-  if (readyState !== ReadyState.OPEN) {
-    return <Loader size={180} />
-  }
+  // TODO: ломает кликер
+  // if (readyState !== ReadyState.OPEN) {
+  //   return <Loader size={180} />
+  // }
 
   return (
     <div className={styles.content}>
