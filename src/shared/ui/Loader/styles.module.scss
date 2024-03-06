@@ -1,0 +1,37 @@
+.block {
+  box-sizing: content-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  border-color: transparent;
+  z-index: 1000;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    border-width: inherit;
+    border-style: solid;
+    border-color: rgb(201 86 255 / 20%) transparent;
+    animation: rotate-animation 3s linear infinite;
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
