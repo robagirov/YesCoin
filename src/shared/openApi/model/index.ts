@@ -5,14 +5,17 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from './getPagePagesGameGet200'
 export * from './hTTPValidationError'
 export * from './leagueCreate'
 export * from './leagueRead'
 export * from './squadRead'
+export * from './squadReadRate'
 export * from './tapParams'
 export * from './userCreate'
 export * from './userRead'
 export * from './userReadLeagueId'
+export * from './userReadRate'
 export * from './userReadSquadId'
 export * from './userTap'
 export * from './userUpdate'
