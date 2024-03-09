@@ -28,3 +28,14 @@ export function YourFriends() {
     </LayoutContent>
   )
 }
+
+// function FriendsList() {
+//   const userId = useTelegramUserId()
+//   const { id } = useParams()
+//   const { data } = useGetFriendsSuspense(Number(id) || userId)
+//
+//   // TODO: отрисовать состояние пустого списка
+//   if (!data?.length) return <p>У вас нет друзей</p>
+//
+//   return data.map((user) => <FriendItem asLink={!id} {...user} key={user.telegram_id} />)
+// }
