@@ -56,7 +56,7 @@ export function PageRoutes() {
           }
         />
         <Route
-          path={ROUTES.YOUR_FRIENDS}
+          path={`${ROUTES.YOUR_FRIENDS}/:id?`}
           element={
             <PageTransition>
               <YourFriends />

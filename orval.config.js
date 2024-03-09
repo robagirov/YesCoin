@@ -8,6 +8,10 @@ module.exports = {
       schemas: 'model',
       client: 'react-query',
       override: {
+        query: {
+          useQuery: true,
+          useSuspenseQuery: true,
+        },
         mutator: {
           path: '../api/axiosInstance.ts',
           name: 'axiosInstance',
