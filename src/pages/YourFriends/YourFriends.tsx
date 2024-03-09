@@ -3,9 +3,14 @@ import { Typography } from 'shared/ui/Typography'
 import { ToLeaders } from 'features/ToLeaders'
 import { FriendsList } from 'features'
 import { InviteFriendButton } from 'features/invite-friend'
+import { useParams } from 'react-router-dom'
+import { useGetUser } from 'shared/openApi'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
+  const { id } = useParams()
+  const { data: currentUser } = useGetUser(Number(id))
+
   return (
     <LayoutContent>
       <div className={styles.header}>
@@ -19,7 +24,7 @@ export function YourFriends() {
       <ToLeaders className={styles.leader} />
 
       <Typography variant="h3" className={styles.subtitle}>
-        Друзья
+        Друзья {currentUser?.username}
       </Typography>
 
       <FriendsList className={styles.friends} />

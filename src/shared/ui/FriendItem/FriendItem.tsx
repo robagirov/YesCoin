@@ -28,7 +28,7 @@ export function FriendItem({ avatar, username, telegram_id: id, asLink }: Friend
       <div className={classNameInfo}>
         <div>
           <span className={styles.infoTitle}>{username}</span>
-          <GoldLeagueLink isSmall />
+          <GoldLeagueLink asLink={false} isSmall />
         </div>
 
         <span className={styles.yellowText}>+50k</span>
