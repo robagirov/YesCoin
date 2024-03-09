@@ -5,6 +5,4 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export interface UserTap {
-  balance: number
-}
+export type GetPagePagesGameGet200 = {}

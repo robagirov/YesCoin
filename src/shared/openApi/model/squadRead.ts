@@ -4,10 +4,11 @@
  * YesCoin-API
  * OpenAPI spec version: 0.1.0
  */
+import type { SquadReadRate } from './squadReadRate'
 
 export interface SquadRead {
   balance: number
   group: string
   name: string
-  rate: number
+  rate: SquadReadRate
 }
