@@ -12,7 +12,13 @@
   padding-right: 2.4rem;
 
   &::before {
-    @include pseudo-arrow
+    @include pseudo-arrow;
+  }
+
+  &_noArrow {
+    &::before {
+      content: none;
+    }
   }
 }
 

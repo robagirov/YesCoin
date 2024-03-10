@@ -1,8 +1,11 @@
-import { ListBlock } from 'shared/ui'
+import { ListBlock, Loader } from 'shared/ui'
 import clsx from 'clsx'
-import styles from './styles.module.scss'
+import { useParams } from 'react-router-dom'
+import { useTelegramUserId } from 'entities/Telegram'
+import { useGetFriendsSuspense } from 'shared/openApi'
+import { Suspense } from 'react'
 import { FriendItem } from './FriendItem'
-import { mockData } from '../model/mock'
+import styles from './styles.module.scss'
 
 interface FriendsListProps {
   className?: string
@@ -11,9 +14,20 @@ interface FriendsListProps {
 export function FriendsList({ className }: FriendsListProps) {
   return (
     <ListBlock className={clsx(styles.list, className)}>
-      {mockData?.map(({ name, level, avatar, bonus }) => (
-        <FriendItem key={name} name={name} level={level} avatar={avatar} bonus={bonus} />
-      ))}
+      <Suspense fallback={<Loader />}>
+        <ItemsList />
+      </Suspense>
     </ListBlock>
   )
+}
+
+function ItemsList() {
+  const userId = useTelegramUserId()
+  const { id } = useParams()
+  const { data } = useGetFriendsSuspense(Number(id) || userId)
+
+  // TODO: отрисовать состояние пустого списка
+  if (!data?.length) return <p>У вас нет друзей</p>
+
+  return data.map((user) => <FriendItem asLink={!id} {...user} key={user.telegram_id} />)
 }
