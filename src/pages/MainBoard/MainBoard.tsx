@@ -1,11 +1,11 @@
-import { BalanceAmount, ChooseSquadButton, GoldLeagueLink, NavigationBar } from 'features'
+import { BalanceAmount, ChooseSquadButton, NavigationBar } from 'features'
 import { useEffect } from 'react'
 import { MainCoin } from 'widgets/MainCoin'
 import { useGetUser, useTap } from 'shared/openApi'
 import { useQueryClient } from '@tanstack/react-query'
 import { useTelegram, useTelegramUserId } from 'entities/Telegram'
-import useWebSocket, { ReadyState } from 'react-use-websocket'
-import { Loader } from 'shared/ui'
+import useWebSocket from 'react-use-websocket'
+import { GamerLevel } from 'shared/ui/GamerLevel'
 import styles from './styles.module.scss'
 
 const WS_URL = 'wss://yestoken.space/ws/'
@@ -63,7 +63,7 @@ export function MainBoard() {
       <div className={styles.header}>
         <BalanceAmount amount={user?.balance ?? 0} />
 
-        <GoldLeagueLink />
+        <GamerLevel level="Pro" />
       </div>
 
       <MainCoin
