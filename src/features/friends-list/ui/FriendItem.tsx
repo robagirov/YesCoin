@@ -1,6 +1,6 @@
 import { Picture } from 'shared/ui/Picture'
 import { Typography } from 'shared/ui/Typography'
-// import { GamerLevel } from 'shared/ui/GamerLevel'
+import { GamerLevel } from 'shared/ui/GamerLevel'
 // import { USER_PRO_LEVEL } from 'shared/consts/user-levels.ts'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
@@ -40,7 +40,7 @@ export function FriendItem({
         <div className={styles.inner}>
           <Typography variant="h6">{username}</Typography>
 
-          {/* <GamerLevel level={level} /> */}
+          <GamerLevel level="Middle" />
         </div>
 
         {/* <Typography variant="h6" color={bonusColor}> */}
