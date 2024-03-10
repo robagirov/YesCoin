@@ -1,18 +1,11 @@
-import {
-  Subtitle,
-  BackCard,
-  ModalView,
-  GlowCircle,
-  InfoTrigger,
-  ActionButton,
-  LayoutContent,
-} from 'shared/ui'
+import { ListBlock, ModalView, GlowCircle, ActionButton, LayoutContent } from 'shared/ui'
 
 import { BalanceAmount, BoostCard, BoostOption } from 'features'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 
+import { Typography } from 'shared/ui/Typography'
 import { boostData, freeBoostData } from './mock.ts'
 import styles from './styles.module.scss'
 
@@ -31,16 +24,22 @@ export function GameBoosts() {
     <>
       <LayoutContent>
         <div className={styles.balance}>
-          <p className={styles.balance__text}>Ваш баланс</p>
+          <Typography variant="h4" color="gray">
+            Ваш баланс
+          </Typography>
 
           <BalanceAmount amount={5000000} />
 
           <Link to={ROUTES.YES_COIN}>
-            <InfoTrigger text="Как работают Бусты?" />
+            <Typography variant="h4" color="purple">
+              Как работают Бусты?
+            </Typography>
           </Link>
         </div>
 
-        <Subtitle title="Бесплатные бусты" className={styles.subtitle} />
+        <Typography variant="h3" className={styles.subtitle}>
+          Бесплатные бусты
+        </Typography>
 
         <div className={styles.freeBoosts}>
           {freeBoostData.map(([boostName, boostDesc]) => (
@@ -50,9 +49,11 @@ export function GameBoosts() {
           ))}
         </div>
 
-        <Subtitle title="Бусты" className={styles.subtitle} />
+        <Typography variant="h3" className={styles.subtitle}>
+          Бусты
+        </Typography>
 
-        <BackCard className={styles.boostList}>
+        <ListBlock className={styles.boostList}>
           {boostData.map(([boostName, boostDesc]) => (
             <BoostOption
               key={boostName}
@@ -61,11 +62,13 @@ export function GameBoosts() {
               onClick={() => onOpenModal(boostDesc)}
             />
           ))}
-        </BackCard>
+        </ListBlock>
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
-        <Subtitle title={modalContent} className={styles.modalContent} />
+        <Typography variant="h3" className={styles.modalContent}>
+          {modalContent}
+        </Typography>
 
         <ActionButton
           className={styles.confirm}

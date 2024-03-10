@@ -1,19 +1,20 @@
 @import "src/app/styles/mixins";
 
 .header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   row-gap: vertical-sizing(15px);
-  margin-bottom: vertical-sizing(35px);
+  margin-bottom: vertical-sizing(56px);
 }
 
-.inviteFriend {
-  margin-bottom: vertical-sizing(15px);
+.button {
+  margin-bottom: vertical-sizing(16px);
 }
 
 .topChartList {
   height: vertical-sizing(438px);
   margin-bottom: - vertical-sizing(32px);
-}
-
-.info {
-  width: 28rem;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }

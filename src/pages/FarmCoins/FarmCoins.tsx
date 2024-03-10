@@ -1,4 +1,5 @@
-import { BackCard, InfoTrigger, MoveItem, PageTitle, Subtitle, LayoutContent } from 'shared/ui'
+import { ListBlock, MoveItem, LayoutContent } from 'shared/ui'
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 export function FarmCoins() {
@@ -6,25 +7,29 @@ export function FarmCoins() {
     <LayoutContent>
       <div className={styles.content}>
         <div className={styles.head}>
-          <PageTitle title="Только Yes фармингу" />
+          <Typography variant="h2">Только Yes фармингу</Typography>
 
-          <InfoTrigger text="Полная инструкция" />
+          <Typography variant="h4" color="purple">
+            Полная инструкция
+          </Typography>
         </div>
 
-        <BackCard className={styles.topItem}>
+        <div className={styles.topItem}>
           <MoveItem coins={10000} title="Зови друзей" />
-        </BackCard>
+        </div>
 
-        <Subtitle title="Активные" className={styles.active} />
+        <Typography variant="h3" className={styles.active}>
+          Активные
+        </Typography>
 
-        <BackCard className={styles.farmList}>
+        <ListBlock className={styles.farmList}>
           <MoveItem coins={10000} title="Пригласи 10 друзей" />
           <MoveItem coins={10000} title="Присоединиться в сквад" />
           <MoveItem coins={10000} title="Подпишись на канал" />
           <MoveItem coins={10000} title="Пригласи 10 друзей" />
           <MoveItem coins={10000} title="Присоединиться в сквад" />
           <MoveItem coins={10000} title="Подпишись на канал" />
-        </BackCard>
+        </ListBlock>
       </div>
     </LayoutContent>
   )

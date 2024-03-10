@@ -1,3 +1,5 @@
+import { Picture } from 'shared/ui/Picture'
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 interface MoveItemProps {
@@ -9,15 +11,16 @@ interface MoveItemProps {
 export function MoveItem({ avatar, title, coins }: MoveItemProps) {
   return (
     <div className={styles.wrapper}>
-      <img
-        src={avatar || 'https://vatnikstan.ru/wp-content/uploads/2020/12/mavrodi.jpg'}
-        className={styles.picture}
-        alt="Фото профиля"
-      />
+      <Picture type="square" src={avatar} />
 
       <div className={styles.info}>
-        <span className={styles.infoTitle}>{title}</span>
-        <span className={styles.infoCount}>+{coins.toLocaleString()}</span>
+        <Typography variant="h4" color="gray">
+          {title}
+        </Typography>
+
+        <Typography variant="h6" color="white">
+          +{coins.toLocaleString()}
+        </Typography>
       </div>
     </div>
   )

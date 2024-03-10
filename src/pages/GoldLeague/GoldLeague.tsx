@@ -1,7 +1,6 @@
 import {
-  BackCard,
-  ListItem,
-  PageTitle,
+  ListBlock,
+  NumberedItem,
   SwitchBar,
   EnergyRemain,
   ToggleSwitch,
@@ -10,6 +9,7 @@ import {
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import { Typography } from 'shared/ui/Typography'
 import { squadTopList } from './model/mock.ts'
 import styles from './styles.module.scss'
 
@@ -45,7 +45,9 @@ export function GoldLeague() {
         </Link>
 
         <div className={styles.list}>
-          <PageTitle title="Золотая Лига" className={styles.title} />
+          <Typography variant="h2" className={styles.title}>
+            Золотая Лига
+          </Typography>
 
           <p className={styles.counter}>929,324 / 2M</p>
 
@@ -65,16 +67,16 @@ export function GoldLeague() {
               setActiveIndex={setActiveType}
             />
 
-            <BackCard className={styles.back}>
+            <ListBlock className={styles.back}>
               {squadTopList?.[activeType]?.map((person) => (
-                <ListItem
+                <NumberedItem
                   key={person.number}
                   number={person.number}
                   title={person.title}
                   subtitle={person.subtitle}
                 />
               ))}
-            </BackCard>
+            </ListBlock>
           </div>
         </div>
       </div>

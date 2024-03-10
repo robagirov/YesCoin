@@ -1,8 +1,8 @@
-import { ActionButton, BackCard, InfoSection, PageTitle, SquadItem, LayoutContent } from 'shared/ui'
-import { Link } from 'react-router-dom'
-import { ROUTES } from 'shared/consts'
+import { ActionButton, LayoutContent } from 'shared/ui'
 import { getTelegramBotCreateSquadLink, useTelegram } from 'entities/Telegram'
 import type { MouseEventHandler } from 'react'
+import { Typography } from 'shared/ui/Typography'
+import { SquadList } from 'features/sqaud-list/ui/SquadList.tsx'
 import styles from './styles.module.scss'
 
 export function EnterSquad() {
@@ -17,9 +17,11 @@ export function EnterSquad() {
   return (
     <LayoutContent>
       <div className={styles.header}>
-        <PageTitle title="Залетай в сквад" />
+        <Typography variant="h2">Залетай в сквад</Typography>
 
-        <InfoSection message="Эти сквады активно набирают игроков Скажи Yes любому" />
+        <Typography variant="h6" color="gray" align="center">
+          Эти сквады активно набирают игроков {'\n'} Скажи Yes любому
+        </Typography>
       </div>
 
       <ActionButton
@@ -29,13 +31,7 @@ export function EnterSquad() {
         message="Выбрать другой сквад"
       />
 
-      <BackCard className={styles.squadList}>
-        {Array.from({ length: 10 }, (_, k) => k).map((_, idx) => (
-          <Link to={ROUTES.SQUAD_NAME} key={idx}>
-            <SquadItem title="Арнольд Криптоалютный" subtitle="Gold" />
-          </Link>
-        ))}
-      </BackCard>
+      <SquadList />
     </LayoutContent>
   )
 }

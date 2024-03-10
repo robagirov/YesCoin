@@ -1,4 +1,5 @@
-import { PageTitle, ActionButton, LayoutContent } from 'shared/ui'
+import { ActionButton, LayoutContent } from 'shared/ui'
+import { Typography } from 'shared/ui/Typography'
 
 export function SquadWork() {
   return (
@@ -9,7 +10,9 @@ export function SquadWork() {
         <ActionButton variant="secondary" onClick={() => false} message="Подписаться" />
       </div>
 
-      <PageTitle title="Сквады" className="mb-12" />
+      <Typography variant="h2" className="mb-12">
+        Сквады
+      </Typography>
 
       <div className="flex flex-col gap-y-7 mb-40 pl-6">
         <div className="flex gap-x-3.5">

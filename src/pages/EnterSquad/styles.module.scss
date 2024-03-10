@@ -3,15 +3,11 @@
 .header {
   display: flex;
   flex-direction: column;
-  row-gap: vertical-sizing(15px);
-  margin-bottom: vertical-sizing(35px);
+  align-items: center;
+  row-gap: vertical-sizing(4px);
+  margin-bottom: vertical-sizing(56px);
 }
 
 .button {
   margin-bottom: vertical-sizing(15px);
-}
-
-.squadList {
-  height: vertical-sizing(443px);
-  margin-bottom: -(vertical-sizing(32px));
 }

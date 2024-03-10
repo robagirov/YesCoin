@@ -1,21 +1,11 @@
-import { ActionButton, BackCard, LayoutContent } from 'shared/ui'
-
-import { FriendItem } from 'shared/ui/FriendItem'
-import type { MouseEventHandler } from 'react'
-import { getTelegramBotInviteLink, useTelegram } from 'entities/Telegram'
+import { LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
 import { ToLeaders } from 'features/ToLeaders'
+import { FriendsList } from 'features'
+import { InviteFriendButton } from 'features/invite-friend'
 import styles from './styles.module.scss'
 
 export function YourFriends() {
-  const telegram = useTelegram()
-
-  const inviteHandler: MouseEventHandler = () => {
-    telegram.openTelegramLink(getTelegramBotInviteLink())
-
-    telegram.close()
-  }
-
   return (
     <LayoutContent>
       <div className={styles.header}>
@@ -32,16 +22,9 @@ export function YourFriends() {
         Друзья
       </Typography>
 
-      <BackCard className={styles.friends}>
-        <FriendItem name="Бизьяна Битзайн" />
-        <FriendItem name="Бизьяна Битзайн" />
-        <FriendItem name="Бизьяна Битзайн" />
-        <FriendItem name="Бизьяна Битзайн" />
-        <FriendItem name="Бизьяна Битзайн" />
-        <FriendItem name="Бизьяна Битзайн" />
-      </BackCard>
+      <FriendsList className={styles.friends} />
 
-      <ActionButton variant="primary" message="Пригласить друга" onClick={inviteHandler} />
+      <InviteFriendButton />
     </LayoutContent>
   )
 }

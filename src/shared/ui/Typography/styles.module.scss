@@ -1,18 +1,24 @@
 .basic {
   background-clip: text;
-  color: transparent
+  color: transparent;
+  white-space: pre-wrap;
 }
 
 .color-white {
-  background-image: linear-gradient(rgba(255, 255, 255, 1))
+  background-image: linear-gradient(rgb(255 255 255 / 100%))
 }
 
 .color-purple {
-  background-image: linear-gradient(0deg, #996BFF, #996BFF), linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-image: linear-gradient(325.7deg, rgb(153 153 153 / 0%) -4.91%, rgb(255 255 255 / 30%) -3.02%, rgb(255 255 255 / 30%) 39.58%, rgb(255 255 255 / 30%) 92.44%, rgb(153 153 153 / 0%) 121.19%, rgb(153 153 153 / 0%) 121.19%),
+                    linear-gradient(94.18deg, #010D52 -45.03%, #32249B -17.88%, #6D28CC 15.39%, #8726E1 64.07%, #9145C9 85.25%, #9350BE 105.46%);
 }
 
 .color-gold {
   background-image: linear-gradient(180deg, #FFF8B5 -41.67%, #FFDE6B 90.66%);
+}
+
+.color-gray {
+  background-image: radial-gradient(46.3% 75.26% at 50% 15.39%, #E2E2E2 0%, #ADADAD 100%);
 }
 
 .h1 {
@@ -47,7 +53,7 @@
 
 .h6 {
   font-size: 1.4rem;
-  line-height: 1.4rem;
+  line-height: 2.4rem;
   font-weight: 500;
 }
 

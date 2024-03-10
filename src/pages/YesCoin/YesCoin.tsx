@@ -1,5 +1,6 @@
-import { ActionButton, LayoutContent, PageTitle } from 'shared/ui'
+import { ActionButton, LayoutContent } from 'shared/ui'
 
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 export function YesCoin() {
@@ -11,7 +12,9 @@ export function YesCoin() {
         <ActionButton variant="secondary" onClick={() => false} message="Подписаться" />
       </div>
 
-      <PageTitle title="YesCoin" className={styles.title} />
+      <Typography variant="h2" className={styles.title}>
+        YesCoin
+      </Typography>
 
       <div className={styles.list}>
         <div className={styles.item}>

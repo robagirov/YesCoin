@@ -1,8 +1,7 @@
 import {
-  BackCard,
-  ListItem,
+  ListBlock,
+  NumberedItem,
   ModalView,
-  PageTitle,
   SwitchBar,
   GlowCircle,
   ActionButton,
@@ -11,6 +10,7 @@ import {
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
+import { Typography } from 'shared/ui/Typography'
 import { squadTopList } from './model/mock.ts'
 
 import styles from './styles.module.scss'
@@ -29,7 +29,9 @@ export function SquadName() {
       <LayoutContent>
         <div className={styles.image} />
 
-        <PageTitle title="Имя Сквада" className={styles.title} />
+        <Typography variant="h2" className={styles.title}>
+          Имя Сквада
+        </Typography>
 
         <p className={styles.subtitle}>Diamond</p>
 
@@ -72,22 +74,24 @@ export function SquadName() {
             setActiveIndex={setActiveIndex}
           />
 
-          <BackCard className={styles.list}>
+          <ListBlock className={styles.list}>
             {squadTopList?.[activeIndex]?.map((person) => (
-              <ListItem
+              <NumberedItem
                 key={person.number}
                 number={person.number}
                 title={person.title}
                 subtitle={person.subtitle}
               />
             ))}
-          </BackCard>
+          </ListBlock>
         </div>
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
         <div className="h-full z-10 flex flex-col justify-end">
-          <PageTitle title="Буст вашего Сквада на 24 часа" className="mb-56 mt-32" />
+          <Typography variant="h2" className="mb-56 mt-32">
+            Буст вашего Сквада на 24 часа
+          </Typography>
 
           <ActionButton className="mb-6" variant="secondary" message="100$" onClick={() => false} />
 

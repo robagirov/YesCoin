@@ -8,7 +8,7 @@ export interface TypographyProps {
   className?: string
   children: React.ReactNode
   align?: 'left' | 'center' | 'right' | 'justify'
-  color?: 'white' | 'purple' | 'gold'
+  color?: 'white' | 'purple' | 'gold' | 'gray'
 }
 
 export function Typography({

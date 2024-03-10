@@ -1,7 +1,8 @@
-import { ActionButton, InfoTrigger, ModalView, PageTitle, LayoutContent } from 'shared/ui'
+import { ActionButton, ModalView, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 export function MajorDigits() {
@@ -20,9 +21,13 @@ export function MajorDigits() {
         <div className={styles.header}>
           <p className={styles.header__balance}>Общий количество YesCoin</p>
 
-          <PageTitle title={(153411234123).toLocaleString()} />
+          <Typography variant="h2">{(153411234123).toLocaleString()}</Typography>
 
-          <InfoTrigger text="Что значит это число?" onClick={onOpenModal} />
+          <div onClick={onOpenModal}>
+            <Typography variant="h4" color="purple">
+              Что значит это число?
+            </Typography>
+          </div>
         </div>
 
         <div className={styles.totals}>
@@ -74,7 +79,9 @@ export function MajorDigits() {
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
-        <PageTitle title="Детали" className={styles.modalTitle} />
+        <Typography variant="h2" className={styles.modalTitle}>
+          Детали
+        </Typography>
 
         <div className={styles.more}>
           <p className={styles.main}>10,245,234,235,536</p>

@@ -1,0 +1,8 @@
+@import "src/app/styles/mixins";
+
+.topChartList {
+  height: vertical-sizing(438px);
+  margin-bottom: - vertical-sizing(32px);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
