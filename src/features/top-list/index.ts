@@ -1,5 +1,1 @@
-export { top
--list
-}
-from
-'./top-list'
+export { TopList } from './ui/TopList'
