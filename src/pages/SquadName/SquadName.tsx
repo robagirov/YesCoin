@@ -1,17 +1,10 @@
-import {
-  ListBlock,
-  NumberedItem,
-  ModalView,
-  SwitchBar,
-  GlowCircle,
-  ActionButton,
-  LayoutContent,
-} from 'shared/ui'
+import { ModalView, SwitchBar, GlowCircle, ActionButton, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 import { Typography } from 'shared/ui/Typography'
-import { squadTopList } from './model/mock.ts'
+import { Picture } from 'shared/ui/Picture'
+import { TopList } from 'features/top-list'
 
 import styles from './styles.module.scss'
 
@@ -27,30 +20,51 @@ export function SquadName() {
   return (
     <>
       <LayoutContent>
-        <div className={styles.image} />
+        <div className={styles.header}>
+          <Picture
+            size="large"
+            type="square"
+            className={styles.image}
+            src="assets/squads/squad-1.png"
+          />
 
-        <Typography variant="h2" className={styles.title}>
-          Имя Сквада
-        </Typography>
+          <Typography variant="h2" className={styles.title}>
+            Имя Сквада
+          </Typography>
 
-        <p className={styles.subtitle}>Diamond</p>
+          <Typography variant="h4" className={styles.level}>
+            Pro LVL
+          </Typography>
 
-        <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
-          Как работают Сквады?
-        </Link>
+          <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
+            <Typography variant="h4" color="gray">
+              Как работают Сквады?
+            </Typography>
+          </Link>
+        </div>
 
         <div className={styles.squadInfo}>
           <div className={styles.counts}>
             <div className={styles.count}>
-              <p className={styles.count__text}>61.578B</p>
-              <p className={styles.count__sign}>всего монет</p>
+              <Typography variant="h4" color="white">
+                61.578B
+              </Typography>
+
+              <Typography variant="h6" color="gray">
+                всего монет
+              </Typography>
             </div>
 
             <div className={styles.count__divider} />
 
             <div className={styles.count}>
-              <p className={styles.count__text}>61.578B</p>
-              <p className={styles.count__sign}>игроков</p>
+              <Typography variant="h4" color="white">
+                61.578B
+              </Typography>
+
+              <Typography variant="h6" color="gray">
+                игроков
+              </Typography>
             </div>
           </div>
 
@@ -74,22 +88,13 @@ export function SquadName() {
             setActiveIndex={setActiveIndex}
           />
 
-          <ListBlock className={styles.list}>
-            {squadTopList?.[activeIndex]?.map((person) => (
-              <NumberedItem
-                key={person.number}
-                number={person.number}
-                title={person.title}
-                subtitle={person.subtitle}
-              />
-            ))}
-          </ListBlock>
+          <TopList className={styles.list} />
         </div>
       </LayoutContent>
 
       <ModalView isOpen={modalOpen}>
         <div className="h-full z-10 flex flex-col justify-end">
-          <Typography variant="h2" className="mb-56 mt-32">
+          <Typography variant="h2" className="mb-56 mt-32" align="center">
             Буст вашего Сквада на 24 часа
           </Typography>
 

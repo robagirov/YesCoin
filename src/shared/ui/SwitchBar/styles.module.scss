@@ -1,13 +1,14 @@
 @import "src/app/styles/mixins";
 
-.item {
+.root {
+  @include backing;
+
   display: flex;
   justify-content: center;
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: vertical-sizing(16px) 2rem;
   position: relative;
-  background-color: rgb(243 243 245 / 10%);
 }
 
 .button {
@@ -19,7 +20,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: rgb(153 107 255);
+  background-color: rgb(255 255 255);
   height: 1px;
   transition: transform 0.3s ease-out;
 }

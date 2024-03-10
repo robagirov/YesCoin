@@ -1,61 +1,54 @@
 @import "src/app/styles/mixins";
 
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .image {
-  width: vertical-sizing(90px);
-  height: vertical-sizing(90px);
-  border-radius: 1.2rem;
-  background-color: rgb(243 243 245 / 10%);
-  margin: 0 auto vertical-sizing(35px) auto;
+  margin-bottom: vertical-sizing(12px);
 }
 
 .title {
-  margin-bottom: vertical-sizing(5px);
+  margin-bottom: vertical-sizing(24px);
 }
 
-.subtitle {
-  margin-bottom: vertical-sizing(10px);
-  text-align: center;
+.level {
+  margin-bottom: vertical-sizing(16px);
 }
 
 .link {
-  text-align: center;
-  display: block;
-  margin-bottom: vertical-sizing(15px);
+  margin-bottom: vertical-sizing(24px);
 }
 
 .squadInfo {
-  border-radius: 1.2rem;
-  background-color: rgb(243 243 245 / 10%);
-  padding: vertical-sizing(30px) 1.5rem vertical-sizing(15px) 1.5rem;
+  @include backing;
+
+  padding: vertical-sizing(16px) 1.6rem;
   margin-bottom: vertical-sizing(15px);
 }
 
 .counts {
   display: flex;
+  align-items: center;
+  padding-top: vertical-sizing(14px);
   margin-bottom: vertical-sizing(30px);
 }
 
 .count {
-  padding-left: 2rem;
+  flex: 1;
+  padding-left: 4rem;
 
-  &:last-child {
+  &:first-child {
     padding-left: 2.8rem;
   }
 
   &__divider {
-    height: vertical-sizing(50px);
+    height: 5rem;
     width: 1px;
-    background-color: rgb(46 46 46);
+    background-color: rgb(255 255 255 / 50%);
     margin-left: 3.5rem;
-  }
-
-  &__text {
-    font-size: 2rem;
-    font-weight: 500;
-  }
-
-  &__sign {
-    opacity: 0.3;
   }
 }
 
