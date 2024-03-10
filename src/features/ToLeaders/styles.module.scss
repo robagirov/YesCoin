@@ -15,13 +15,13 @@
     display: block;
     content: "";
     position: absolute;
-    height: 5.2rem;
+    height: vertical-sizing(52px);
     width: 1px;
     background: rgb(255 255 255 / 70%);
     left: 23%;
   }
 
   &::after {
-    @include pseudoArrow(3rem);
+    @include pseudo-arrow(3rem);
   }
 }

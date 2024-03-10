@@ -9,7 +9,10 @@
 }
 
 .topItem {
+  padding: vertical-sizing(16px) 1.6rem;
   margin-bottom: vertical-sizing(30px);
+
+  @include backing
 }
 
 .active {

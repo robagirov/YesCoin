@@ -2,10 +2,10 @@
 
 .header {
   display: flex;
-  flex-direction: column;
-  row-gap: vertical-sizing(10px);
   align-items: center;
-  margin-bottom: vertical-sizing(28px);
+  flex-direction: column;
+  row-gap: vertical-sizing(8px);
+  margin-bottom: vertical-sizing(24px);
 }
 
 .leader {
@@ -17,6 +17,5 @@
 }
 
 .friends {
-  height: vertical-sizing(334px);
   margin-bottom: vertical-sizing(20px);
 }
