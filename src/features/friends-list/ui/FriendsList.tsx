@@ -23,9 +23,7 @@ export function FriendsList({ className }: FriendsListProps) {
 
 function ItemsList() {
   const userId = useTelegramUserId()
-  console.log('=>(FriendsList.tsx:26) userId', userId)
   const { id } = useParams()
-  console.log('=>(FriendsList.tsx:28) id', id)
   const { data, isError } = useGetFriendsSuspense(Number(id) || userId)
 
   // TODO: отрисовать состояние пустого списка
