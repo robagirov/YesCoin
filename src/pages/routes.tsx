@@ -112,7 +112,7 @@ export function PageRoutes() {
           }
         />
         <Route
-          path={`${ROUTES.JOIN_SQUAD}/:id?`}
+          path={`${ROUTES.JOIN_SQUAD}/:id`}
           element={
             <PageTransition>
               <JoinSquad />
