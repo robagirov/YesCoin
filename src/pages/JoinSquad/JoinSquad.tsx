@@ -1,6 +1,5 @@
 import { ActionButton, LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
-import { Picture } from 'shared/ui/Picture'
 import { useParams } from 'react-router-dom'
 import { useGetSquad } from 'shared/openApi'
 import styles from './styles.module.scss'
@@ -20,7 +19,7 @@ export function JoinSquad() {
       </div>
 
       <Typography variant="h2" className="mb-72" align="center">
-        Присоединиться к Арнольд Криптовалютный Squad
+        Присоединиться к {squad?.name}
       </Typography>
 
       <div className={styles.additional}>

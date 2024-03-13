@@ -69,7 +69,7 @@ export function SquadName() {
           </div>
 
           <div className={styles.buttons}>
-            <Link to={ROUTES.JOIN_SQUAD}>
+            <Link to={`${ROUTES.JOIN_SQUAD}/${id}`}>
               <ActionButton
                 variant="primary"
                 onClick={() => false}
