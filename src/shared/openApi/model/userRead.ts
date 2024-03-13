@@ -4,17 +4,17 @@
  * YesCoin-API
  * OpenAPI spec version: 0.1.0
  */
-import type { UserReadLeagueId } from './userReadLeagueId'
+import type { UserReadIsPremium } from './userReadIsPremium'
+import type { UserReadLanguageCode } from './userReadLanguageCode'
 import type { UserReadRate } from './userReadRate'
-import type { UserReadSquadId } from './userReadSquadId'
 
 export interface UserRead {
   balance: number
   energy: number
   invite_code: string
-  league_id: UserReadLeagueId
+  is_premium: UserReadIsPremium
+  language_code: UserReadLanguageCode
   rate: UserReadRate
-  squad_id: UserReadSquadId
   telegram_id: number
   total_score: number
   username: string

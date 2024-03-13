@@ -4,9 +4,6 @@
  * YesCoin-API
  * OpenAPI spec version: 0.1.0
  */
+import type { SquadRead } from './squadRead'
 
-export interface LeagueRead {
-  id: number
-  name: string
-  type: string
-}
+export type LeagueReadDetailSquads = SquadRead[] | null

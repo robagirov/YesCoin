@@ -9,6 +9,7 @@ import type { SquadReadRate } from './squadReadRate'
 export interface SquadRead {
   balance: number
   group: string
+  id: number
   name: string
   rate: SquadReadRate
 }

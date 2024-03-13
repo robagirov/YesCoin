@@ -1,9 +1,16 @@
 import { ActionButton, LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
 import { Picture } from 'shared/ui/Picture'
+import { useParams } from 'react-router-dom'
+import { useGetSquad } from 'shared/openApi'
 import styles from './styles.module.scss'
 
 export function JoinSquad() {
+  const { id } = useParams()
+  const { data: squad } = useGetSquad(Number(id))
+
+  // TODO: mock
+
   return (
     <LayoutContent>
       <div className="flex justify-center mb-12">

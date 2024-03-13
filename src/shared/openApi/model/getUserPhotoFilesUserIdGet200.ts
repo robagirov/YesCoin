@@ -5,8 +5,4 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export interface LeagueRead {
-  id: number
-  name: string
-  type: string
-}
+export type GetUserPhotoFilesUserIdGet200 = {}

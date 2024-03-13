@@ -104,7 +104,7 @@ export function PageRoutes() {
           }
         />
         <Route
-          path={ROUTES.SQUAD_NAME}
+          path={`${ROUTES.SQUAD_NAME}/:id`}
           element={
             <PageTransition>
               <SquadName />
@@ -112,7 +112,7 @@ export function PageRoutes() {
           }
         />
         <Route
-          path={ROUTES.JOIN_SQUAD}
+          path={`${ROUTES.JOIN_SQUAD}/:id?`}
           element={
             <PageTransition>
               <JoinSquad />
