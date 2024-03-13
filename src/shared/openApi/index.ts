@@ -17,12 +17,16 @@ import type {
 } from '@tanstack/react-query'
 import type {
   GetPagePagesGameGet200,
+  GetUserFile200,
   HTTPValidationError,
   LeagueCreate,
   LeagueRead,
+  LeagueReadDetail,
   SquadRead,
+  SquadReadDetail,
   TapParams,
   UserRead,
+  UserReadDetail,
   UserTap,
 } from './model'
 import { axiosInstance } from '../api/axiosInstance'
@@ -33,7 +37,7 @@ type SecondParameter<T extends (...args: any) => any> = Parameters<T>[1]
  * @summary Get Users
  */
 export const getUsers = (options?: SecondParameter<typeof axiosInstance>, signal?: AbortSignal) => {
-  return axiosInstance<UserRead[]>(
+  return axiosInstance<UserReadDetail[]>(
     { url: `https://yestoken.space/users`, method: 'GET', signal },
     options,
   )
@@ -139,7 +143,7 @@ export const getUser = (
   options?: SecondParameter<typeof axiosInstance>,
   signal?: AbortSignal,
 ) => {
-  return axiosInstance<UserRead>(
+  return axiosInstance<UserReadDetail>(
     { url: `https://yestoken.space/users/${userId}`, method: 'GET', signal },
     options,
   )
@@ -531,6 +535,124 @@ export const useGetSquadsSuspense = <
 }
 
 /**
+ * @summary Get Squad
+ */
+export const getSquad = (
+  squadId: number,
+  options?: SecondParameter<typeof axiosInstance>,
+  signal?: AbortSignal,
+) => {
+  return axiosInstance<SquadReadDetail>(
+    { url: `https://yestoken.space/squads/${squadId}`, method: 'GET', signal },
+    options,
+  )
+}
+
+export const getGetSquadQueryKey = (squadId: number) => {
+  return [`https://yestoken.space/squads/${squadId}`] as const
+}
+
+export const getGetSquadQueryOptions = <
+  TData = Awaited<ReturnType<typeof getSquad>>,
+  TError = HTTPValidationError,
+>(
+  squadId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getSquad>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetSquadQueryKey(squadId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getSquad>>> = ({ signal }) =>
+    getSquad(squadId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!squadId, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getSquad>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetSquadQueryResult = NonNullable<Awaited<ReturnType<typeof getSquad>>>
+export type GetSquadQueryError = HTTPValidationError
+
+/**
+ * @summary Get Squad
+ */
+export const useGetSquad = <
+  TData = Awaited<ReturnType<typeof getSquad>>,
+  TError = HTTPValidationError,
+>(
+  squadId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getSquad>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetSquadQueryOptions(squadId, options)
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+export const getGetSquadSuspenseQueryOptions = <
+  TData = Awaited<ReturnType<typeof getSquad>>,
+  TError = HTTPValidationError,
+>(
+  squadId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getSquad>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetSquadQueryKey(squadId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getSquad>>> = ({ signal }) =>
+    getSquad(squadId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!squadId, ...queryOptions } as UseSuspenseQueryOptions<
+    Awaited<ReturnType<typeof getSquad>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetSquadSuspenseQueryResult = NonNullable<Awaited<ReturnType<typeof getSquad>>>
+export type GetSquadSuspenseQueryError = HTTPValidationError
+
+/**
+ * @summary Get Squad
+ */
+export const useGetSquadSuspense = <
+  TData = Awaited<ReturnType<typeof getSquad>>,
+  TError = HTTPValidationError,
+>(
+  squadId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getSquad>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseSuspenseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetSquadSuspenseQueryOptions(squadId, options)
+
+  const query = useSuspenseQuery(queryOptions) as UseSuspenseQueryResult<TData, TError> & {
+    queryKey: QueryKey
+  }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+/**
  * @summary Get Leagues
  */
 export const getLeagues = (
@@ -706,6 +828,124 @@ export const useAddLeague = <TError = HTTPValidationError, TContext = unknown>(o
 }
 
 /**
+ * @summary Get League
+ */
+export const getLeague = (
+  leagueId: number,
+  options?: SecondParameter<typeof axiosInstance>,
+  signal?: AbortSignal,
+) => {
+  return axiosInstance<LeagueReadDetail>(
+    { url: `https://yestoken.space/leagues/${leagueId}`, method: 'GET', signal },
+    options,
+  )
+}
+
+export const getGetLeagueQueryKey = (leagueId: number) => {
+  return [`https://yestoken.space/leagues/${leagueId}`] as const
+}
+
+export const getGetLeagueQueryOptions = <
+  TData = Awaited<ReturnType<typeof getLeague>>,
+  TError = HTTPValidationError,
+>(
+  leagueId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getLeague>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetLeagueQueryKey(leagueId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getLeague>>> = ({ signal }) =>
+    getLeague(leagueId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!leagueId, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getLeague>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetLeagueQueryResult = NonNullable<Awaited<ReturnType<typeof getLeague>>>
+export type GetLeagueQueryError = HTTPValidationError
+
+/**
+ * @summary Get League
+ */
+export const useGetLeague = <
+  TData = Awaited<ReturnType<typeof getLeague>>,
+  TError = HTTPValidationError,
+>(
+  leagueId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getLeague>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetLeagueQueryOptions(leagueId, options)
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+export const getGetLeagueSuspenseQueryOptions = <
+  TData = Awaited<ReturnType<typeof getLeague>>,
+  TError = HTTPValidationError,
+>(
+  leagueId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getLeague>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetLeagueQueryKey(leagueId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getLeague>>> = ({ signal }) =>
+    getLeague(leagueId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!leagueId, ...queryOptions } as UseSuspenseQueryOptions<
+    Awaited<ReturnType<typeof getLeague>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetLeagueSuspenseQueryResult = NonNullable<Awaited<ReturnType<typeof getLeague>>>
+export type GetLeagueSuspenseQueryError = HTTPValidationError
+
+/**
+ * @summary Get League
+ */
+export const useGetLeagueSuspense = <
+  TData = Awaited<ReturnType<typeof getLeague>>,
+  TError = HTTPValidationError,
+>(
+  leagueId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getLeague>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseSuspenseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetLeagueSuspenseQueryOptions(leagueId, options)
+
+  const query = useSuspenseQuery(queryOptions) as UseSuspenseQueryResult<TData, TError> & {
+    queryKey: QueryKey
+  }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+/**
  * @summary Get Page
  */
 export const getPagePagesGameGet = (
@@ -808,6 +1048,124 @@ export const useGetPagePagesGameGetSuspense = <
   request?: SecondParameter<typeof axiosInstance>
 }): UseSuspenseQueryResult<TData, TError> & { queryKey: QueryKey } => {
   const queryOptions = getGetPagePagesGameGetSuspenseQueryOptions(options)
+
+  const query = useSuspenseQuery(queryOptions) as UseSuspenseQueryResult<TData, TError> & {
+    queryKey: QueryKey
+  }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+/**
+ * @summary Get User Photo
+ */
+export const getUserFile = (
+  userId: number,
+  options?: SecondParameter<typeof axiosInstance>,
+  signal?: AbortSignal,
+) => {
+  return axiosInstance<GetUserFile200>(
+    { url: `https://yestoken.space/files/${userId}`, method: 'GET', signal },
+    options,
+  )
+}
+
+export const getGetUserFileQueryKey = (userId: number) => {
+  return [`https://yestoken.space/files/${userId}`] as const
+}
+
+export const getGetUserFileQueryOptions = <
+  TData = Awaited<ReturnType<typeof getUserFile>>,
+  TError = HTTPValidationError,
+>(
+  userId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getUserFile>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetUserFileQueryKey(userId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getUserFile>>> = ({ signal }) =>
+    getUserFile(userId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!userId, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getUserFile>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetUserFileQueryResult = NonNullable<Awaited<ReturnType<typeof getUserFile>>>
+export type GetUserFileQueryError = HTTPValidationError
+
+/**
+ * @summary Get User Photo
+ */
+export const useGetUserFile = <
+  TData = Awaited<ReturnType<typeof getUserFile>>,
+  TError = HTTPValidationError,
+>(
+  userId: number,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getUserFile>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetUserFileQueryOptions(userId, options)
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey }
+
+  query.queryKey = queryOptions.queryKey
+
+  return query
+}
+
+export const getGetUserFileSuspenseQueryOptions = <
+  TData = Awaited<ReturnType<typeof getUserFile>>,
+  TError = HTTPValidationError,
+>(
+  userId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getUserFile>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {}
+
+  const queryKey = queryOptions?.queryKey ?? getGetUserFileQueryKey(userId)
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getUserFile>>> = ({ signal }) =>
+    getUserFile(userId, requestOptions, signal)
+
+  return { queryKey, queryFn, enabled: !!userId, ...queryOptions } as UseSuspenseQueryOptions<
+    Awaited<ReturnType<typeof getUserFile>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey }
+}
+
+export type GetUserFileSuspenseQueryResult = NonNullable<Awaited<ReturnType<typeof getUserFile>>>
+export type GetUserFileSuspenseQueryError = HTTPValidationError
+
+/**
+ * @summary Get User Photo
+ */
+export const useGetUserFileSuspense = <
+  TData = Awaited<ReturnType<typeof getUserFile>>,
+  TError = HTTPValidationError,
+>(
+  userId: number,
+  options?: {
+    query?: Partial<UseSuspenseQueryOptions<Awaited<ReturnType<typeof getUserFile>>, TError, TData>>
+    request?: SecondParameter<typeof axiosInstance>
+  },
+): UseSuspenseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetUserFileSuspenseQueryOptions(userId, options)
 
   const query = useSuspenseQuery(queryOptions) as UseSuspenseQueryResult<TData, TError> & {
     queryKey: QueryKey

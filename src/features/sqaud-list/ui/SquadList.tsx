@@ -1,18 +1,24 @@
-import { ListBlock } from 'shared/ui'
-import { Link } from 'react-router-dom'
-import { ROUTES } from 'shared/consts'
-import styles from './styles.module.scss'
+import { ListBlock, Loader } from 'shared/ui'
+import { useGetSquads } from 'shared/openApi'
+import { Suspense } from 'react'
 import { SquadItem } from './SquadItem'
-import { mockData } from '../model/mock'
+import styles from './styles.module.scss'
 
 export function SquadList() {
   return (
     <ListBlock className={styles.list}>
-      {mockData.map(({ name, level, avatar }) => (
-        <Link to={ROUTES.SQUAD_NAME} key={name}>
-          <SquadItem name={name} level={level} image={avatar} />
-        </Link>
-      ))}
+      <Suspense fallback={<Loader />}>
+        <ItemsList />
+      </Suspense>
     </ListBlock>
   )
+}
+
+function ItemsList() {
+  const { data, isError } = useGetSquads()
+
+  // TODO: отрисовать состояние пустого списка
+  if (!data?.length || isError) return <p>У вас нет друзей</p>
+
+  return data.map((squad) => <SquadItem {...squad} key={squad.id} />)
 }

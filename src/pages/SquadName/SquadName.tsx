@@ -1,21 +1,21 @@
 import { ModalView, SwitchBar, GlowCircle, ActionButton, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
 import { Typography } from 'shared/ui/Typography'
 import { Picture } from 'shared/ui/Picture'
 import { TopList } from 'features/top-list'
 
+import { useGetSquad } from 'shared/openApi'
+import { useDisclosure } from 'shared/hooks'
 import styles from './styles.module.scss'
 
 export function SquadName() {
+  const { id } = useParams()
+  const { data: squad } = useGetSquad(Number(id))
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const [activeIndex, setActiveIndex] = useState(0)
-
-  const [modalOpen, setModalOpen] = useState(false)
-
-  const onCloseModal = () => setModalOpen(false)
-
-  const onOpenModal = () => setModalOpen(true)
 
   return (
     <>
@@ -29,7 +29,7 @@ export function SquadName() {
           />
 
           <Typography variant="h2" className={styles.title}>
-            Имя Сквада
+            {squad?.name}
           </Typography>
 
           <Typography variant="h4" className={styles.level}>
@@ -77,7 +77,7 @@ export function SquadName() {
               />
             </Link>
 
-            <ActionButton variant="secondary" onClick={onOpenModal} message="Бустануть" />
+            <ActionButton variant="secondary" onClick={onOpen} message="Бустануть" />
           </div>
         </div>
 
@@ -88,11 +88,11 @@ export function SquadName() {
             setActiveIndex={setActiveIndex}
           />
 
-          <TopList className={styles.list} />
+          <TopList className={styles.list} users={squad?.users} />
         </div>
       </LayoutContent>
 
-      <ModalView isOpen={modalOpen}>
+      <ModalView isOpen={isOpen}>
         <div className="h-full z-10 flex flex-col justify-end">
           <Typography variant="h2" className="mb-56 mt-32" align="center">
             Буст вашего Сквада на 24 часа
@@ -100,7 +100,7 @@ export function SquadName() {
 
           <ActionButton className="mb-6" variant="secondary" message="100$" onClick={() => false} />
 
-          <ActionButton variant="primary" message="Буст на 24 часа" onClick={onCloseModal} />
+          <ActionButton variant="primary" message="Буст на 24 часа" onClick={onClose} />
         </div>
 
         <GlowCircle position="bottom" className="opacity-15 -z-10" />

@@ -1,26 +1,26 @@
 import { Picture } from 'shared/ui/Picture'
 import { GamerLevel } from 'shared/ui/GamerLevel'
 import { Typography } from 'shared/ui/Typography'
+import type { SquadRead } from 'shared/openApi/model'
+import { Link } from 'react-router-dom'
+import { ROUTES } from 'shared/consts'
 import styles from './styles.module.scss'
 
-interface SquadItemProps {
-  image?: string
-  name: string
-  level: 'Pro' | 'Middle'
-}
+interface SquadItemProps extends SquadRead {}
 
-export function SquadItem({ image, name, level }: SquadItemProps) {
+export function SquadItem({ id, name }: SquadItemProps) {
+  // TODO: добавить картинку и уровень сквада
+
   return (
-    <div className={styles.item}>
-      <Picture src={image} type="square" />
+    <Link to={`${ROUTES.SQUAD_NAME}/${id}`} className={styles.item}>
+      <Picture src="" type="square" />
 
       <div className={styles.inner}>
         <Typography variant="h4" color="white">
           {name}
         </Typography>
-
-        <GamerLevel level={level} />
+        <GamerLevel level="Pro" /> {/* TODO: mock */}
       </div>
-    </div>
+    </Link>
   )
 }
