@@ -24,7 +24,7 @@ export function GameBoosts() {
     <>
       <LayoutContent>
         <div className={styles.balance}>
-          <Typography variant="h4" color="gray">
+          <Typography variant="h4" color="silver">
             Ваш баланс
           </Typography>
 

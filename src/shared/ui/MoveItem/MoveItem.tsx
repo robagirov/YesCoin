@@ -14,7 +14,7 @@ export function MoveItem({ avatar, title, coins }: MoveItemProps) {
       <Picture type="square" src={avatar} />
 
       <div className={styles.info}>
-        <Typography variant="h4" color="gray">
+        <Typography variant="h4" color="silver">
           {title}
         </Typography>
 
