@@ -3,41 +3,9 @@
 .wrapper {
   flex: 1;
   padding-top: vertical-sizing(50px);
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.coiners {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(243 243 245 / 10%);
-  border-radius: 0.6rem;
-  padding: 0.4rem 0.8rem 0.4rem 1.2rem;
-}
-
-.circle {
-  display: flex;
-  align-items: center;
-  column-gap: 0.8rem;
-}
-
-.coins {
-  display: flex;
-  column-gap: -0.4rem;
-}
-
-.coin {
-  width: 1.6rem;
-  height: 1.6rem;
-  background-color: #fff;
-  border-radius: 50%;
-
-  &:not(:first-child) {
-    margin-left: -0.4rem;
-  }
 }
 
 .title {
