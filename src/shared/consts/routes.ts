@@ -2,7 +2,7 @@ export const ROUTES = {
   MAIN_BOARD: '/',
   CRYPTO_HOLDER: '/crypto-holder',
   TRADE_MARKET: '/trade-market',
-  GOLD_LEAGUE: '/gold-league',
+  LEAGUES: '/leagues',
   YOUR_FRIENDS: '/your-friends',
   FARM_COINS: '/farm-coins',
   GAME_BOOST: '/game-boost',

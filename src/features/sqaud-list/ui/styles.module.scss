@@ -13,9 +13,7 @@
   align-items: center;
   column-gap: 0.8rem;
 
-  &::before {
-    @include pseudo-arrow
-  }
+  @include pseudo-arrow;
 }
 
 .inner {

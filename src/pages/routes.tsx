@@ -5,7 +5,7 @@ import { PageTransition } from 'shared/ui'
 import { MainBoard } from './MainBoard'
 import { CryptoHolder } from './CryptoHolder'
 import { TradeMarket } from './TradeMarket'
-import { GoldLeague } from './GoldLeague'
+import { Leagues } from './Leagues'
 import { YourFriends } from './YourFriends'
 import { FarmCoins } from './FarmCoins'
 import { GameBoosts } from './GameBoosts'
@@ -48,10 +48,10 @@ export function PageRoutes() {
           }
         />
         <Route
-          path={ROUTES.GOLD_LEAGUE}
+          path={ROUTES.LEAGUES}
           element={
             <PageTransition>
-              <GoldLeague />
+              <Leagues />
             </PageTransition>
           }
         />

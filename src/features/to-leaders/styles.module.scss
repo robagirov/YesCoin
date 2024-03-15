@@ -11,7 +11,7 @@
 
   @include backing;
 
-  &::before {
+  &::after {
     display: block;
     content: "";
     position: absolute;
@@ -21,7 +21,5 @@
     left: 23%;
   }
 
-  &::after {
-    @include pseudo-arrow(3rem);
-  }
+  @include pseudo-arrow(3rem);
 }
