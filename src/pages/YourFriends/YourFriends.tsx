@@ -1,6 +1,6 @@
 import { LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
-import { ToLeaders } from 'features/ToLeaders'
+import { ToLeaders } from 'features/to-leaders'
 import { FriendsList } from 'features'
 import { InviteFriendButton } from 'features/invite-friend'
 import { useParams } from 'react-router-dom'

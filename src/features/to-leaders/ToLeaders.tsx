@@ -10,14 +10,12 @@ interface ToLeadersProps {
 
 export function ToLeaders({ className }: ToLeadersProps) {
   return (
-    <div className={clsx(styles.root, className)}>
+    <Link to={ROUTES.PARTY_KINGS} className={clsx(styles.root, className)}>
       <Typography variant="h6" color="gold">
         +80k
       </Typography>
 
-      <Link to={ROUTES.PARTY_KINGS}>
-        <Typography variant="h6">Топ 300 лидеров</Typography>
-      </Link>
-    </div>
+      <Typography variant="h6">Топ 300 лидеров</Typography>
+    </Link>
   )
 }
