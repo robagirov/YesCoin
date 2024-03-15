@@ -1,4 +1,4 @@
-import { ListBlock, ModalView, GlowCircle, ActionButton, LayoutContent } from 'shared/ui'
+import { ListBlock, ModalView, ActionButton, LayoutContent } from 'shared/ui'
 
 import { BalanceAmount, BoostCard, BoostOption } from 'features'
 import { useState } from 'react'
@@ -76,8 +76,6 @@ export function GameBoosts() {
           message="Активировать"
           onClick={onCloseModal}
         />
-
-        <GlowCircle position="bottom" className={styles.modalGlow} />
       </ModalView>
     </>
   )

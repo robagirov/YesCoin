@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { ArrowRight } from 'shared/ui'
 
 import styles from './styles.module.scss'
 
@@ -32,8 +31,6 @@ export function BoostOption({ className, onClick, cost, title, picture }: BoostI
           <span className={styles.lvl}>9 lvl</span>
         </div>
       </div>
-
-      <ArrowRight />
     </div>
   )
 }

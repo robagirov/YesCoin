@@ -1,4 +1,4 @@
-import { ModalView, SwitchBar, GlowCircle, ActionButton, LayoutContent } from 'shared/ui'
+import { ModalView, SwitchBar, ActionButton, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ROUTES } from 'shared/consts'
@@ -102,8 +102,6 @@ export function SquadName() {
 
           <ActionButton variant="primary" message="Буст на 24 часа" onClick={onClose} />
         </div>
-
-        <GlowCircle position="bottom" className="opacity-15 -z-10" />
       </ModalView>
     </>
   )
