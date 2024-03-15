@@ -1,7 +1,6 @@
 import { Picture } from 'shared/ui/Picture'
 import { Typography } from 'shared/ui/Typography'
 import { GamerLevel } from 'shared/ui/GamerLevel'
-// import { USER_PRO_LEVEL } from 'shared/consts/user-levels.ts'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import styles from './styles.module.scss'
@@ -26,7 +25,7 @@ export function FriendItem({
   asLink,
 }: FriendItemProps) {
   const as = { element: asLink ? Link : 'div' }
-  // const bonusColor = level === USER_PRO_LEVEL ? 'gold' : 'gray'
+  // const bonusColor = level === 'Pro ? 'gold' : 'gray'
 
   const className = clsx(styles.wrapper, {
     [styles.wrapper_noArrow]: !asLink,
@@ -40,7 +39,7 @@ export function FriendItem({
         <div className={styles.inner}>
           <Typography variant="h6">{username}</Typography>
 
-          <GamerLevel level="Middle" />
+          <GamerLevel level="Player" />
         </div>
 
         {/* <Typography variant="h6" color={bonusColor}> */}

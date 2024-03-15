@@ -6,16 +6,20 @@
   &__dot {
     position: relative;
 
-    &, &::before, &::after {
+    &,
+    &::before,
+    &::after {
       border-radius: 50%;
     }
 
-    &, &::before {
+    &,
+    &::before {
       height: 1.1rem;
       width: 1.1rem;
     }
 
-    &::before, &::after {
+    &::before,
+    &::after {
       display: block;
       content: "";
       position: absolute;
@@ -28,27 +32,29 @@
       width: 0.85rem;
       height: 0.85rem;
     }
+  }
+}
 
-    &_color_gold {
-      &, &::after {
-        background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
-                    linear-gradient(180deg, #FFF8B5 -41.67%, #FFDE6B 90.66%);
-      }
+.newbie {
+  &,
+  &::after {
+    background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
+      linear-gradient(180deg, #e2e2e2 -41.67%, #adadad 90.66%);
+  }
 
-      &::before {
-        background: linear-gradient(224.11deg, #FFF 7.7%, rgb(255 255 255 / 0%) 90.12%);
-      }
-    }
+  &::before {
+    background: linear-gradient(224.11deg, #fff 7.7%, rgb(255 255 255 / 0%) 90.12%);
+  }
+}
 
-    &_color_gray {
-      &, &::after {
-        background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
-                    linear-gradient(180deg, #E2E2E2 -41.67%, #ADADAD 90.66%);
-      }
+.pro {
+  &,
+  &::after {
+    background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
+      linear-gradient(180deg, #fff8b5 -41.67%, #ffde6b 90.66%);
+  }
 
-      &::before {
-        background: linear-gradient(224.11deg, #FFF 7.7%, rgb(255 255 255 / 0%) 90.12%);
-      }
-    }
+  &::before {
+    background: linear-gradient(224.11deg, #fff 7.7%, rgb(255 255 255 / 0%) 90.12%);
   }
 }
