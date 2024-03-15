@@ -10,7 +10,7 @@ export function PartyKings() {
       <div className={styles.header}>
         <Typography variant="h2">Yes-топ</Typography>
 
-        <Typography variant="h6" color="gray" align="center">
+        <Typography variant="h6" color="silver" align="center">
           Приглашай больше друзей {'\n'} чтобы попасть сюда
         </Typography>
       </div>

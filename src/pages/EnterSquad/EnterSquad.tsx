@@ -19,7 +19,7 @@ export function EnterSquad() {
       <div className={styles.header}>
         <Typography variant="h2">Залетай в сквад</Typography>
 
-        <Typography variant="h6" color="gray" align="center">
+        <Typography variant="h6" color="silver" align="center">
           Эти сквады активно набирают игроков {'\n'} Скажи Yes любому
         </Typography>
       </div>

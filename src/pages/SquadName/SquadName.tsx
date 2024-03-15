@@ -37,7 +37,7 @@ export function SquadName() {
           </Typography>
 
           <Link to={ROUTES.SQUAD_WORK} className={styles.link}>
-            <Typography variant="h4" color="gray">
+            <Typography variant="h4" color="silver">
               Как работают Сквады?
             </Typography>
           </Link>
@@ -50,7 +50,7 @@ export function SquadName() {
                 61.578B
               </Typography>
 
-              <Typography variant="h6" color="gray">
+              <Typography variant="h6" color="silver">
                 всего монет
               </Typography>
             </div>
@@ -62,7 +62,7 @@ export function SquadName() {
                 61.578B
               </Typography>
 
-              <Typography variant="h6" color="gray">
+              <Typography variant="h6" color="silver">
                 игроков
               </Typography>
             </div>

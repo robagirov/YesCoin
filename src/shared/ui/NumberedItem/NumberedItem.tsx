@@ -19,7 +19,7 @@ export function NumberedItem({ number, avatar, title, subtitle }: ListItemProps)
       <div className={styles.info}>
         <Typography variant="h5">{title}</Typography>
 
-        <Typography variant="h6" color="gray">
+        <Typography variant="h6" color="silver">
           {subtitle}
         </Typography>
       </div>

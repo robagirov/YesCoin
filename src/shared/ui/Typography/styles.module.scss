@@ -5,20 +5,44 @@
 }
 
 .color-white {
-  background-image: linear-gradient(rgb(255 255 255 / 100%))
-}
-
-.color-purple {
-  background-image: linear-gradient(325.7deg, rgb(153 153 153 / 0%) -4.91%, rgb(255 255 255 / 30%) -3.02%, rgb(255 255 255 / 30%) 39.58%, rgb(255 255 255 / 30%) 92.44%, rgb(153 153 153 / 0%) 121.19%, rgb(153 153 153 / 0%) 121.19%),
-                    linear-gradient(94.18deg, #010D52 -45.03%, #32249B -17.88%, #6D28CC 15.39%, #8726E1 64.07%, #9145C9 85.25%, #9350BE 105.46%);
-}
-
-.color-gold {
-  background-image: linear-gradient(180deg, #FFF8B5 -41.67%, #FFDE6B 90.66%);
+  background-image: linear-gradient(rgb(255 255 255 / 100%));
 }
 
 .color-gray {
-  background-image: radial-gradient(46.3% 75.26% at 50% 15.39%, #E2E2E2 0%, #ADADAD 100%);
+  background-image: linear-gradient(rgb(255 255 255 / 70%));
+}
+
+.color-silver {
+  background-image: radial-gradient(46.3% 75.26% at 50% 15.39%, #e2e2e2 0%, #adadad 100%);
+}
+
+.color-purple {
+  background-image: linear-gradient(
+      325.7deg,
+      rgb(153 153 153 / 0%) -4.91%,
+      rgb(255 255 255 / 30%) -3.02%,
+      rgb(255 255 255 / 30%) 39.58%,
+      rgb(255 255 255 / 30%) 92.44%,
+      rgb(153 153 153 / 0%) 121.19%,
+      rgb(153 153 153 / 0%) 121.19%
+    ),
+    linear-gradient(
+      94.18deg,
+      #010d52 -45.03%,
+      #32249b -17.88%,
+      #6d28cc 15.39%,
+      #8726e1 64.07%,
+      #9145c9 85.25%,
+      #9350be 105.46%
+    );
+}
+
+.color-gold {
+  background-image: linear-gradient(180deg, #fff8b5 -41.67%, #ffde6b 90.66%);
+}
+
+.color-red {
+  background-image: linear-gradient(180deg, #ff7b7b -41.67%, #ff6060 90.66%);
 }
 
 .h1 {
