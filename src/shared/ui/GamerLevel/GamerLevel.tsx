@@ -1,23 +1,19 @@
 import { Typography } from 'shared/ui/Typography'
-import { USER_MIDDLE_LEVEL, USER_PRO_LEVEL } from 'shared/consts/user-levels.ts'
 import clsx from 'clsx'
 import styles from './styles.module.scss'
 
+type LevelVariant = 'Newbie' | 'Player' | 'Pro' | 'Elite' | 'Legend' | 'YES'
+
 interface GamerLevelProps {
-  level: 'Pro' | 'Middle'
+  level: LevelVariant
 }
 
 export function GamerLevel({ level }: GamerLevelProps) {
-  const levelColor = level === USER_PRO_LEVEL ? 'gold' : 'gray'
+  const levelColor = level === 'Pro' ? 'gold' : 'gray'
 
   return (
     <div className={styles.level}>
-      <span
-        className={clsx(styles.level__dot, {
-          [styles.level__dot_color_gold]: level === USER_PRO_LEVEL,
-          [styles.level__dot_color_gray]: level === USER_MIDDLE_LEVEL,
-        })}
-      />
+      <span className={clsx(styles.level__dot, styles[level.toLowerCase()])} />
 
       <Typography variant="h6" color={levelColor}>
         {level} LVL
