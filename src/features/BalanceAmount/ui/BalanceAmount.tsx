@@ -1,4 +1,4 @@
-import LuminousCircle from 'shared/icon/LuminousCircle.svg?react'
+import LuminousCircle from 'shared/icons/LuminousCircle.svg?react'
 import clsx from 'clsx'
 import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
