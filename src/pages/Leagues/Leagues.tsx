@@ -1,7 +1,8 @@
-import { ListBlock, NumberedItem, SwitchBar, ToggleSwitch, LayoutContent } from 'shared/ui'
+import { ListBlock, NumberedItem, SwitchBar, LayoutContent } from 'shared/ui'
 import { useState } from 'react'
 import { YesCoiners } from 'features/yes-coiners'
 import { LeagueProgress } from 'widgets/LeagueProgress'
+import { ToggleSwitch } from 'shared/ui/ToggleSwitch'
 import { squadTopList } from './model/mock.ts'
 import styles from './styles.module.scss'
 
@@ -14,7 +15,7 @@ export function Leagues() {
       <div className={styles.wrapper}>
         <YesCoiners />
 
-        <LeagueProgress />
+        <LeagueProgress pointCount={929} />
 
         <div className={styles.list}>
           <ToggleSwitch
@@ -32,9 +33,10 @@ export function Leagues() {
             />
 
             <ListBlock className={styles.back}>
-              {squadTopList?.[activeType]?.map((person) => (
+              {squadTopList?.[activeType]?.map((person, index) => (
                 <NumberedItem
-                  key={person.number}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`${person.number}-${index}`}
                   number={person.number}
                   title={person.title}
                   subtitle={person.subtitle}

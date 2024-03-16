@@ -1,24 +1,30 @@
-import styles from './styles.module.scss'
-import League1 from '../../../assets/leagues/league-1.png'
-import League2 from '../../../assets/leagues/league-2.png'
-import League3 from '../../../assets/leagues/league-3.png'
-import League4 from '../../../assets/leagues/league-4.png'
+import { memo, useState } from 'react'
+import { LeaguesSlider } from 'features/leagues-slider'
+import { LeaguePoints } from 'shared/ui/LeaguePoints'
+import { Typography } from 'shared/ui/Typography'
+import { leaguesPoints } from './model/mock.ts'
 
-export function LeagueProgress() {
-  return (
-    <div className={styles.slider}>
-      <div className={styles.slide} id="slide-1">
-        <img className={styles.icon} src={League1} alt="" />
-      </div>
-      <div className={styles.slide} id="slide-2">
-        <img className={styles.icon} src={League2} alt="" />
-      </div>
-      <div className={styles.slide} id="slide-3">
-        <img className={styles.icon} src={League3} alt="" />
-      </div>
-      <div className={styles.slide} id="slide-4">
-        <img className={styles.icon} src={League4} alt="" />
-      </div>
-    </div>
-  )
+interface LeagueProgressProps {
+  pointCount: number
 }
+
+const LeagueProgress = memo(({ pointCount }: LeagueProgressProps) => {
+  const [activeLeague, setActiveLeague] = useState<string | null>(null)
+
+  return (
+    <>
+      <LeaguesSlider setActiveLeague={setActiveLeague} />
+
+      <Typography variant="h2" align="center">
+        {activeLeague} LVL
+      </Typography>
+
+      <LeaguePoints
+        remain={pointCount}
+        maxEnergy={leaguesPoints[activeLeague as keyof typeof leaguesPoints]}
+      />
+    </>
+  )
+})
+
+export { LeagueProgress }

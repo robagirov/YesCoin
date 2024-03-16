@@ -1,6 +1,7 @@
-import { LayoutContent, ToggleSwitch, ActionButton } from 'shared/ui'
+import { LayoutContent, ActionButton } from 'shared/ui'
 import { BalanceAmount } from 'features'
 import { useState } from 'react'
+import { ToggleSwitch } from 'shared/ui/ToggleSwitch'
 import styles from './styles.module.scss'
 
 export function CryptoHolder() {

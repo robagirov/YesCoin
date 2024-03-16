@@ -9,7 +9,10 @@
   padding: 0 2rem;
 
   @include backing;
-  @include pseudo-arrow(2.5rem);
+
+  &::before {
+    @include pseudo-arrow(2.5rem);
+  }
 }
 
 .inner {

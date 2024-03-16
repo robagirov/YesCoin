@@ -1,14 +1,16 @@
+@import "src/app/styles/mixins";
+
 .container {
   position: relative;
   display: flex;
-  border-radius: 1.2rem;
   height: 4.8rem;
   gap: 1rem;
   padding: 0.5rem;
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background: #24212a;
+
+  @include backing
 }
 
 .slide {
@@ -16,26 +18,21 @@
   width: 15.1rem;
   height: 3.8rem;
   border-radius: 1.2rem;
-  background-color: rgb(153 107 255);
-  transition: transform 150ms ease-in-out;
+  background: linear-gradient(132deg, #010D52 -45.03%, #32249B -0.31%, #6D28CC 38.45%, #8726E1 64.07%, #9145C9 85.25%, #9350BE 105.46%),
+              linear-gradient(334.63deg, rgb(153 153 153 / 0%) -7.7%, rgb(255 255 255 / 10%) -6.22%, rgb(255 255 255 / 10%) 27.11%, rgb(255 255 255 / 10%) 49.53%, rgb(153 153 153 / 0%) 90.97%, rgb(153 153 153 / 0%) 90.97%);
+  transition: all 1500ms ease-in-out;
 }
 
 .left {
-  left: 5px;
+  left: 0.5rem;
 }
 
 .right {
-  right: 5px;
+  right: 0.5rem;
 }
 
 .button {
   z-index: 20;
   width: 100%;
   height: 100%;
-  color: #fff;
-  font-weight: 500;
-}
-
-.active {
-  background: #996bff;
 }

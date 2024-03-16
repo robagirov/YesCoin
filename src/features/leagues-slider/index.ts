@@ -1,0 +1,1 @@
+export { LeaguesSlider } from './LeaguesSlider'

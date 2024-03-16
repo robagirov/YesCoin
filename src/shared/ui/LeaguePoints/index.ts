@@ -1,0 +1,1 @@
+export { LeaguePoints } from './LeaguePoints'

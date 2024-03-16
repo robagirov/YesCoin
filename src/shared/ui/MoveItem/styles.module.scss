@@ -13,5 +13,7 @@
   flex-direction: column;
   row-gap: 0.6rem;
 
-  @include pseudo-arrow;
+  &::before {
+    @include pseudo-arrow;
+  }
 }

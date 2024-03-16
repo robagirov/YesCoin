@@ -2,28 +2,11 @@
 
 .wrapper {
   flex: 1;
-  padding-top: vertical-sizing(50px);
+  padding-top: vertical-sizing(20px);
+  margin-bottom: -(vertical-sizing(32px));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.title {
-  margin-bottom: vertical-sizing(10px);
-}
-
-.counter {
-  margin-bottom: vertical-sizing(4px);
-  opacity: 0.3;
-  text-align: center;
-}
-
-.remain {
-  margin-bottom: vertical-sizing(8px);
-}
-
-.list {
-  margin-bottom: -(vertical-sizing(32px));
 }
 
 .switch {
@@ -33,8 +16,4 @@
 .back {
   border-radius: 0;
   height: vertical-sizing(338px);
-}
-
-.glow {
-  opacity: 0.5;
 }
