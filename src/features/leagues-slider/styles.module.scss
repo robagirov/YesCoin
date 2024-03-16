@@ -1,0 +1,48 @@
+@import "src/app/styles/mixins";
+
+.wrapper {
+  position: relative;
+
+  &::before {
+    @include pseudo-arrow(87%, 1, -135deg)
+  }
+
+  &::after {
+    @include pseudo-arrow(5%, 1)
+  }
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  // устанавливает, насколько строго применяются точки привязки к контейнеру прокрутки
+  scroll-snap-type: x mandatory;
+
+  // управление плавностью прокрутки
+  scroll-behavior: smooth;
+
+  // для предотвращения интерпретации смахивания влево или вправо,
+  // как навигацию назад или вперед на мобильных устройствах
+  overscroll-behavior: contain;
+
+  & > div {
+    // управляет тем, как элементы закрепляются внутри контейнера
+    scroll-snap-align: start;
+  }
+}
+
+.slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.picture {
+  height: vertical-sizing(100px);
+  width: vertical-sizing(100px);
+}

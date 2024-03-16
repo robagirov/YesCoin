@@ -13,23 +13,20 @@ $baseHeight: 844px;
   border-radius: $radius;
 }
 
-@mixin pseudo-arrow($right: 0) {
-  &::before {
-    position: absolute;
-    right: $right;
-    top: calc(50% + 0.3rem);
-    display: block;
-    content: "";
-    width: 1.4rem;
-    height: 1.4rem;
-    border-color: #fff;
-    border-width: 0.2rem;
-    border-style: solid;
-    border-radius: 2px;
-    border-bottom: none;
-    border-left: none;
-    opacity: 0.7;
-    rotate: 45deg;
-    transform: translate(-50%, -50%);
-  }
+@mixin pseudo-arrow($right: 0, $opacity: 0.7, $rotate: 45deg) {
+  position: absolute;
+  right: $right;
+  top: 50%;
+  display: block;
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  border-color: #fff;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 2px;
+  border-bottom: none;
+  border-left: none;
+  opacity: $opacity;
+  transform: translate(-50%, -50%) rotateZ($rotate);
 }

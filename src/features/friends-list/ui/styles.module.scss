@@ -11,7 +11,9 @@
   column-gap: 0.8rem;
   padding-right: 2.4rem;
 
-  @include pseudo-arrow;
+  &::before {
+    @include pseudo-arrow;
+  }
 
   &_noArrow {
     &::before {

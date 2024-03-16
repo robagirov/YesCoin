@@ -1,9 +1,11 @@
 import clsx from 'clsx'
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 interface ToggleSwitchProps {
   options: string[]
   activeIndex: number
+  // eslint-disable-next-line no-unused-vars
   setActiveIndex: (active: number) => void
   className?: string
 }
@@ -30,7 +32,9 @@ export function ToggleSwitch({
           className={styles.button}
           onClick={() => setActiveIndex(index)}
         >
-          {option}
+          <Typography variant="h5" align="center">
+            {option}
+          </Typography>
         </button>
       ))}
     </div>
