@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import styles from './styles.module.scss'
 import Newbie from '../../../assets/leagues/league-1.png'
 import Player from '../../../assets/leagues/league-2.png'
@@ -21,52 +22,27 @@ const leagues = [
 ]
 
 export function LeaguesSlider({ setActiveLeague }: LeaguesSliderProps) {
-  const slideRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+
+    const selectedIndex = emblaApi.selectedScrollSnap()
+
+    setActiveLeague(leagues[selectedIndex][0])
+  }, [emblaApi, setActiveLeague])
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1.0,
-    }
+    if (!emblaApi) return
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveLeague(entry.target.id)
-        }
-      })
-    }, observerOptions)
-
-    const slides = slideRefs.current
-
-    slides.forEach((ref) => {
-      if (ref) {
-        observer.observe(ref)
-      }
-    })
-
-    return () => {
-      slides.forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref)
-        }
-      })
-    }
-  }, [setActiveLeague])
-
-  const setSlideRef = useCallback(
-    (index: number) => (element: HTMLDivElement | null) => {
-      slideRefs.current[index] = element
-    },
-    [],
-  )
+    emblaApi.on('select', onSelect)
+  }, [emblaApi, onSelect])
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.slider}>
+    <div className={styles.wrapper} ref={emblaRef}>
+      <div className={styles.embla}>
         {leagues.map(([league, leaguePicture], index) => (
-          <div id={league} key={league} className={styles.slide} ref={setSlideRef(index)}>
+          <div className={styles.slide} key={league}>
             <img className={styles.picture} src={leaguePicture} alt={`League ${league}`} />
           </div>
         ))}

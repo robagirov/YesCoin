@@ -9,7 +9,7 @@ interface LeagueProgressProps {
 }
 
 const LeagueProgress = memo(({ pointCount }: LeagueProgressProps) => {
-  const [activeLeague, setActiveLeague] = useState<string | null>(null)
+  const [activeLeague, setActiveLeague] = useState<string | null>('Newbie')
 
   return (
     <>
