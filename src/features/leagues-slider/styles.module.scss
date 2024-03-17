@@ -2,6 +2,7 @@
 
 .wrapper {
   position: relative;
+  overflow: hidden;
 
   &::before {
     @include pseudo-arrow(87%, 1, -135deg);
@@ -12,38 +13,16 @@
   }
 }
 
-.slider {
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  overflow-x: auto;
-
-  // для управления прокруткой сенсорных устройств в веб-кит-основанных браузерах
-  // touch: Включает моментальную прокрутку с инерцией
-  -webkit-overflow-scrolling: touch;
-
-  // устанавливает, насколько строго применяются точки привязки к контейнеру прокрутки
-  scroll-snap-type: x mandatory;
-
-  // управление плавностью прокрутки
-  scroll-behavior: smooth;
-
-  // для предотвращения интерпретации смахивания влево или вправо,
-  // как навигацию назад или вперед на мобильных устройствах
-  overscroll-behavior: contain;
-
-  & > div {
-    // управляет тем, как элементы закрепляются внутри контейнера
-    scroll-snap-align: start;
-  }
-}
-
 .slide {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.embla {
+  display: flex;
 }
 
 .picture {
