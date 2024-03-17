@@ -8,7 +8,6 @@ import Legend from '../../../assets/leagues/league-5.png'
 import YES from '../../../assets/leagues/league-6.png'
 
 interface LeaguesSliderProps {
-  // eslint-disable-next-line no-unused-vars
   setActiveLeague: (league: string) => void
 }
 

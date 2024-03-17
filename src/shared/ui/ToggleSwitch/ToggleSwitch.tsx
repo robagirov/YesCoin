@@ -5,7 +5,6 @@ import styles from './styles.module.scss'
 interface ToggleSwitchProps {
   options: string[]
   activeIndex: number
-  // eslint-disable-next-line no-unused-vars
   setActiveIndex: (active: number) => void
   className?: string
 }
