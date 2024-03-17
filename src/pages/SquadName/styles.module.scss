@@ -63,3 +63,20 @@
   margin-bottom: -(vertical-sizing(32px));
   height: vertical-sizing(190px);
 }
+
+.modal {
+  height: vertical-sizing(600px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  & > p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  & > button:not(:last-child) {
+    margin-bottom: vertical-sizing(20px);
+  }
+}

@@ -9,6 +9,7 @@ import { TopList } from 'features/top-list'
 import { useGetSquad } from 'shared/openApi'
 import { useDisclosure } from 'shared/hooks'
 import styles from './styles.module.scss'
+import YesCoin from '../../../assets/squads/squad-1.png'
 
 export function SquadName() {
   const { id } = useParams()
@@ -21,12 +22,7 @@ export function SquadName() {
     <>
       <LayoutContent>
         <div className={styles.header}>
-          <Picture
-            size="large"
-            type="square"
-            className={styles.image}
-            src="assets/squads/squad-1.png"
-          />
+          <Picture size="large" type="square" className={styles.image} src={YesCoin} />
 
           <Typography variant="h2" className={styles.title}>
             {squad?.name}
@@ -92,16 +88,14 @@ export function SquadName() {
         </div>
       </LayoutContent>
 
-      <ModalView isOpen={isOpen}>
-        <div className="h-full z-10 flex flex-col justify-end">
-          <Typography variant="h2" className="mb-56 mt-32" align="center">
-            Буст вашего Сквада на 24 часа
-          </Typography>
+      <ModalView isOpen={isOpen} className={styles.modal}>
+        <Typography variant="h2" align="center">
+          Буст вашего Сквада на 24 часа
+        </Typography>
 
-          <ActionButton className="mb-6" variant="secondary" message="100$" onClick={() => false} />
+        <ActionButton variant="secondary" message="100$" onClick={() => false} />
 
-          <ActionButton variant="primary" message="Буст на 24 часа" onClick={onClose} />
-        </div>
+        <ActionButton variant="primary" message="Буст на 24 часа" onClick={onClose} />
       </ModalView>
     </>
   )
