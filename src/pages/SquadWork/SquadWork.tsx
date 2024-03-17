@@ -1,57 +1,45 @@
 import { ActionButton, LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
+import { Picture } from 'shared/ui/Picture'
+import styles from './styles.module.scss'
 
 export function SquadWork() {
   return (
     <LayoutContent>
-      <div className="flex gap-x-2.5 mb-9">
-        <ActionButton message="Войти" variant="secondary" onClick={() => false} />
+      <div className={styles.buttons}>
+        <ActionButton variant="secondary" message="Войти" onClick={() => false} />
 
-        <ActionButton variant="secondary" onClick={() => false} message="Подписаться" />
+        <ActionButton variant="secondary" message="Подписаться" onClick={() => false} />
       </div>
 
-      <Typography variant="h2" className="mb-12">
+      <Typography variant="h2" align="center" className={styles.title}>
         Сквады
       </Typography>
 
-      <div className="flex flex-col gap-y-7 mb-40 pl-6">
-        <div className="flex gap-x-3.5">
-          <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
+      <div className={styles.slider}>
+        {[
+          { mainText: 'Жми на монету', subText: 'И получай YesCoin' },
+          { mainText: 'Прокачивай Буст', subText: 'Чтобы получать монетка' },
+          { mainText: 'Соревнуйся', subText: 'Дойди до лиги' },
+        ].map((item, index) => (
+          <div className={styles.item} key={index}>
+            <Picture type="square" />
 
-          <div className="flex flex-col">
-            <span>Жми на монету</span>
+            <div className={styles.text}>
+              <Typography variant="h4">{item.mainText}</Typography>
 
-            <span className="text-sm text-gray-400 opacity-70 font-light">И получай YesCoin</span>
+              <Typography variant="h6" color="gray">
+                {item.subText}
+              </Typography>
+            </div>
           </div>
-        </div>
-
-        <div className="flex gap-x-3.5">
-          <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
-
-          <div className="flex flex-col">
-            <span>Прокачивай Буст</span>
-
-            <span className="text-sm text-gray-400 opacity-70 font-light">
-              Чтобы получать монетка
-            </span>
-          </div>
-        </div>
-
-        <div className="flex gap-x-3.5">
-          <div className="w-[46px] h-[46px] rounded-md bg-[rgba(243,243,245,0.1)] object-cover" />
-
-          <div className="flex flex-col">
-            <span>Соревнуйся</span>
-
-            <span className="text-sm text-gray-400 opacity-70 font-light">Дойди до лиги</span>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="flex flex-col gap-y-4">
-        <ActionButton variant="secondary" onClick={() => false} message="Гайд" />
+      <div className={styles.bottom}>
+        <ActionButton variant="secondary" message="Гайд" onClick={() => false} />
 
-        <ActionButton variant="primary" onClick={() => false} message="Хорошо" />
+        <ActionButton variant="primary" message="Хорошо" onClick={() => false} />
       </div>
     </LayoutContent>
   )
