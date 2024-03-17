@@ -20,7 +20,7 @@ export function Typography({
   color = 'white',
 }: TypographyProps) {
   return (
-    <div
+    <p
       className={clsx(
         className,
         styles.basic,
@@ -30,6 +30,6 @@ export function Typography({
       )}
     >
       {children}
-    </div>
+    </p>
   )
 }
