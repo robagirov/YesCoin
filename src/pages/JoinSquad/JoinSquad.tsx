@@ -2,7 +2,9 @@ import { ActionButton, LayoutContent } from 'shared/ui'
 import { Typography } from 'shared/ui/Typography'
 import { useParams } from 'react-router-dom'
 import { useGetSquad } from 'shared/openApi'
+import { Picture } from 'shared/ui/Picture'
 import styles from './styles.module.scss'
+import YesCoin from '../../../assets/squads/squad-1.png'
 
 export function JoinSquad() {
   const { id } = useParams()
@@ -12,13 +14,13 @@ export function JoinSquad() {
 
   return (
     <LayoutContent>
-      <div className="flex justify-center mb-12">
-        <div className="w-24 h-24 rounded-xl bg-[rgb(243,243,245,0.1)]" />
+      <div className={styles.pictures}>
+        <Picture type="square" size="large" src={YesCoin} className={styles.picture} />
 
-        <div className="relative w-24 h-24 rounded-full bg-[rgb(243,243,245,0.1)] -left-6" />
+        <Picture type="round" size="large" />
       </div>
 
-      <Typography variant="h2" className="mb-72" align="center">
+      <Typography variant="h2" align="center" className={styles.title}>
         Присоединиться к {squad?.name}
       </Typography>
 

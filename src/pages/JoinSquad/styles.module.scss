@@ -1,5 +1,19 @@
 @import "src/app/styles/mixins";
 
+.pictures {
+  display: flex;
+  justify-content: center;
+  margin: vertical-sizing(55px);
+
+  & > div:last-child {
+    margin-left: -2rem;
+  }
+}
+
+.title {
+  margin-bottom: vertical-sizing(180px);
+}
+
 .additional {
   display: flex;
   flex-direction: column;
