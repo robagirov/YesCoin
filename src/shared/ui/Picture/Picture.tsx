@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import styles from './styles.module.scss'
 
 interface PictureProps {
@@ -8,11 +9,9 @@ interface PictureProps {
 }
 
 export function Picture({ src, size = 'medium', type, className }: PictureProps) {
-  const classList = [styles.container, styles[size], styles[type], className]
-    .filter(Boolean)
-    .join(' ')
-
   return (
-    <div className={classList}>{src && <img src={src} alt="" className={styles.picture} />}</div>
+    <div className={clsx(styles.container, styles[size], styles[type], className)}>
+      {src && <img src={src} alt="" className={styles.picture} />}
+    </div>
   )
 }
