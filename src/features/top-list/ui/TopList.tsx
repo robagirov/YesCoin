@@ -1,6 +1,7 @@
 import { ListBlock, NumberedItem } from 'shared/ui'
 import clsx from 'clsx'
 import type { SquadReadDetailUsers } from 'shared/openApi/model'
+import { BlankListStub } from 'shared/ui/BlankListStub'
 import styles from './styles.module.scss'
 
 interface TopListProps {
@@ -9,12 +10,10 @@ interface TopListProps {
 }
 
 export function TopList({ className, users }: TopListProps) {
-  // TODO: отрисовать пустой список
-
   return (
     <ListBlock className={clsx(styles.topChartList, className)}>
       {!users || !users.length ? (
-        <p>список участников пуст</p>
+        <BlankListStub label="Список участников пуст" />
       ) : (
         users.map(({ username, telegram_id: id }, index) => (
           <NumberedItem
