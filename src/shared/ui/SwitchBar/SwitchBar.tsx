@@ -1,3 +1,4 @@
+import { Typography } from 'shared/ui/Typography'
 import styles from './styles.module.scss'
 
 interface SwitchBarProps {
@@ -16,7 +17,9 @@ export function SwitchBar({ options, activeIndex, setActiveIndex }: SwitchBarPro
           className={styles.button}
           onClick={() => setActiveIndex(index)}
         >
-          {option}
+          <Typography variant="h5" align="center">
+            {option}
+          </Typography>
         </button>
       ))}
 
