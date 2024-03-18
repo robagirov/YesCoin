@@ -51,8 +51,6 @@ select,
 textarea {
   font-family: inherit; /* Наследование шрифта от body */
   font-size: 100%; /* Наследование размера шрифта от body */
-  line-height: 1.15; /* Наследование высоты строки от body */
-  overflow: visible; /* Предотвращение обрезки контента */
 }
 
 /* Удаление стилей для элементов форм в Firefox и Safari */
