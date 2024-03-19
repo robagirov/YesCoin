@@ -1,0 +1,42 @@
+.container {
+  overflow: hidden;
+  background: rgb(217 217 217 / 10%);
+}
+
+.picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.large {
+  width: 9rem;
+  height: 9rem;
+
+  &.square {
+    border-radius: 1.2rem;
+  }
+}
+
+.medium {
+  width: 5rem;
+  height: 5rem;
+
+  &.square {
+    border-radius: 0.8rem;
+  }
+}
+
+.small {
+  width: 3.9rem;
+  height: 3.9rem;
+}
+
+.tiny {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.round {
+  border-radius: 50%;
+}

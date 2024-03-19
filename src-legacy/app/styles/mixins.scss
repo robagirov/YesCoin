@@ -1,0 +1,33 @@
+@use "sass:math";
+
+$baseHeight: 844px;
+
+@function vertical-sizing($value) {
+  $calculated: math.div($value, $baseHeight) * 100;
+
+  @return $calculated + vh;
+}
+
+@mixin backing($color: rgba(243, 217, 255, 0.15), $radius: 1.6rem) {
+  background: $color;
+  border-radius: $radius;
+}
+
+@mixin pseudo-arrow($right: 0) {
+  position: absolute;
+  right: $right;
+  top: calc(50% + 0.3rem);
+  display: block;
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  border-color: #fff;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 2px;
+  border-bottom: none;
+  border-left: none;
+  opacity: 0.7;
+  rotate: 45deg;
+  transform: translate(-50%, -50%);
+}

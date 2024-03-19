@@ -1,0 +1,19 @@
+@import "src/app/styles/mixins";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem;
+}
+
+.info {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+
+  &::before {
+    @include pseudo-arrow
+  }
+}

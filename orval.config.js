@@ -3,6 +3,7 @@ module.exports = {
     output: {
       mode: 'split',
       baseUrl: 'https://yestoken.space',
+      // baseUrl: 'http://localhost:3000/',
       workspace: './src/shared/openApi/',
       target: 'index.ts',
       schemas: 'model',
@@ -21,7 +22,8 @@ module.exports = {
       prettier: true,
     },
     input: {
-      target: 'https://yestoken.space/openapi.json',
+      target: 'https://yestoken.space/api-json',
+      // target: 'http://localhost:3000/api-json',
     },
   },
 }

@@ -1,0 +1,54 @@
+.level {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &__dot {
+    position: relative;
+
+    &, &::before, &::after {
+      border-radius: 50%;
+    }
+
+    &, &::before {
+      height: 1.1rem;
+      width: 1.1rem;
+    }
+
+    &::before, &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      width: 0.85rem;
+      height: 0.85rem;
+    }
+
+    &_color_gold {
+      &, &::after {
+        background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
+                    linear-gradient(180deg, #FFF8B5 -41.67%, #FFDE6B 90.66%);
+      }
+
+      &::before {
+        background: linear-gradient(224.11deg, #FFF 7.7%, rgb(255 255 255 / 0%) 90.12%);
+      }
+    }
+
+    &_color_gray {
+      &, &::after {
+        background: linear-gradient(0deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%)),
+                    linear-gradient(180deg, #E2E2E2 -41.67%, #ADADAD 90.66%);
+      }
+
+      &::before {
+        background: linear-gradient(224.11deg, #FFF 7.7%, rgb(255 255 255 / 0%) 90.12%);
+      }
+    }
+  }
+}
