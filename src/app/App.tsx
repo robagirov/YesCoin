@@ -7,7 +7,16 @@ import { useState } from 'react'
 import { GameConnectionContext } from '../useGameConnection.ts'
 import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
-import { InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
+import { init, InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
+
+const { mainButton, viewport } = init();
+
+mainButton
+  .setBackgroundColor('#ff0000')
+  .setTextColor('#ffffff')
+  .setText('Expand')
+  .enable()
+  .show();
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
