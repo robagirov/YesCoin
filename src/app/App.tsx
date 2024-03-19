@@ -7,16 +7,18 @@ import { useState } from 'react'
 import { GameConnectionContext } from '../useGameConnection.ts'
 import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
-import { retrieveLaunchParams } from '@tma.js/sdk'
+import { InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
 
 let dataRaw;
+let tgData: InitDataParsed;
 
 try {
   const { initDataRaw, initData } = retrieveLaunchParams();
   dataRaw = initDataRaw;
+  tgData = initData!;
 } catch (e) {
   dataRaw = '';
 }
@@ -53,8 +55,8 @@ function App() {
       <BrowserRouter>
         <GameConnectionContext.Provider value={{
           energy,
-          tap: (userId) => {
-            socket.emit('tap', { userId: userId })
+          tap: () => {
+            socket.emit('tap', { userId: tgData.user?.id.toString() })
           }
         }}>
         <Layout>

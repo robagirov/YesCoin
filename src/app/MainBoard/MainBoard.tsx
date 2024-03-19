@@ -49,7 +49,7 @@ export function MainBoard() {
   return (
     <div className={styles.content}>
 
-      <button onClick={() => game.tap(userId.toString())}>Click</button>
+      <button onClick={() => game.tap()}>Click</button>
 
       <span>Energy left: {game.energy.toString()}</span>
 
