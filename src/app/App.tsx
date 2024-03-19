@@ -9,16 +9,23 @@ import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
 import { retrieveLaunchParams } from '@tma.js/sdk'
 
-// const WS_URL = 'http://localhost:3500/'
+// const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
 
-const { initDataRaw, initData } = retrieveLaunchParams();
+let dataRaw;
+
+try {
+  const { initDataRaw, initData } = retrieveLaunchParams();
+  dataRaw = initDataRaw;
+} catch (e) {
+  dataRaw = '';
+}
 
 
 const socket = io(WS_URL, {
   transports: ['websocket'],
   query: {
-    tgWebData: initDataRaw
+    tgWebData: dataRaw
   }
 });
 
@@ -28,6 +35,9 @@ function App() {
 
   socket.on('connect', () => {
     console.log('connected')
+  })
+  socket.on('disconnect', () => {
+    console.log('disconnected')
   })
 
   socket.on('connect_error', (err) => {
