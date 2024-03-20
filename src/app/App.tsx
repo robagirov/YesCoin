@@ -37,6 +37,7 @@ function App() {
   // }, []);
 
   const [energy, setEnergy] = useState(0n);
+  const [balance, setBalance] = useState(0n);
 
   const initDataRaw = useInitDataRaw();
   const initData = useInitData();
@@ -67,6 +68,10 @@ function App() {
     socket?.on('energy', (data) => {
       setEnergy(data);
     })
+
+    socket?.on('balance', (data) => {
+      setEnergy(data);
+    })
   }, [socket])
 
   return (
@@ -74,6 +79,7 @@ function App() {
       <BrowserRouter>
         <GameConnectionContext.Provider value={{
           energy,
+          balance,
           tap: () => {
             socket?.emit('tap', { userId: initData?.user?.id.toString() })
           }

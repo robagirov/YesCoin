@@ -51,6 +51,7 @@ export function MainBoard() {
 
       <button onClick={() => game.tap()}>Click</button>
 
+      <span>Balance: {game.balance.toString()}</span>
       <span>Energy left: {game.energy.toString()}</span>
 
       {/* <div className={styles.header}> */}
