@@ -34,11 +34,11 @@ const WS_URL = 'https://yestoken.space/game'
 
 function App() {
 
-  const miniApp = useMiniApp();
-
-  useEffect(() => {
-    miniApp.ready();
-  }, []);
+  // const miniApp = useMiniApp();
+  //
+  // useEffect(() => {
+  //   miniApp.ready();
+  // }, []);
 
   const [energy, setEnergy] = useState(0n);
 
