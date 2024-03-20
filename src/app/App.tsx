@@ -9,6 +9,8 @@ import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
 import { init, InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
 import { useInitData, useInitDataRaw, useMiniApp } from '@tma.js/sdk-react'
+import { on } from '@tma.js/sdk';
+
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
@@ -48,6 +50,18 @@ function App() {
         tgWebData: initDataRaw
       },
     }))
+
+    socket?.on('energy', (data) => {
+      setEnergy(data);
+    })
+
+    on('popup_closed', () => {
+      socket?.disconnect();
+    })
+
+    return () => {
+      socket?.disconnect();
+    }
 
   }, [initDataRaw])
 
