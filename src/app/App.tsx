@@ -51,11 +51,6 @@ function App() {
       },
     }))
 
-    socket?.on('energy', (data) => {
-      console.log('energy data: ', data);
-      setEnergy(data);
-    })
-
     on('popup_closed', () => {
       socket?.disconnect();
     })
@@ -65,6 +60,14 @@ function App() {
     }
 
   }, [initDataRaw])
+
+  useEffect(() => {
+    console.log('socket: ', socket);
+
+    socket?.on('energy', (data) => {
+      setEnergy(data);
+    })
+  }, [socket])
 
   return (
     <QueryProvider>
