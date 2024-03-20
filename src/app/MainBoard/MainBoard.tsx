@@ -11,7 +11,7 @@ export function MainBoard() {
 
 
   const initDataRaw = useInitDataRaw();
-  const { data } = useQuery({ queryKey: ['player'], queryFn: () => fetch('https://yescoin.space/players/getById', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tgWebData: initDataRaw }) }).then(r => r.json()) })
+  const { data } = useQuery({ queryKey: ['player'], queryFn: () => fetch('https://yestoken.space/players/getById', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tgWebData: initDataRaw }) }).then(r => r.json()) })
 
   console.log('initDataRaw: ', initDataRaw);
 
