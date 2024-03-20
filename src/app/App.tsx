@@ -70,7 +70,7 @@ function App() {
     })
 
     socket?.on('balance', (data) => {
-      setEnergy(data);
+      setBalance(data);
     })
   }, [socket])
 
