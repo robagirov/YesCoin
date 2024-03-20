@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useQueryClient } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTelegram, useTelegramUserId } from 'entities/Telegram'
 import useWebSocket from 'react-use-websocket'
 import { GamerLevel } from 'shared/ui/GamerLevel'
@@ -9,7 +9,9 @@ import { useInitDataRaw } from '@tma.js/sdk-react'
 
 export function MainBoard() {
 
+
   const initDataRaw = useInitDataRaw();
+  const { data } = useQuery({ queryKey: ['player'], queryFn: () => fetch('https://yescoin.space/players/getById', { method: 'POST', body: JSON.stringify({ tgWebData: initDataRaw }) }).then(r => r.json()) })
 
   console.log('initDataRaw: ', initDataRaw);
 
@@ -43,7 +45,9 @@ export function MainBoard() {
   // }
 
   return (
-    <div className={styles.content}>
+    data && <div className={styles.content}>
+
+      <p>Username: {data?.username}</p>
 
       <button onClick={() => game.tap()}>Click</button>
 
