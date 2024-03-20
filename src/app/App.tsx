@@ -52,6 +52,7 @@ function App() {
     }))
 
     socket?.on('energy', (data) => {
+      console.log('energy data: ', data);
       setEnergy(data);
     })
 
