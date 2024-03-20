@@ -2,7 +2,7 @@ import './styles/index.scss'
 import { BrowserRouter } from 'react-router-dom'
 import { Layout } from 'shared/ui'
 import { QueryProvider, TelegramProvider } from './providers'
-import { io } from 'socket.io-client'
+import { io, Socket } from 'socket.io-client'
 import { useEffect, useState } from 'react'
 import { GameConnectionContext } from '../useGameConnection.ts'
 import { useTelegramUserId } from '../entities/Telegram'
@@ -25,12 +25,6 @@ const WS_URL = 'https://yestoken.space/game'
 // }
 //
 //
-// const socket = io(WS_URL, {
-//   transports: ['websocket'],
-//   query: {
-//     tgWebData: dataRaw
-//   }
-// });
 
 function App() {
 
@@ -42,44 +36,36 @@ function App() {
 
   const [energy, setEnergy] = useState(0n);
 
-  // socket.on('connect', () => {
-  //   console.log('connected')
-  // })
-  // socket.on('disconnect', () => {
-  //   console.log('disconnected')
-  // })
-  //
-  // socket.on('connect_error', (err) => {
-  //   console.error(err)
-  // })
-  //
-  // socket.on('energy', (data) => {
-  //   setEnergy(BigInt(data))
-  // })
-
-  const initData = useInitData();
   const initDataRaw = useInitDataRaw();
+  const initData = useInitData();
+
+  const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    console.log('initDataRaw: ', initDataRaw);
-  }, [initDataRaw, initData])
+    setSocket(io(WS_URL, {
+      transports: ['websocket'],
+      query: {
+        tgWebData: initDataRaw
+      },
+    }))
+
+  }, [initDataRaw])
 
   return (
-    <div>App component</div>
-    // <QueryProvider>
-    //   <BrowserRouter>
-    //     <GameConnectionContext.Provider value={{
-    //       energy,
-    //       tap: () => {
-    //         // socket.emit('tap', { userId: tgData.user?.id.toString() })
-    //       }
-    //     }}>
-    //     {/* <Layout> */}
-    //     {/*   /!* <PageRoutes /> *!/ */}
-    //     {/* </Layout> */}
-    //     </GameConnectionContext.Provider>
-    //   </BrowserRouter>
-    // </QueryProvider>
+    <QueryProvider>
+      <BrowserRouter>
+        <GameConnectionContext.Provider value={{
+          energy,
+          tap: () => {
+            socket?.emit('tap', { userId: initData?.user?.id.toString() })
+          }
+        }}>
+        <Layout>
+          <PageRoutes />
+        </Layout>
+        </GameConnectionContext.Provider>
+      </BrowserRouter>
+    </QueryProvider>
   )
 }
 
