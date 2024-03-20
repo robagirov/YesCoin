@@ -9,14 +9,9 @@ import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
 import { init, InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
 
-const { mainButton, viewport } = init();
+const { initData } = init();
 
-mainButton
-  .setBackgroundColor('#ff0000')
-  .setTextColor('#ffffff')
-  .setText('Expand')
-  .enable()
-  .show();
+console.log(initData);
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
