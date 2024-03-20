@@ -66,9 +66,9 @@ function App() {
             // socket.emit('tap', { userId: tgData.user?.id.toString() })
           }
         }}>
-        <Layout>
-          {/* <PageRoutes /> */}
-        </Layout>
+        {/* <Layout> */}
+        {/*   /!* <PageRoutes /> *!/ */}
+        {/* </Layout> */}
         </GameConnectionContext.Provider>
       </BrowserRouter>
     </QueryProvider>
