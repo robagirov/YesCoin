@@ -8,7 +8,7 @@ import { GameConnectionContext } from '../useGameConnection.ts'
 import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
 import { init, InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
-import { useMiniApp } from '@tma.js/sdk-react'
+import { useInitData, useInitDataRaw, useMiniApp } from '@tma.js/sdk-react'
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
@@ -56,6 +56,13 @@ function App() {
   // socket.on('energy', (data) => {
   //   setEnergy(BigInt(data))
   // })
+
+  const initData = useInitData();
+  const initDataRaw = useInitDataRaw();
+
+  useEffect(() => {
+    console.log('initDataRaw: ', initDataRaw);
+  }, [initDataRaw, initData])
 
   return (
     <div>App component</div>
