@@ -3,56 +3,59 @@ import { BrowserRouter } from 'react-router-dom'
 import { Layout } from 'shared/ui'
 import { QueryProvider, TelegramProvider } from './providers'
 import { io } from 'socket.io-client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { GameConnectionContext } from '../useGameConnection.ts'
 import { useTelegramUserId } from '../entities/Telegram'
 import { PageRoutes } from './routes'
 import { init, InitDataParsed, retrieveLaunchParams } from '@tma.js/sdk'
-
-const { initData } = init();
-
-console.log(initData);
+import { useMiniApp } from '@tma.js/sdk-react'
 
 // const WS_URL = 'http://localhost:3500/game'
 const WS_URL = 'https://yestoken.space/game'
 
-let dataRaw;
-let tgData: InitDataParsed;
-
-try {
-  const { initDataRaw, initData } = retrieveLaunchParams();
-  dataRaw = initDataRaw;
-  tgData = initData!;
-} catch (e) {
-  dataRaw = '';
-}
-
-
-const socket = io(WS_URL, {
-  transports: ['websocket'],
-  query: {
-    tgWebData: dataRaw
-  }
-});
+// let dataRaw;
+// let tgData: InitDataParsed;
+//
+// try {
+//   const { initDataRaw, initData } = retrieveLaunchParams();
+//   dataRaw = initDataRaw;
+//   tgData = initData!;
+// } catch (e) {
+//   dataRaw = '';
+// }
+//
+//
+// const socket = io(WS_URL, {
+//   transports: ['websocket'],
+//   query: {
+//     tgWebData: dataRaw
+//   }
+// });
 
 function App() {
 
+  const miniApp = useMiniApp();
+
+  useEffect(() => {
+    miniApp.ready();
+  }, []);
+
   const [energy, setEnergy] = useState(0n);
 
-  socket.on('connect', () => {
-    console.log('connected')
-  })
-  socket.on('disconnect', () => {
-    console.log('disconnected')
-  })
-
-  socket.on('connect_error', (err) => {
-    console.error(err)
-  })
-
-  socket.on('energy', (data) => {
-    setEnergy(BigInt(data))
-  })
+  // socket.on('connect', () => {
+  //   console.log('connected')
+  // })
+  // socket.on('disconnect', () => {
+  //   console.log('disconnected')
+  // })
+  //
+  // socket.on('connect_error', (err) => {
+  //   console.error(err)
+  // })
+  //
+  // socket.on('energy', (data) => {
+  //   setEnergy(BigInt(data))
+  // })
 
   return (
     <QueryProvider>
@@ -60,12 +63,11 @@ function App() {
         <GameConnectionContext.Provider value={{
           energy,
           tap: () => {
-            socket.emit('tap', { userId: tgData.user?.id.toString() })
+            // socket.emit('tap', { userId: tgData.user?.id.toString() })
           }
         }}>
         <Layout>
           <PageRoutes />
-          <TelegramProvider />
         </Layout>
         </GameConnectionContext.Provider>
       </BrowserRouter>

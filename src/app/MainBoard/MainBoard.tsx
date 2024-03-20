@@ -5,11 +5,13 @@ import useWebSocket from 'react-use-websocket'
 import { GamerLevel } from 'shared/ui/GamerLevel'
 import styles from './styles.module.scss'
 import { useGameConnection } from '../../useGameConnection.ts'
+import { useInitDataRaw } from '@tma.js/sdk-react'
 
 export function MainBoard() {
-  const queryClient = useQueryClient()
-  const telegram = useTelegram()
-  const userId = useTelegramUserId()
+
+  const initDataRaw = useInitDataRaw();
+
+  console.log('initDataRaw: ', initDataRaw);
 
   const game = useGameConnection()
 
@@ -34,12 +36,6 @@ export function MainBoard() {
   //     },
   //   )
   // }
-
-  useEffect(() => {
-    if (!telegram) return
-
-    telegram.expand()
-  }, [telegram])
 
   // TODO: ломает кликер
   // if (readyState !== ReadyState.OPEN) {
