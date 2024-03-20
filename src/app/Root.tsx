@@ -26,6 +26,8 @@ const Loading: FC = () => {
 
 export function Root() {
 
+  console.log('root');
+
   useEffect(() => {
     setDebug(true);
   }, []);

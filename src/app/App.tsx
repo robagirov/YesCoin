@@ -67,7 +67,7 @@ function App() {
           }
         }}>
         <Layout>
-          <PageRoutes />
+          {/* <PageRoutes /> */}
         </Layout>
         </GameConnectionContext.Provider>
       </BrowserRouter>
