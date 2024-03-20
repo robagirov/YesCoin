@@ -58,20 +58,21 @@ function App() {
   // })
 
   return (
-    <QueryProvider>
-      <BrowserRouter>
-        <GameConnectionContext.Provider value={{
-          energy,
-          tap: () => {
-            // socket.emit('tap', { userId: tgData.user?.id.toString() })
-          }
-        }}>
-        {/* <Layout> */}
-        {/*   /!* <PageRoutes /> *!/ */}
-        {/* </Layout> */}
-        </GameConnectionContext.Provider>
-      </BrowserRouter>
-    </QueryProvider>
+    <div>App component</div>
+    // <QueryProvider>
+    //   <BrowserRouter>
+    //     <GameConnectionContext.Provider value={{
+    //       energy,
+    //       tap: () => {
+    //         // socket.emit('tap', { userId: tgData.user?.id.toString() })
+    //       }
+    //     }}>
+    //     {/* <Layout> */}
+    //     {/*   /!* <PageRoutes /> *!/ */}
+    //     {/* </Layout> */}
+    //     </GameConnectionContext.Provider>
+    //   </BrowserRouter>
+    // </QueryProvider>
   )
 }
 
